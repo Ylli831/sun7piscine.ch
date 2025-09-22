@@ -2,102 +2,99 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <section className="hero container section" aria-labelledby="hero-title">
+        <div>
+          <div className="eyebrow">Piscine • Spa • Bien-être</div>
+          <h1 id="hero-title">SUN 7 — Piscines & Spas sur-mesure</h1>
+          <p>
+            Nous concevons, installons et entretenons vos espaces aquatiques avec
+            savoir-faire. Portfolio, services et contact ci-dessous — images à
+            venir.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="cta-row">
+            <a className="btn" href="#contact">Demandez un devis</a>
+            <a href="#services" style={{ color: "var(--color-primary)", fontWeight: 700 }}>Nos services</a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <aside className="subtle-surface" style={{ padding: 20 }}>
+          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+            <Image src="/file.svg" alt="Icône contact" width={72} height={72} />
+            <div>
+              <strong>Contact rapide</strong>
+              <div style={{ color: "var(--color-muted)" }}>+41 79 346 32 00</div>
+              <div style={{ color: "var(--color-muted)" }}>sun7h7@gmail.com</div>
+            </div>
+          </div>
+          <div style={{ marginTop: 16, color: "var(--color-muted)" }}>
+            Adresse : Esplanade des Récréations 22, 1217 Meyrin
+          </div>
+        </aside>
+      </section>
+
+      <section id="services" className="section container">
+        <h2>Nos services</h2>
+        <p>Solutions complètes — construction, rénovation, entretien et plus.</p>
+        <div className="services" role="list">
+          <div className="service-card" role="listitem">
+            <div className="service-icon">🏊</div>
+            <h3>Piscines sur-mesure</h3>
+            <p>Conception, installation et finition haut de gamme.</p>
+          </div>
+          <div className="service-card" role="listitem">
+            <div className="service-icon">🛁</div>
+            <h3>Spas & Jacuzzis</h3>
+            <p>Équipements premium pour détente et bien-être.</p>
+          </div>
+          <div className="service-card" role="listitem">
+            <div className="service-icon">🔧</div>
+            <h3>Entretien & Dépannage</h3>
+            <p>Interventions rapides et maintenance préventive.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="section container">
+        <h2>Galerie (à venir)</h2>
+        <p>Exemples de réalisations — remplacez ces placeholders par vos photos.</p>
+        <div className="gallery">
+          <div className="placeholder-img">Photo 1</div>
+          <div className="placeholder-img">Photo 2</div>
+          <div className="placeholder-img">Photo 3</div>
+        </div>
+      </section>
+
+      <section id="contact" className="section container">
+        <h2>Contact</h2>
+        <div className="contact">
+          <div>
+            <p>
+              Pour un devis ou une visite technique, contactez-nous. Les champs
+              ci-dessous sont des placeholders — remplacez par votre formulaire
+              préféré.
+            </p>
+
+            <form aria-label="Formulaire de contact" style={{ display: "grid", gap: 12 }}>
+              <input placeholder="Nom" />
+              <input placeholder="Email" />
+              <textarea placeholder="Votre message" />
+              <div style={{ display: "flex", gap: 8 }}>
+                <button className="btn" type="button">Envoyer</button>
+                <button type="button">Appeler : +41 79 346 32 00</button>
+              </div>
+            </form>
+          </div>
+
+          <aside className="contact-card">
+            <h3>Restez en contact</h3>
+            <p style={{ color: "rgba(255,255,255,0.9)" }}>Email : sun7h7@gmail.com</p>
+            <p style={{ color: "rgba(255,255,255,0.9)" }}>Instagram : @sun7_piscine</p>
+            <p style={{ color: "rgba(255,255,255,0.9)" }}>Site : www.sun7piscine.com</p>
+          </aside>
+        </div>
+      </section>
     </div>
   );
 }
