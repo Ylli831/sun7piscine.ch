@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Header from "../components/Header";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -15,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SUN 7 — Piscine & Spa",
-  description: "Site vitrine pour SUN 7 Piscine & Spa",
+  title: "Piscines et Spas en Suisse | SUN7 – Construction & Entretien",
+  description: "Construction, rénovation et entretien de piscines et spas en Suisse Romande. Devis gratuit et service premium.",
 };
 
 export default function RootLayout({
@@ -39,6 +38,8 @@ export default function RootLayout({
             <div>
               <strong>SUN 7</strong>
               <div style={{ color: "var(--color-muted)" }}>Piscine & Spa — Conception, entretien & rénovation</div>
+              <div style={{ color: "var(--color-muted)", marginTop: 8 }}>Adresse : Esplanade des Récréations 22, 1217 Meyrin</div>
+              <div style={{ color: "var(--color-muted)" }}>Téléphone : +41 79 346 32 00</div>
             </div>
 
             <div style={{ color: "var(--color-muted)" }}>
