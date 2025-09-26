@@ -9,11 +9,14 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f0f8ff',
-          100: '#e6f7fb', 
-          500: '#4cc9e5',
-          600: '#3bb8d4',
-          700: '#2aa7c3',
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#c3d5fd',
+          600: '#a7c7f7',
+          700: '#8bb5f1',
         },
         accent: {
           400: '#d4af37',

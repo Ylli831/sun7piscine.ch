@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -33,23 +34,7 @@ export default function RootLayout({
 
         <main>{children}</main>
 
-        <footer className="site-footer container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 20, paddingBottom: 20, gap: 12 }}>
-            <div>
-              <strong>SUN 7</strong>
-              <div style={{ color: "var(--color-muted)" }}>Piscine & Spa — Conception, entretien & rénovation</div>
-              <div style={{ color: "var(--color-muted)", marginTop: 8 }}>Adresse : Esplanade des Récréations 22, 1217 Meyrin</div>
-              <div style={{ color: "var(--color-muted)" }}>Téléphone : +41 79 346 32 00</div>
-            </div>
-
-            <div style={{ color: "var(--color-muted)" }}>
-              © {new Date().getFullYear()} SUN 7 — Tous droits réservés
-              <div style={{ fontSize: 12 }}>
-                Site réalisé par <a href="https://atlas-studio.eu" target="_blank" rel="noreferrer">Atlas Studio</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
