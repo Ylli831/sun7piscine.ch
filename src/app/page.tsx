@@ -24,9 +24,9 @@ export default function Home() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div className="min-h-screen md:-mt-12 md:pt-12 pt-28">
+    <div className="min-h-screen -mt-12 pt-12">
       {/* Hero Section avec Video Background */}
-  <section className="relative h-screen flex items-center justify-center overflow-hidden md:-mt-12 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-12 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
         {/* Background pattern overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-transparent to-cyan-900/90 z-5"></div>
         
