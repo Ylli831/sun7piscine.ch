@@ -100,7 +100,7 @@ export default function Home() {
                     <span key={i} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <span className="text-white text-sm">+20 ans d&apos;excellence</span>
+                <span className="text-white text-sm">+20 ans d&apos;expérience</span>
               </div>
               <div className="text-white text-sm">
                 <span className="font-bold text-yellow-400">500+</span> projets réalisés
@@ -171,7 +171,7 @@ export default function Home() {
               Nos Services d&apos;Excellence
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d&apos;expertise.
+              Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d&apos;expérience.
             </p>
           </motion.div>
 
