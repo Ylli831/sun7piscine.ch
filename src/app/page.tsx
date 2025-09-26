@@ -26,9 +26,9 @@ export default function Home() {
   return (
     <div className="min-h-screen -mt-12 pt-12">
       {/* Hero Section avec Video Background */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-12 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-12 bg-gradient-to-br from-[#4cc9e5] via-[#3bb8d4] to-[#2aa7c3]">
         {/* Background pattern overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-transparent to-cyan-900/90 z-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4cc9e5]/90 via-transparent to-[#3bb8d4]/90 z-5"></div>
         
         {/* Hero Content Layout */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
@@ -100,9 +100,9 @@ export default function Home() {
                     <span key={i} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <span className="text-blue-200 text-sm">+20 ans d&apos;excellence</span>
+                <span className="text-white text-sm">+20 ans d&apos;excellence</span>
               </div>
-              <div className="text-blue-200 text-sm">
+              <div className="text-white text-sm">
                 <span className="font-bold text-yellow-400">500+</span> projets réalisés
               </div>
             </motion.div>
@@ -117,7 +117,7 @@ export default function Home() {
           >
             <div className="relative w-full max-w-lg h-96 lg:h-[500px]">
               {/* Decorative background circle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4cc9e5]/20 to-[#3bb8d4]/20 rounded-full blur-3xl animate-pulse"></div>
               
               {/* GIF animation that switches to static last frame */}
               <div className="relative w-full h-full">
@@ -148,7 +148,7 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 2.5, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                className="absolute -bottom-4 -left-4 bg-gradient-to-r from-[#4cc9e5] to-[#3bb8d4] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
               >
                 Swiss Made
               </motion.div>
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Trust & Authority Section */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-[#4cc9e5] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -218,7 +218,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Confiance & Expertise
             </h2>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Plus de 20 ans d&apos;expérience en Suisse Romande avec les meilleures marques du secteur
             </p>
           </motion.div>
@@ -270,7 +270,7 @@ export default function Home() {
                 <p className="text-lg mb-4 italic">
                   &quot;Service impeccable et équipe professionnelle. Notre piscine n&apos;a jamais été aussi belle ! Travail de qualité suisse.&quot;
                 </p>
-                <cite className="text-blue-200 font-semibold">— M. Dubois, Genève</cite>
+                <cite className="text-white font-semibold">— M. Dubois, Genève</cite>
               </motion.blockquote>
 
               <motion.blockquote
@@ -285,7 +285,7 @@ export default function Home() {
                 <p className="text-lg mb-4 italic">
                   &quot;Rénovation rapide et de qualité. Hautement recommandé pour tous vos projets piscine en Suisse.&quot;
                 </p>
-                <cite className="text-blue-200 font-semibold">— Mme. Martin, Lausanne</cite>
+                <cite className="text-white font-semibold">— Mme. Martin, Lausanne</cite>
               </motion.blockquote>
 
               <motion.blockquote
@@ -300,7 +300,7 @@ export default function Home() {
                 <p className="text-lg mb-4 italic">
                   &quot;Installation spa parfaite avec un service après-vente exceptionnel. Merci SUN7 !&quot;
                 </p>
-                <cite className="text-blue-200 font-semibold">— Famille Rodriguez, Montreux</cite>
+                <cite className="text-white font-semibold">— Famille Rodriguez, Montreux</cite>
               </motion.blockquote>
             </motion.div>
           </div>
@@ -384,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Quote Form */}
-      <section id="quote" className="py-20 bg-gradient-to-br from-blue-900 to-blue-800">
+      <section id="quote" className="py-20 bg-gradient-to-br from-[#4cc9e5] to-[#3bb8d4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -396,7 +396,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Demander un Devis Gratuit
             </h2>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Obtenez un devis personnalisé pour votre projet en seulement 3 étapes
             </p>
           </motion.div>
