@@ -1,19 +1,22 @@
 "use client";
 
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import TrustAuthority from "../components/TrustAuthority";
-import Portfolio from "../components/Portfolio";
-import QuoteForm from "../components/QuoteForm";
+import HeroPremium from "../components/HeroPremium";
+import ServicesPremium from "../components/ServicesPremium";
+import ProjectsCarousel from "../components/ProjectsCarousel";
+import QuoteFormClean from "../components/QuoteFormClean";
+import WaterPipeScrollIndicator from "../components/WaterPipeScrollIndicator";
 
 export default function Home() {
   return (
-    <div className="min-h-screen -mt-12 pt-12">
-      <Hero />
-      <Services />
-      <TrustAuthority />
-      <Portfolio />
-      <QuoteForm />
+    <div className="min-h-screen">
+      <WaterPipeScrollIndicator />
+      <HeroPremium />
+      <ServicesPremium />
+      
+      {/* Before/After Showcase */}
+      <ProjectsCarousel />
+
+      <QuoteFormClean />
     </div>
   );
 }

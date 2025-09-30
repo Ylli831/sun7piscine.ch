@@ -8,6 +8,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Override default gray/white colors
+        white: '#C3D5FD',
+        gray: {
+          50: '#C3D5FD',
+          100: '#B8CCFC',
+          200: '#A8BFFA',
+          300: '#98B2F8',
+          400: '#88A5F6',
+          500: '#7898F4',
+          600: '#112A46',
+          700: '#0F2540',
+          800: '#0D1F3A',
+          900: '#0B1934',
+        },
+        slate: {
+          50: '#C3D5FD',
+          100: '#B8CCFC', 
+          200: '#A8BFFA',
+          300: '#98B2F8',
+          400: '#88A5F6',
+          500: '#7898F4',
+          600: '#112A46',
+          700: '#0F2540',
+          800: '#0D1F3A',
+          900: '#0B1934',
+        },
         primary: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -31,7 +57,10 @@ export default {
           500: '#0ea5e9',
           600: '#0284c7',
           700: '#0369a1',
-        }
+        },
+        // New default theme colors
+        'default-bg': '#C3D5FD',
+        'default-text': '#112A46',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

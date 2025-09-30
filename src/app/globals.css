@@ -3,23 +3,446 @@
 :root {
   --header-height: 100px;
   --ff-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  
+  /* New Default Color Palette */
+  --primary-blue: #1e40af;
+  --secondary-blue: #0ea5e9;
+  --accent-gold: #f59e0b;
+  --default-bg: #C3D5FD;
+  --default-text: #112A46;
+  --neutral-gray: #64748b;
+  --dark-blue: #0f172a;
 }
 
 * { 
   box-sizing: border-box; 
 }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+  background-color: var(--default-bg);
+}
+
+body {
   padding: 0;
   margin: 0;
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--default-text);
+  background-color: var(--default-bg);
+  overflow-x: hidden;
 }
 
-/* Minimal header styles - just the waves background */
+/* Override all text to use default colors */
+* {
+  color: var(--default-text);
+}
+
+/* Override backgrounds for common classes */
+.bg-white {
+  background-color: var(--default-bg) !important;
+}
+
+/* Only override text-white in specific non-overlay contexts */
+section:not([class*="bg-gradient"]) .text-white,
+div:not([class*="bg-gradient"]) .text-white,
+.text-white:not(.hero-text):not(.overlay-text) {
+  color: var(--default-text) !important;
+}
+
+.text-gray-800,
+.text-gray-700, 
+.text-gray-600,
+.text-gray-500 {
+  color: var(--default-text) !important;
+}
+
+.text-slate-800,
+.text-slate-700,
+.text-slate-600,
+.text-slate-500 {
+  color: var(--default-text) !important;
+}
+
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: var(--default-bg) !important;
+}
+
+/* Keep light text for dark backgrounds and gradients */
+.hero-text,
+.hero-text *,
+.hero-text h1,
+.hero-text h2, 
+.hero-text h3,
+.hero-text p,
+.hero-text span,
+.hero-text div,
+.overlay-text,
+[class*="bg-gradient"] .text-white,
+[class*="bg-blue"] .text-white,
+[class*="bg-gradient"] *,
+header .text-white {
+  color: #C3D5FD !important; /* Force light blue text for hero section */
+}
+
+/* Nuclear option - override ANY text in hero section */
+section .hero-text,
+section .hero-text *,
+section .hero-text h1,
+section .hero-text h2, 
+section .hero-text h3,
+section .hero-text p,
+section .hero-text span {
+  color: #C3D5FD !important;
+}
+
+/* Nuclear option - override ANY text in footer section */
+footer,
+footer *,
+footer h3,
+footer h4,
+footer p,
+footer span,
+footer div,
+footer a,
+footer li {
+  color: #C3D5FD !important;
+}
+
+/* Dark backgrounds should use light text */
+[class*="from-blue-9"],
+[class*="from-blue-8"],
+[class*="bg-blue-9"],
+[class*="bg-blue-8"],
+[class*="bg-slate-9"],
+[class*="bg-gray-9"] {
+  color: var(--default-bg) !important;
+}
+
+/* Header Styles */
 .site-header {
   background: url('/layered-waves-navbar.png') no-repeat center center;
   background-size: 100% 100%;
   height: var(--header-height);
+  transition: all 0.3s ease;
+}
+
+/* Water Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-button:hover::before {
+  width: 300px;
+  height: 300px;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Parallax Container */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
+}
+
+/* Smooth Reveal Animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Before/After Slider */
+.before-after-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.before-after-handle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--accent-gold);
+  border: 3px solid white;
+  border-radius: 50%;
+  cursor: ew-resize;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.before-after-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-gold);
+  z-index: 9;
+}
+
+/* Premium Service Sections */
+.service-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.8), rgba(14, 165, 233, 0.6));
+  z-index: 1;
+}
+
+.service-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Wave Dividers */
+.wave-divider {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.wave-divider svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Parallax and 3D effects */
+.parallax-container {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.parallax-element {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(0deg); }
+  75% { transform: translateY(-15px) rotate(-1deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(15px) rotate(-1deg); }
+  50% { transform: translateY(5px) rotate(0deg); }
+  75% { transform: translateY(10px) rotate(1deg); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+/* Morphing shapes */
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  75% { border-radius: 40% 60% 60% 40% / 70% 40% 50% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.morphing-shape {
+  animation: morph 20s ease-in-out infinite;
+}
+
+/* Liquid/blob effects */
+.liquid-blob {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  filter: blur(40px);
+  animation: blob 7s infinite;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* Magnetic hover effects */
+.magnetic-card {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.magnetic-card:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff,
+    0 0 35px #00ffff,
+    0 0 40px #00ffff;
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    box-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff,
+      0 0 20px #00ffff,
+      0 0 35px #00ffff,
+      0 0 40px #00ffff;
+  }
+  to {
+    box-shadow: 
+      0 0 2px #00ffff,
+      0 0 5px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #00ffff,
+      0 0 18px #00ffff,
+      0 0 25px #00ffff;
+  }
+}
+
+/* Gradient text animations */
+.gradient-text-animated {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass morphism effects */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Remove visual clutter */
+.no-bg-waves {
+  background-image: none !important;
+}
+
+/* Improved focus states */
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}
+
+/* Better button styles */
+.btn-primary {
+  background: var(--gradient-accent);
+  color: var(--color-gray-900);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  padding: var(--space-3) var(--space-6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
 }

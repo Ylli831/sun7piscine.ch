@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Piscines et Spas en Suisse | SUN7 – Construction & Entretien",
-  description: "Construction, rénovation et entretien de piscines et spas en Suisse Romande. Devis gratuit et service premium.",
+  title: "Pisciniste Suisse Romande | SUN7 – Construction, Rénovation & Entretien",
+  description: "Au bénéfice de plus de 20 ans d'expérience dans l'entretien et la rénovation de piscines en Suisse romande. Construction, rénovation, entretien de spas, bassins et piscines. Devis gratuit.",
 };
 
 export default function RootLayout({
