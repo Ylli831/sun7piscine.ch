@@ -142,9 +142,9 @@ export default function Footer() {
                 { label: "À propos", href: "/about" },
                 { label: "Nos Services", href: "/services" },
                 { label: "Portfolio", href: "/portfolio" },
-                { label: "Devis Gratuit", href: "#quote" },
-                { label: "Contact", href: "#contact" },
-                { label: "FAQ", href: "#faq" }
+                { label: "Devis Gratuit", href: "/#quote" },
+                { label: "Contact", href: "/#contact" },
+                { label: "FAQ", href: "/faq" }
               ].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-[#C3D5FD] hover:text-white transition-colors duration-300" style={{color: '#C3D5FD'}}>

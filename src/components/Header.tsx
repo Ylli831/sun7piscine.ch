@@ -16,6 +16,7 @@ export default function Header() {
         height: open ? expandedHeight : 'var(--header-height)',
         backgroundSize: open ? '100% 360px' : '100% 100%',
       }}
+      suppressHydrationWarning
     >
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4" style={{ height: 'var(--header-height)' }}>
         <Link href="/" className="flex items-center gap-3 pl-2" aria-label="Accueil">
@@ -34,6 +35,9 @@ export default function Header() {
           </Link>
           <Link href="/about" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
             À Propos
+          </Link>
+          <Link href="/faq" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
+            FAQ
           </Link>
           <a 
             href="/#quote" 
@@ -58,7 +62,7 @@ export default function Header() {
         </button>
       </div>
 
-      <div className={`w-full md:hidden px-4 transition-all duration-300 ${open ? 'block' : 'hidden'}`}>
+      <div className={`w-full md:hidden px-4 transition-all duration-300 overflow-hidden ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="mt-2 flex flex-col items-center gap-4 py-4">
           <Link href="/" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
             Accueil
@@ -71,6 +75,9 @@ export default function Header() {
           </Link>
           <Link href="/about" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
             À Propos
+          </Link>
+          <Link href="/faq" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
+            FAQ
           </Link>
           <a 
             href="/#quote" 

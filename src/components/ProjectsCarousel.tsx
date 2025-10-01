@@ -17,6 +17,14 @@ interface ProjectData {
 
 const projectsData: ProjectData[] = [
   {
+    id: 0,
+    title: "Transformation Spectaculaire",
+    description: "Métamorphose complète d'une piscine - notre projet phare",
+    beforeImage: "/before1.jpg",
+    afterImage: "/after1.jpg",
+    category: "renovation"
+  },
+  {
     id: 1,
     title: "Rénovation Complète - Piscine Familiale",
     description: "Transformation complète d'une piscine vieillissante en oasis moderne",
@@ -69,6 +77,22 @@ const projectsData: ProjectData[] = [
 export default function ProjectsCarousel() {
   const [currentProject, setCurrentProject] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+
+  // Preload images for better performance
+  useEffect(() => {
+    const preloadImages = () => {
+      projectsData.forEach((project) => {
+        if (typeof window !== 'undefined') {
+          const beforeImg = document.createElement('img');
+          const afterImg = document.createElement('img');
+          beforeImg.src = project.beforeImage;
+          afterImg.src = project.afterImage;
+        }
+      });
+    };
+    
+    preloadImages();
+  }, []);
 
   useEffect(() => {
     if (!autoPlay) return;
@@ -126,6 +150,7 @@ export default function ProjectsCarousel() {
                 className="py-8"
               >
                 <BeforeAfterSlider
+                  key={`slider-${currentProject}`}
                   beforeImage={projectsData[currentProject].beforeImage}
                   afterImage={projectsData[currentProject].afterImage}
                   title={projectsData[currentProject].title}

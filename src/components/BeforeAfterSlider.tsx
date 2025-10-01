@@ -17,7 +17,7 @@ export default function BeforeAfterSlider({
   title,
   description 
 }: BeforeAfterSliderProps) {
-  const [sliderPosition, setSliderPosition] = useState(50);
+  const [sliderPosition, setSliderPosition] = useState(20);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -62,9 +62,8 @@ export default function BeforeAfterSlider({
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           <h3 className="text-3xl md:text-4xl font-bold text-[#112A46] mb-4">{title}</h3>
           {description && (
@@ -75,7 +74,7 @@ export default function BeforeAfterSlider({
       
       <motion.div 
         ref={containerRef}
-        className="relative w-full h-[320px] md:h-[400px] lg:h-[480px] overflow-hidden rounded-2xl shadow-premium cursor-col-resize select-none bg-gradient-to-br from-blue-50 to-cyan-50"
+        className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-premium cursor-col-resize select-none bg-gradient-to-br from-blue-50 to-cyan-50"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleEnd}
         onMouseUp={handleEnd}
@@ -84,9 +83,8 @@ export default function BeforeAfterSlider({
         onClick={handleClick}
         style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
         initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Before Image */}
         <div className="absolute inset-0">
@@ -94,6 +92,8 @@ export default function BeforeAfterSlider({
             src={beforeImage}
             alt="Pool Before Renovation"
             fill
+            priority
+            loading="eager"
             className="object-cover select-none pointer-events-none transition-all duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}
@@ -117,6 +117,8 @@ export default function BeforeAfterSlider({
             src={afterImage}
             alt="Pool After Renovation"
             fill
+            priority
+            loading="eager"
             className="object-cover select-none pointer-events-none transition-all duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}
