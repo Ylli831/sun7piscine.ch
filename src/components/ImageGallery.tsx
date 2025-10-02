@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -70,21 +70,21 @@ export default function ImageGallery() {
     setSelectedImage(index);
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = useCallback(() => {
     setSelectedImage(null);
-  };
+  }, []);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage + 1) % filteredImages.length);
     }
-  };
+  }, [selectedImage, filteredImages.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage - 1 + filteredImages.length) % filteredImages.length);
     }
-  };
+  }, [selectedImage, filteredImages.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -106,7 +106,7 @@ export default function ImageGallery() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage]);
+  }, [selectedImage, closeLightbox, prevImage, nextImage]);
 
   // Prevent body scroll when lightbox is open
   useEffect(() => {
@@ -134,7 +134,7 @@ export default function ImageGallery() {
             Galerie Complète
           </h2>
           <p className="text-xl text-[#112A46] opacity-80 max-w-3xl mx-auto mb-8">
-            Découvrez l'ensemble de nos réalisations classées par catégorie
+            Découvrez l&apos;ensemble de nos réalisations classées par catégorie
           </p>
 
           {/* Category Filter */}

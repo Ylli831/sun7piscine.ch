@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Clock, Shield, Star, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 
 export default function AboutPage() {
@@ -23,7 +24,7 @@ export default function AboutPage() {
               À Propos de SUN7
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              Votre partenaire de confiance pour la création et l'entretien de piscines en Suisse Romande depuis plus de 20 ans
+              Votre partenaire de confiance pour la création et l&apos;entretien de piscines en Suisse Romande depuis plus de 20 ans
             </p>
           </motion.div>
         </div>
@@ -44,14 +45,14 @@ export default function AboutPage() {
               <div className="space-y-6 text-[#112A46] text-lg">
                 <p>
                   Fondée en 2008, SUN7 est née de la passion de créer des espaces aquatiques exceptionnels. 
-                  Notre expertise s'est développée au fil des années pour devenir une référence en Suisse Romande.
+                  Notre expertise s&apos;est développée au fil des années pour devenir une référence en Suisse Romande.
                 </p>
                 <p>
                   Nous croyons que chaque piscine doit être unique, refléter la personnalité de son propriétaire 
-                  et s'intégrer parfaitement dans son environnement. C'est cette philosophie qui guide chacun de nos projets.
+                  et s&apos;intégrer parfaitement dans son environnement. C&apos;est cette philosophie qui guide chacun de nos projets.
                 </p>
                 <p>
-                  Aujourd'hui, avec plus de 200 réalisations à notre actif, nous continuons d'innover 
+                  Aujourd&apos;hui, avec plus de 200 réalisations à notre actif, nous continuons d&apos;innover 
                   pour offrir les meilleures solutions à nos clients.
                 </p>
               </div>
@@ -303,12 +304,12 @@ export default function AboutPage() {
               et réaliser la piscine de vos rêves.
             </p>
             <div className="space-x-4">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-block bg-amber-400 text-[#112A46] hover:bg-amber-500 font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
                 Nous Contacter
-              </a>
+              </Link>
               <a
                 href="/portfolio"
                 className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"

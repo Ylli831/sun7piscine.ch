@@ -39,12 +39,12 @@ export default function Header() {
           <Link href="/faq" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
             FAQ
           </Link>
-          <a 
+          <Link 
             href="/#quote" 
             className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             Devis Gratuit
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -79,13 +79,13 @@ export default function Header() {
           <Link href="/faq" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
             FAQ
           </Link>
-          <a 
+          <Link 
             href="/#quote" 
             className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold text-lg px-6 py-2 rounded-full w-full max-w-xs text-center transition-all duration-300" 
             onClick={() => setOpen(false)}
           >
             Demander un Devis
-          </a>
+          </Link>
         </div>
       </div>
     </header>

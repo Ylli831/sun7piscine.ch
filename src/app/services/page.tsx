@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Hammer, Shield, Droplets, Sparkles, Settings } from "lucide-react";
+import { Wrench, Hammer, Settings } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 
 const services = [
@@ -77,7 +78,7 @@ export default function ServicesPage() {
               Nos Services Premium
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d'expérience
+              Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d&apos;expérience
             </p>
           </motion.div>
         </div>
@@ -174,7 +175,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "20+ Années d'Expérience",
+                title: "20+ Années d&apos;Expérience",
                 description: "Une expertise reconnue dans le domaine des piscines et spas"
               },
               {
@@ -230,7 +231,7 @@ export default function ServicesPage() {
               Notre Processus
             </h2>
             <p className="text-xl text-[#112A46] opacity-80 max-w-3xl mx-auto">
-              De l'étude à la réalisation, découvrez comment nous menons votre projet
+              De l&apos;étude à la réalisation, découvrez comment nous menons votre projet
             </p>
           </motion.div>
 
@@ -291,15 +292,15 @@ export default function ServicesPage() {
               Prêt à Commencer Votre Projet ?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Contactez-nous dès aujourd'hui pour une consultation gratuite et un devis personnalisé
+              Contactez-nous dès aujourd&apos;hui pour une consultation gratuite et un devis personnalisé
             </p>
             <div className="space-x-4">
-              <a
+              <Link
                 href="/#quote"
                 className="inline-block bg-amber-400 text-[#112A46] hover:bg-amber-500 font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
                 Demander un Devis
-              </a>
+              </Link>
               <a
                 href="tel:+41793463200"
                 className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"

@@ -66,7 +66,7 @@ export default function ServicesPremium() {
             Services Premium
           </h2>
           <p className="text-xl text-[#112A46] max-w-3xl mx-auto leading-relaxed">
-            L'excellence suisse au service de vos projets aquatiques. 
+            L&apos;excellence suisse au service de vos projets aquatiques. 
             Chaque détail compte, chaque réalisation est unique.
           </p>
         </motion.div>

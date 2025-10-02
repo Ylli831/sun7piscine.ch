@@ -128,7 +128,7 @@ export default function HeroPremium() {
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <span className="text-[#C3D5FD] opacity-90 text-sm font-medium" style={{color: '#C3D5FD'}}>20+ ans d'expérience</span>
+              <span className="text-[#C3D5FD] opacity-90 text-sm font-medium" style={{color: '#C3D5FD'}}>20+ ans d&apos;expérience</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-green-400" />

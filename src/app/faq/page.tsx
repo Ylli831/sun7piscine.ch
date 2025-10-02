@@ -21,8 +21,8 @@ const allFaqData: FAQItem[] = [
   },
   {
     category: "Prix & Budget",
-    question: "Combien coûte l'entretien annuel d'une piscine ?",
-    answer: "L'entretien professionnel coûte entre 1'500 et 3'000 CHF/an selon la taille et les services inclus. Cela comprend : produits chimiques (400-600 CHF), nettoyage régulier, hivernage, remise en route, maintenance des équipements. Un entretien régulier prolonge la durée de vie de votre piscine."
+    question: "Combien coûte l&apos;entretien annuel d&apos;une piscine ?",
+    answer: "L&apos;entretien professionnel coûte entre 1&apos;500 et 3&apos;000 CHF/an selon la taille et les services inclus. Cela comprend : produits chimiques (400-600 CHF), nettoyage régulier, hivernage, remise en route, maintenance des équipements. Un entretien régulier prolonge la durée de vie de votre piscine."
   },
   {
     category: "Prix & Budget",
@@ -134,7 +134,7 @@ export default function FAQPage() {
               className="inline-flex items-center gap-2 text-[#C3D5FD] hover:text-white mb-8 transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5" />
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </Link>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Questions Fréquentes
@@ -280,7 +280,7 @@ export default function FAQPage() {
             </div>
 
             <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-              <h3 className="text-lg font-semibold mb-2">Horaires d'ouverture</h3>
+              <h3 className="text-lg font-semibold mb-2">Horaires d&apos;ouverture</h3>
               <p className="text-sm opacity-90">
                 Lundi - Vendredi : 8h00 - 18h00<br />
                 Samedi : 9h00 - 16h00<br />

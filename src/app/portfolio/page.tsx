@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ProjectsCarousel from "../../components/ProjectsCarousel";
 import ImageGallery from "../../components/ImageGallery";
 import Image from "next/image";
+import Link from "next/link";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 
 const portfolioCategories = [
@@ -63,7 +64,7 @@ export default function PortfolioPage() {
               Notre Portfolio
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-              Plus de 20 ans d'expérience dans la création et rénovation de piscines en Suisse Romande
+              Plus de 20 ans d&apos;expérience dans la création et rénovation de piscines en Suisse Romande
             </p>
             <div className="inline-flex items-center space-x-8 text-sm">
               <div className="flex items-center space-x-2">
@@ -194,15 +195,15 @@ export default function PortfolioPage() {
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Contactez-nous pour un devis gratuit et personnalisé. 
-              Notre équipe d'experts vous accompagne de A à Z.
+              Notre équipe d&apos;experts vous accompagne de A à Z.
             </p>
             <div className="space-x-4">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-block bg-amber-400 hover:bg-amber-500 text-[#112A46] font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
                 Demander un Devis
-              </a>
+              </Link>
               <a
                 href="tel:+41793463200"
                 className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"
