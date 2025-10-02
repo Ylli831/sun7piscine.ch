@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Phone, Mail } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -12,24 +12,24 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Combien coûte la construction d'une piscine en Suisse ?",
-    answer: "Le coût varie selon la taille, le type et les finitions. Pour une piscine standard 8x4m, comptez entre 40'000 et 80'000 CHF. Une piscine premium avec équipements haut de gamme peut atteindre 120'000 CHF. Nous offrons toujours un devis gratuit et détaillé adapté à votre projet."
+    answer: "Le coût varie selon la taille, le type et les finitions. Pour une piscine standard 8x4m, comptez entre 40'000 et 80'000 CHF. Une réalisation avec équipements haut de gamme peut atteindre 120'000 CHF. Nous offrons toujours un devis gratuit et détaillé adapté à votre projet.",
   },
   {
     question: "Combien de temps faut-il pour construire une piscine ?",
-    answer: "La construction prend généralement 4 à 8 semaines selon la complexité. Cela inclut : excavation (1-2 jours), structure béton (1 semaine), installations techniques (1 semaine), revêtement et finitions (2-3 semaines), mise en eau et tests (3-5 jours). Les conditions météorologiques peuvent influencer ces délais."
+    answer: "La construction prend généralement 4 à 8 semaines selon la complexité. Cela inclut : excavation (1-2 jours), structure béton (1 semaine), installations techniques (1 semaine), revêtement et finitions (2-3 semaines), mise en eau et tests (3-5 jours). Les conditions météorologiques peuvent influencer ces délais.",
   },
   {
     question: "Faut-il un permis de construire pour une piscine ?",
-    answer: "En Suisse, un permis de construire est généralement requis pour les piscines permanentes. Les règles varient selon les cantons et communes. Nous nous occupons de toutes les démarches administratives et vous guidons dans l'obtention des autorisations nécessaires."
+    answer: "En Suisse, un permis de construire est généralement requis pour les piscines permanentes. Les règles varient selon les cantons et communes. Nous nous occupons de toutes les démarches administratives et vous guidons dans l'obtention des autorisations nécessaires.",
   },
   {
     question: "Proposez-vous des garanties sur vos travaux ?",
-    answer: "Oui, nous offrons une garantie de 10 ans sur la structure béton, 2 ans sur les équipements techniques et 1 an sur les finitions et accessoires. Notre assurance responsabilité civile couvre tous nos chantiers. Nous restons disponibles pour le service après-vente."
+    answer: "Nous assurons un accompagnement sérénité sur toute la durée de vie de votre piscine : contrôles programmés, assistance prioritaire et suivi personnalisé avec nos experts. Notre assurance responsabilité civile couvre chacun de nos chantiers et nous restons votre interlocuteur privilégié pour le service après-vente.",
   },
   {
     question: "Dans quelles régions intervenez-vous ?",
-    answer: "Nous couvrons toute la Suisse Romande : Genève, Vaud, Valais, Fribourg, Neuchâtel et Jura. Notre base à Meyrin nous permet d'intervenir rapidement. Pour les projets importants, nous nous déplaçons également en Suisse alémanique."
-  }
+    answer: "Nous couvrons toute la Suisse Romande : Genève, Vaud, Valais, Fribourg, Neuchâtel et Jura. Notre base à Meyrin nous permet d'intervenir rapidement. Pour les projets importants, nous nous déplaçons également en Suisse alémanique.",
+  },
 ];
 
 export default function FAQ() {
@@ -40,7 +40,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 bg-[#C3D5FD]">
+    <section className="py-20 section-muted text-brand-navy">
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,12 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#112A46] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
             Questions Fréquentes
           </h2>
-          <p className="text-xl text-[#112A46] opacity-80 max-w-3xl mx-auto">
-            Trouvez les réponses aux questions les plus courantes sur nos services de piscines et spas
+          <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto">
+            Trouvez les réponses aux questions les plus courantes sur nos services
+            de piscines et spas
           </p>
         </motion.div>
 
@@ -65,13 +66,13 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm rounded-xl border border-[#112A46]/10 shadow-lg overflow-hidden"
+              className="bg-white/85 backdrop-blur-sm rounded-xl border border-brand-navy/10 shadow-lg overflow-hidden"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-[#112A46]/5 transition-colors duration-200 group"
+                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-brand-sky/20 transition-colors duration-200 group"
               >
-                <h3 className="text-lg font-semibold text-[#112A46] pr-4 group-hover:text-blue-600 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-brand-navy pr-4 group-hover:text-brand-gold transition-colors duration-200">
                   {faq.question}
                 </h3>
                 <motion.div
@@ -79,10 +80,10 @@ export default function FAQ() {
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <ChevronDown className="w-6 h-6 text-[#112A46] group-hover:text-blue-600 transition-colors duration-200" />
+                  <ChevronDown className="w-6 h-6 text-brand-navy group-hover:text-brand-gold transition-colors duration-200" />
                 </motion.div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -93,8 +94,8 @@ export default function FAQ() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-6 pt-2">
-                      <div className="w-full h-px bg-gradient-to-r from-transparent via-[#112A46]/20 to-transparent mb-4"></div>
-                      <p className="text-[#112A46] opacity-90 leading-relaxed">
+                      <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-navy/20 to-transparent mb-4"></div>
+                      <p className="text-brand-navy/85 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -104,18 +105,15 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        {/* View All FAQs Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
           className="text-center mt-12"
         >
           <a
             href="/faq"
-            className="inline-flex items-center gap-2 bg-[#112A46] text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C3D5FD] focus-visible:ring-offset-[#112A46]"
+            className="inline-flex items-center gap-2 bg-brand-navy text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-sky focus-visible:ring-offset-brand-navy"
           >
             Voir Toutes les Questions
             <ChevronDown className="w-5 h-5 rotate-[-90deg]" />
@@ -130,25 +128,45 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+          <div className="rounded-2xl bg-white border border-brand-navy/10 shadow-xl p-8 text-brand-navy">
+            <h3 className="text-2xl font-bold mb-4 text-brand-navy">
               Vous ne trouvez pas la réponse à votre question ?
             </h3>
-            <p className="text-lg opacity-90 mb-6">
+            <p className="text-lg text-brand-navy/80 mb-6">
               Nos experts sont là pour répondre à toutes vos questions spécifiques
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="grid gap-4 sm:grid-cols-2">
               <a
                 href="tel:+41793463200"
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/60 focus-visible:ring-offset-2"
+                className="group flex items-center gap-4 rounded-2xl border border-brand-navy/10 bg-white text-brand-navy px-6 py-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                📞 079 346 32 00
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-goldBright/15 text-brand-goldDark transition-colors duration-300 group-hover:bg-brand-goldBright/25">
+                  <Phone className="h-5 w-5" />
+                </span>
+                <div>
+                  <div className="text-sm font-medium text-brand-navy/80">
+                    Appelez-nous
+                  </div>
+                  <div className="text-lg font-semibold text-brand-navy">
+                    +41 79 346 32 00
+                  </div>
+                </div>
               </a>
               <a
                 href="mailto:info@sun7piscine.ch"
-                className="inline-flex items-center justify-center gap-2 bg-white/20 border-2 border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white/30 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
+                className="group flex items-center gap-4 rounded-2xl border border-brand-navy/10 bg-white text-brand-navy px-6 py-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                ✉️ info@sun7piscine.ch
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy transition-colors duration-300 group-hover:bg-brand-navy/15">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <div>
+                  <div className="text-sm font-medium text-brand-navy/80">
+                    Écrivez-nous
+                  </div>
+                  <div className="text-lg font-semibold text-brand-navy">
+                    info@sun7piscine.ch
+                  </div>
+                </div>
               </a>
             </div>
           </div>

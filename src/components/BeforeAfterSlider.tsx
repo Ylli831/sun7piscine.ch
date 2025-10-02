@@ -17,7 +17,7 @@ export default function BeforeAfterSlider({
   title,
   description 
 }: BeforeAfterSliderProps) {
-  const [sliderPosition, setSliderPosition] = useState(20);
+  const [sliderPosition, setSliderPosition] = useState(80);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +74,7 @@ export default function BeforeAfterSlider({
       
       <motion.div 
         ref={containerRef}
-        className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-premium cursor-col-resize select-none bg-gradient-to-br from-blue-50 to-cyan-50"
+  className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl cursor-col-resize select-none bg-gradient-to-br from-blue-50 to-cyan-50"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleEnd}
         onMouseUp={handleEnd}
@@ -86,33 +86,8 @@ export default function BeforeAfterSlider({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        {/* Before Image */}
+        {/* After Image */}
         <div className="absolute inset-0">
-          <Image
-            src={beforeImage}
-            alt="Pool Before Renovation"
-            fill
-            priority
-            loading="eager"
-            className="object-cover select-none pointer-events-none transition-all duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            draggable={false}
-          />
-          <div className="absolute bottom-6 left-6 bg-gradient-to-r from-[#112A46] to-[#1e40af] text-[#C3D5FD] px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-              AVANT
-            </span>
-          </div>
-        </div>
-        
-        {/* After Image with clip-path */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
-          }}
-        >
           <Image
             src={afterImage}
             alt="Pool After Renovation"
@@ -123,10 +98,35 @@ export default function BeforeAfterSlider({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}
           />
-          <div className="absolute bottom-6 right-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-[#C3D5FD] px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
+          <div className="absolute bottom-6 left-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-[#C3D5FD] px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
               APRÈS
+            </span>
+          </div>
+        </div>
+        
+        {/* Before Image with clip-path */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            clipPath: `inset(0 0 0 ${sliderPosition}%)`
+          }}
+        >
+          <Image
+            src={beforeImage}
+            alt="Pool Before Renovation"
+            fill
+            priority
+            loading="eager"
+            className="object-cover select-none pointer-events-none transition-all duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            draggable={false}
+          />
+          <div className="absolute bottom-6 right-6 bg-gradient-to-r from-[#112A46] to-[#1e40af] text-[#C3D5FD] px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+              AVANT
             </span>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function BeforeAfterSlider({
           onTouchStart={handleStart}
         >
           <motion.div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#C3D5FD] rounded-full shadow-premium border-3 border-blue-500 flex items-center justify-center hover:scale-110 transition-all duration-200"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#C3D5FD] rounded-full shadow-xl border-3 border-blue-500 flex items-center justify-center hover:scale-110 transition-all duration-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

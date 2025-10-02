@@ -49,7 +49,7 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 4,
-    title: "Restauration Premium",
+    title: "Restauration Signature",
     description: "Remise à neuf complète avec équipements haut de gamme",
     beforeImage: "/sun7piscine-images/pool-before4.jpg",
     afterImage: "/sun7piscine-images/pool-after4.jpg",
@@ -119,7 +119,7 @@ export default function ProjectsCarousel() {
   };
 
   return (
-    <section className="py-20 bg-[#C3D5FD]">
+    <section className="py-20 section-muted text-brand-navy">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,10 +127,10 @@ export default function ProjectsCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#112A46] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
             Nos Réalisations
           </h2>
-          <p className="text-xl text-[#112A46] max-w-3xl mx-auto">
+          <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto">
             Découvrez comment nous transformons vos espaces aquatiques. 
             Faites glisser pour voir la différence avant/après de nos projets.
           </p>
@@ -138,7 +138,7 @@ export default function ProjectsCarousel() {
 
         <div className="relative">
           {/* Main Carousel */}
-          <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative overflow-hidden rounded-2xl border border-brand-navy/10 shadow-xl bg-white/95 backdrop-blur-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentProject}
@@ -162,7 +162,7 @@ export default function ProjectsCarousel() {
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#C3D5FD]/90 hover:bg-[#C3D5FD] text-[#112A46] rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet précédent"
           >
             <ChevronLeft size={24} />
@@ -170,7 +170,7 @@ export default function ProjectsCarousel() {
           
           <button
             onClick={nextProject}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#C3D5FD]/90 hover:bg-[#C3D5FD] text-[#112A46] rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet suivant"
           >
             <ChevronRight size={24} />
@@ -184,8 +184,8 @@ export default function ProjectsCarousel() {
                 onClick={() => goToProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-200 ${
                   index === currentProject
-                    ? "bg-[#112A46] scale-125"
-                    : "bg-[#112A46]/30 hover:bg-[#112A46]/50"
+                    ? "bg-brand-navy scale-125"
+                    : "bg-brand-navy/30 hover:bg-brand-navy/50"
                 }`}
                 aria-label={`Aller au projet ${index + 1}`}
               />
@@ -194,7 +194,7 @@ export default function ProjectsCarousel() {
 
           {/* Project Counter */}
           <div className="text-center mt-4">
-            <span className="text-sm text-[#112A46]">
+            <span className="text-sm text-brand-navy/80">
               {currentProject + 1} / {projectsData.length}
             </span>
           </div>

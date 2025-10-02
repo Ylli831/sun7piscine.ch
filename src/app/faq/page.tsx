@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown, ArrowLeft, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import { ArrowLeft, ChevronDown, Phone, Mail } from "lucide-react";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 
 interface FAQItem {
@@ -17,7 +17,7 @@ const allFaqData: FAQItem[] = [
   {
     category: "Prix & Budget",
     question: "Combien coûte la construction d'une piscine en Suisse ?",
-    answer: "Le coût varie selon la taille, le type et les finitions. Pour une piscine standard 8x4m, comptez entre 40'000 et 80'000 CHF. Une piscine premium avec équipements haut de gamme peut atteindre 120'000 CHF. Nous offrons toujours un devis gratuit et détaillé adapté à votre projet."
+    answer: "Le coût varie selon la taille, le type et les finitions. Pour une piscine standard 8x4m, comptez entre 40'000 et 80'000 CHF. Une piscine avec équipements haut de gamme peut atteindre 120'000 CHF. Nous offrons toujours un devis gratuit et détaillé adapté à votre projet."
   },
   {
     category: "Prix & Budget",
@@ -68,7 +68,7 @@ const allFaqData: FAQItem[] = [
   {
     category: "Entretien & Services",
     question: "Intervenez-vous en urgence pour les pannes ?",
-    answer: "Oui, nous proposons un service d'urgence 7j/7 pour les pannes critiques (fuites importantes, dysfonctionnements majeurs). Nos techniciens interviennent dans les 24h en Suisse Romande. Contactez-nous au 079 346 32 00 pour les urgences."
+    answer: "Oui, nous proposons un service d'urgence 7j/7 pour les pannes critiques (fuites importantes, dysfonctionnements majeurs). Nos techniciens interviennent dans les 24h en Suisse Romande. Contactez-nous au +41 79 346 32 00 pour les urgences."
   },
   {
     category: "Entretien & Services",
@@ -80,12 +80,12 @@ const allFaqData: FAQItem[] = [
   {
     category: "Garanties & Qualité",
     question: "Proposez-vous des garanties sur vos travaux ?",
-    answer: "Oui, nous offrons une garantie de 10 ans sur la structure béton, 2 ans sur les équipements techniques et 1 an sur les finitions et accessoires. Notre assurance responsabilité civile couvre tous nos chantiers. Nous restons disponibles pour le service après-vente."
+    answer: "Nous assurons un accompagnement sérénité sur toute la durée de vie de votre piscine : contrôles programmés, assistance prioritaire et suivi personnalisé avec nos experts. Notre assurance responsabilité civile couvre chacun de nos chantiers et nous restons votre interlocuteur privilégié pour le service après-vente."
   },
   {
     category: "Garanties & Qualité",
     question: "Êtes-vous assurés et certifiés ?",
-    answer: "SUN7 dispose de toutes les assurances obligatoires : responsabilité civile entreprise, assurance travaux, garantie décennale. Nos techniciens sont certifiés et formés aux dernières normes. Nous sommes membres des associations professionnelles suisses du secteur."
+    answer: "SUN7 dispose de toutes les assurances professionnelles obligatoires : responsabilité civile entreprise, assurance travaux et couvertures spécifiques au secteur. Nos techniciens sont certifiés, formés en continu et nous sommes membres des principales associations suisses de la piscine."
   },
 
   // Coverage & Contact
@@ -97,7 +97,7 @@ const allFaqData: FAQItem[] = [
   {
     category: "Couverture & Contact",
     question: "Comment obtenir un devis ?",
-    answer: "Contactez-nous par téléphone (079 346 32 00), email (info@sun7piscine.ch) ou via notre formulaire en ligne. Nous organisons une visite gratuite pour étudier votre terrain et comprendre vos besoins. Le devis détaillé vous est remis sous 48h."
+    answer: "Contactez-nous par téléphone (+41 79 346 32 00), email (info@sun7piscine.ch) ou via notre formulaire en ligne. Nous organisons une visite gratuite pour étudier votre terrain et comprendre vos besoins. Le devis détaillé vous est remis sous 48h."
   }
 ];
 
@@ -199,10 +199,10 @@ export default function FAQPage() {
                   className="w-full px-6 py-5 text-left flex justify-between items-start hover:bg-[#112A46]/5 transition-colors duration-200 group"
                 >
                   <div className="flex-1 pr-4">
-                    <div className="inline-block px-3 py-1 bg-[#112A46]/10 rounded-full text-xs font-medium text-[#112A46] mb-2">
+                    <div className="inline-block px-3 py-1 rounded-full bg-brand-goldBright/15 text-xs font-semibold uppercase tracking-wide text-brand-navy mb-2">
                       {faq.category}
                     </div>
-                    <h3 className="text-lg font-semibold text-[#112A46] group-hover:text-blue-600 transition-colors duration-200">
+                    <h3 className="text-lg font-semibold text-[#112A46] transition-colors duration-200 group-hover:text-brand-goldBright">
                       {faq.question}
                     </h3>
                   </div>
@@ -211,7 +211,7 @@ export default function FAQPage() {
                     transition={{ duration: 0.2 }}
                     className="flex-shrink-0 mt-2"
                   >
-                    <ChevronDown className="w-6 h-6 text-[#112A46] group-hover:text-blue-600 transition-colors duration-200" />
+                    <ChevronDown className="w-6 h-6 text-[#112A46] transition-colors duration-200 group-hover:text-brand-goldBright" />
                   </motion.div>
                 </button>
                 
@@ -225,7 +225,7 @@ export default function FAQPage() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 pt-2">
-                        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#112A46]/20 to-transparent mb-4"></div>
+                        <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-goldBright/40 to-transparent mb-4"></div>
                         <p className="text-[#112A46] opacity-90 leading-relaxed">
                           {faq.answer}
                         </p>
@@ -240,48 +240,55 @@ export default function FAQPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="container mx-auto px-4 text-center">
+  <section className="section-spacing bg-white">
+        <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl"
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-brand-goldBright/30 bg-brand-goldBright/10 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-goldDark">
+              Assistance personnalisée
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
               Vous ne trouvez pas la réponse à votre question ?
             </h2>
-            <p className="text-xl opacity-90 mb-8">
+            <p className="text-xl text-brand-navy mb-10">
               Nos experts sont là pour répondre à toutes vos questions spécifiques sur votre projet de piscine
             </p>
             
-            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="mx-auto grid max-w-2xl gap-6 md:grid-cols-2">
               <a
                 href="tel:+41793463200"
-                className="flex items-center justify-center gap-3 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors duration-200 shadow-lg"
+                className="group flex items-center justify-center gap-4 rounded-2xl border border-brand-goldBright/25 bg-white px-8 py-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <Phone className="w-5 h-5" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-goldBright/15 text-brand-gold-dark transition-colors duration-300 group-hover:bg-brand-goldBright/25">
+                  <Phone className="h-5 w-5" />
+                </span>
                 <div className="text-left">
-                  <div className="text-sm opacity-70">Appelez-nous</div>
-                  <div>079 346 32 00</div>
+                  <div className="text-sm font-medium text-brand-navy">Appelez-nous</div>
+                  <div className="text-lg font-semibold text-brand-navy">+41 79 346 32 00</div>
                 </div>
               </a>
               
               <a
                 href="mailto:info@sun7piscine.ch"
-                className="flex items-center justify-center gap-3 bg-white/20 border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/30 transition-colors duration-200"
+                  className="group flex items-center justify-center gap-4 rounded-2xl border border-brand-goldBright/25 bg-white px-8 py-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <Mail className="w-5 h-5" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-goldBright/15 text-brand-gold-dark transition-colors duration-300 group-hover:bg-brand-goldBright/25">
+                  <Mail className="h-5 w-5" />
+                </span>
                 <div className="text-left">
-                  <div className="text-sm opacity-70">Écrivez-nous</div>
-                  <div>info@sun7piscine.ch</div>
+                  <div className="text-sm font-medium text-brand-navy">Écrivez-nous</div>
+                  <div className="text-lg font-semibold text-brand-navy">info@sun7piscine.ch</div>
                 </div>
               </a>
             </div>
 
-            <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-              <h3 className="text-lg font-semibold mb-2">Horaires d&apos;ouverture</h3>
-              <p className="text-sm opacity-90">
+            <div className="mt-10 rounded-2xl border border-brand-goldBright/25 bg-white p-6 shadow-inner">
+              <h3 className="text-lg font-semibold text-brand-navy mb-2">Horaires d&apos;ouverture</h3>
+              <p className="text-sm text-brand-navy/70 leading-relaxed">
                 Lundi - Vendredi : 8h00 - 18h00<br />
                 Samedi : 9h00 - 16h00<br />
                 Urgences : 7j/7, 24h/24

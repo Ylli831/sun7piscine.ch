@@ -7,11 +7,10 @@ import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucid
 export default function Footer() {
   return (
     <footer 
-      className="relative text-[#C3D5FD]"
+      className="relative text-brand-sky"
       style={{
         background: 'url(/layered-waves-footer.png) no-repeat center center',
-        backgroundSize: '100% 100%',
-        color: '#C3D5FD'
+        backgroundSize: '100% 100%'
       }}
     >
       {/* Overlay for better text readability */}
@@ -26,7 +25,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-[#C3D5FD] flex items-center gap-3">
+            <h3 className="text-2xl font-bold text-brand-sky flex items-center gap-3">
               <Image
                 src="/logo-without-bg.png"
                 alt="SUN7 Piscine"
@@ -37,7 +36,7 @@ export default function Footer() {
               />
               SUN7 Piscine
             </h3>
-            <p className="text-[#C3D5FD] opacity-90 leading-relaxed" style={{color: '#C3D5FD'}}>
+            <p className="text-brand-sky opacity-90 leading-relaxed">
               Votre partenaire de confiance pour piscines et spas en Suisse Romande.
               Plus de 20 ans d&apos;expérience dans la construction, rénovation et entretien.
             </p>
@@ -77,7 +76,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h4 className="text-xl font-semibold text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Nos Services</h4>
+            <h4 className="text-xl font-semibold text-brand-sky">Nos Services</h4>
             <ul className="space-y-2">
               {[
                 "Construction de piscines",
@@ -88,7 +87,7 @@ export default function Footer() {
                 "Produits & Accessoires"
               ].map((service) => (
                 <li key={service}>
-                  <a href="#" className="text-[#C3D5FD] hover:text-white transition-colors duration-300" style={{color: '#C3D5FD'}}>
+                  <a href="#" className="text-brand-sky hover:text-white transition-colors duration-300">
                     {service}
                   </a>
                 </li>
@@ -104,36 +103,36 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h4 className="text-xl font-semibold text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Contact</h4>
+            <h4 className="text-xl font-semibold text-brand-sky">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[#C3D5FD] mt-0.5 flex-shrink-0" />
-                <div className="text-[#C3D5FD] opacity-90">
-                  <div className="font-medium text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Adresse</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>Esplanade des Récréations 22</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>1217 Meyrin, Suisse</div>
+                <MapPin className="w-5 h-5 text-brand-sky mt-0.5 flex-shrink-0" />
+                <div className="text-brand-sky/90">
+                  <div className="font-medium text-brand-sky">Adresse</div>
+                  <div className="text-sm text-brand-sky/80">Esplanade des Récréations 22</div>
+                  <div className="text-sm text-brand-sky/80">1217 Meyrin, Suisse</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#C3D5FD] flex-shrink-0" />
-                <div className="text-[#C3D5FD] opacity-90">
-                  <div className="font-medium text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Téléphone</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>079 346 32 00</div>
+                <Phone className="w-5 h-5 text-brand-sky flex-shrink-0" />
+                <div className="text-brand-sky/90">
+                  <div className="font-medium text-brand-sky">Téléphone</div>
+                  <div className="text-sm text-brand-sky/80">+41 79 346 32 00</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#C3D5FD] flex-shrink-0" />
-                <div className="text-[#C3D5FD] opacity-90">
-                  <div className="font-medium text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Email</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>info@sun7piscine.ch</div>
+                <Mail className="w-5 h-5 text-brand-sky flex-shrink-0" />
+                <div className="text-brand-sky/90">
+                  <div className="font-medium text-brand-sky">Email</div>
+                  <div className="text-sm text-brand-sky/80">info@sun7piscine.ch</div>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-[#C3D5FD] mt-0.5 flex-shrink-0" />
-                <div className="text-[#C3D5FD] opacity-90">
-                  <div className="font-medium text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Horaires</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>Lun-Ven: 8h-18h</div>
-                  <div className="text-sm text-[#C3D5FD] opacity-80" style={{color: '#C3D5FD'}}>Sam: 9h-16h</div>
+                <Clock className="w-5 h-5 text-brand-sky mt-0.5 flex-shrink-0" />
+                <div className="text-brand-sky/90">
+                  <div className="font-medium text-brand-sky">Horaires</div>
+                  <div className="text-sm text-brand-sky/80">Lun-Ven: 8h-18h</div>
+                  <div className="text-sm text-brand-sky/80">Sam: 9h-16h</div>
                 </div>
               </div>
             </div>
@@ -147,18 +146,18 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h4 className="text-xl font-semibold text-[#C3D5FD]" style={{color: '#C3D5FD'}}>Liens Rapides</h4>
+            <h4 className="text-xl font-semibold text-brand-sky">Liens Rapides</h4>
             <ul className="space-y-2">
               {[
                 { label: "À propos", href: "/about" },
                 { label: "Nos Services", href: "/services" },
-                { label: "Portfolio", href: "/portfolio" },
-                { label: "Devis Gratuit", href: "/#quote" },
+                { label: "Réalisations", href: "/portfolio" },
+                { label: "Demander un devis", href: "/contact" },
                 { label: "Contact", href: "/#contact" },
                 { label: "FAQ", href: "/faq" }
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-[#C3D5FD] hover:text-white transition-colors duration-300" style={{color: '#C3D5FD'}}>
+                  <a href={link.href} className="text-brand-sky hover:text-white transition-colors duration-300">
                     {link.label}
                   </a>
                 </li>
@@ -175,10 +174,10 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-white/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
-          <div className="text-[#C3D5FD] opacity-80 text-sm" style={{color: '#C3D5FD'}}>
+          <div className="text-brand-sky/80 text-sm">
             © {new Date().getFullYear()} SUN7 Piscine. Tous droits réservés.
           </div>
-          <div className="text-[#C3D5FD] opacity-80 text-sm" style={{color: '#C3D5FD'}}>
+          <div className="text-brand-sky/80 text-sm">
             Site réalisé par{" "}
             <a
               href="https://atlas-studio.eu"

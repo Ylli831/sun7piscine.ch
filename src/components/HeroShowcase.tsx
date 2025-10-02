@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Star, Phone, CheckCircle, Award } from "lucide-react";
 
-export default function HeroPremium() {
+export default function HeroShowcase() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -54,15 +54,13 @@ export default function HeroPremium() {
       {/* Content */}
       <div className="relative z-20 w-full max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
         
-        {/* Left Side - Content */}
+        {/* Excellence Badge */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="hero-text text-[#C3D5FD] space-y-8"
-          style={{color: '#C3D5FD'}}
+          className="hero-text text-brand-sky space-y-8"
         >
-          {/* Premium Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +68,7 @@ export default function HeroPremium() {
             className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
           >
             <Award className="w-5 h-5 text-amber-400" />
-            <span className="text-sm font-semibold text-[#C3D5FD]">Pisciniste Premium depuis 20 ans</span>
+            <span className="text-sm font-semibold text-brand-sky">Pisciniste d&apos;exception depuis 20 ans</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -80,14 +78,14 @@ export default function HeroPremium() {
             transition={{ duration: 1, delay: 0.7 }}
             className="space-y-4"
           >
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[#C3D5FD]">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-brand-sky">
               Piscines & Spas
               <span className="block text-3xl lg:text-4xl xl:text-5xl text-amber-400 mt-2">
-                Suisse Romande
+                haut de gamme
               </span>
             </h1>
             
-            <p className="text-lg lg:text-xl text-[#C3D5FD] opacity-90 font-light max-w-2xl leading-relaxed" style={{color: '#C3D5FD'}}>
+            <p className="text-lg lg:text-xl text-brand-sky opacity-90 font-light max-w-2xl leading-relaxed">
               Construction, rénovation et entretien de piscines haut de gamme par des experts certifiés.
             </p>
           </motion.div>
@@ -100,18 +98,17 @@ export default function HeroPremium() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#quote"
-              className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-center"
-              style={{color: '#112A46'}}
+              href="/contact"
+              className="ripple-button bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-center"
             >
-              Devis Gratuit Premium
+              <span className="whitespace-nowrap">Devis Gratuit Personnalisé</span>
             </a>
             <a
               href="tel:+41793463200"
-              className="border-2 border-[#C3D5FD]/30 text-[#C3D5FD] hover:text-amber-400 hover:border-amber-400 font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-[#C3D5FD]/5 backdrop-blur-sm text-center flex items-center justify-center gap-3"
+              className="border-2 border-brand-sky/30 text-brand-sky hover:text-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-brand-sky/5 backdrop-blur-sm text-center flex items-center justify-center gap-3"
             >
               <Phone className="w-5 h-5" />
-              079 346 32 00
+              <span className="whitespace-nowrap">+41 79 346 32 00</span>
             </a>
           </motion.div>
 
@@ -120,7 +117,7 @@ export default function HeroPremium() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1 }}
-            className="flex flex-wrap items-center gap-8 pt-8 border-t border-[#C3D5FD]/20"
+            className="flex flex-wrap items-center gap-8 pt-8 border-t border-brand-sky/20"
           >
             <div className="flex items-center gap-3">
               <div className="flex text-amber-400">
@@ -128,15 +125,11 @@ export default function HeroPremium() {
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <span className="text-[#C3D5FD] opacity-90 text-sm font-medium" style={{color: '#C3D5FD'}}>20+ ans d&apos;expérience</span>
+              <span className="text-brand-sky opacity-90 text-sm font-medium">20+ ans d&apos;expérience</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-green-400" />
-              <span className="text-[#C3D5FD] opacity-90 text-sm font-medium" style={{color: '#C3D5FD'}}>500+ projets réalisés</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span className="text-[#C3D5FD] opacity-90 text-sm font-medium" style={{color: '#C3D5FD'}}>Garantie 10 ans</span>
+              <span className="text-brand-sky opacity-90 text-sm font-medium">500+ projets réalisés</span>
             </div>
           </motion.div>
         </motion.div>
@@ -186,9 +179,9 @@ export default function HeroPremium() {
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm" style={{color: '#F59E0B'}}>
+              <div className="flex items-center gap-2 text-brand-gold font-semibold text-sm">
                 <Award className="w-4 h-4" />
-                Swiss Premium
+                Signature Suisse
               </div>
             </motion.div>
           </div>

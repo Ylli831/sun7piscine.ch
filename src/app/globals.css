@@ -3,24 +3,25 @@
 :root {
   --header-height: 100px;
   --ff-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  
-  /* New Default Color Palette */
-  --primary-blue: #1e40af;
-  --secondary-blue: #0ea5e9;
-  --accent-gold: #f59e0b;
-  --default-bg: #C3D5FD;
-  --default-text: #112A46;
-  --neutral-gray: #64748b;
-  --dark-blue: #0f172a;
+
+  --color-brand-navy: #112A46;
+  --color-brand-sky: #C3D5FD;
+  --color-brand-sky-muted: #AEC3EF;
+  --color-brand-gold: #F59E0B;
+  --color-brand-gold-dark: #B45309;
+  --color-brand-gold-bright: #FED700;
+  --color-surface: #F5F7FB;
+  --color-surface-muted: #E7EDF6;
+  --color-text: #112A46;
+  --color-text-on-dark: #F7FAFF;
 }
 
-* { 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--default-bg);
 }
 
 body {
@@ -30,36 +31,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: var(--default-text);
-  background-color: var(--default-bg);
+  color: var(--color-text);
+  background-color: var(--color-surface);
   overflow-x: hidden;
 }
 
-/* Override backgrounds for common classes */
-.bg-white {
-  background-color: var(--default-bg) !important;
+.page-surface {
+  background: linear-gradient(180deg, rgba(195, 213, 253, 0.35) 0%, rgba(247, 250, 255, 0.9) 100%);
 }
 
-.text-gray-800,
-.text-gray-700, 
-.text-gray-600,
-.text-gray-500 {
-  color: var(--default-text) !important;
+.section-muted {
+  background: var(--color-surface-muted);
 }
 
-.text-slate-800,
-.text-slate-700,
-.text-slate-600,
-.text-slate-500 {
-  color: var(--default-text) !important;
+.text-on-dark {
+  color: var(--color-text-on-dark);
 }
 
-.bg-gray-50,
-.bg-gray-100 {
-  background-color: var(--default-bg) !important;
-}
-
-/* Keep light text for dark backgrounds and gradients */
+/* Keep light text for dark hero overlays */
 .hero-text,
 .hero-text *,
 .hero-text h1,
@@ -68,50 +57,13 @@ body {
 .hero-text p,
 .hero-text span,
 .hero-text div,
-.overlay-text,
-[class*="bg-gradient"] .text-white,
-[class*="bg-blue"] .text-white,
-header .text-white {
-  color: #C3D5FD !important; /* Force light blue text for hero section */
-}
-
-/* Nuclear option - override ANY text in hero section */
-section .hero-text,
-section .hero-text *,
-section .hero-text h1,
-section .hero-text h2, 
-section .hero-text h3,
-section .hero-text p,
-section .hero-text span {
-  color: #C3D5FD !important;
-}
-
-/* Nuclear option - override ANY text in footer section */
-footer,
-footer *,
-footer h3,
-footer h4,
-footer p,
-footer span,
-footer div,
-footer a,
-footer li {
-  color: #C3D5FD !important;
-}
-
-/* Dark backgrounds should use light text */
-[class*="from-blue-9"],
-[class*="from-blue-8"],
-[class*="bg-blue-9"],
-[class*="bg-blue-8"],
-[class*="bg-slate-9"],
-[class*="bg-gray-9"] {
-  color: var(--default-bg) !important;
+.overlay-text {
+  color: var(--color-text-on-dark) !important;
 }
 
 /* Header Styles */
 .site-header {
-  background: url('/layered-waves-navbar.png') no-repeat center center;
+  background: url("/layered-waves-navbar.png") center bottom no-repeat;
   background-size: 100% 100%;
   height: var(--header-height);
   transition: all 0.3s ease;
@@ -216,7 +168,7 @@ footer li {
   z-index: 9;
 }
 
-/* Premium Service Sections */
+/* Signature Service Sections */
 .service-hero {
   position: relative;
   height: 80vh;

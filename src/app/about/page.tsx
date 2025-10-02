@@ -11,38 +11,44 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <WaterPipeScrollIndicator />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-700 text-[#C3D5FD] py-32">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 right-8 h-64 w-64 rounded-full bg-brand-gold/20 blur-3xl" />
+          <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-brand-gold-dark/10 blur-[140px]" />
+        </div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="mx-auto max-w-4xl text-center text-brand-navy"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              À Propos de SUN7
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-navy/70">
+              Notre histoire
+            </div>
+            <h1 className="mt-4 text-balance text-4xl font-bold lg:text-5xl">
+              À propos de SUN7 Piscine
             </h1>
-            <p className="text-xl md:text-2xl mb-8">
-              Votre partenaire de confiance pour la création et l&apos;entretien de piscines en Suisse Romande depuis plus de 20 ans
+            <p className="mt-4 text-lg leading-relaxed text-brand-navy/70 lg:text-xl">
+              Plus de 20 ans d&apos;excellence suisse dans la création, la rénovation et l&apos;entretien de piscines d&apos;exception en Suisse Romande.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-20 bg-[#C3D5FD]">
-        <div className="container mx-auto px-4">
+  {/* Our Story */}
+  <section className="section-spacing">
+        <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-[#112A46] mb-6">
+              <h2 className="text-4xl font-bold text-brand-navy mb-6">
                 Notre Histoire
               </h2>
-              <div className="space-y-6 text-[#112A46] text-lg">
+              <div className="space-y-6 text-brand-navy/80 text-lg">
                 <p>
                   Fondée en 2008, SUN7 est née de la passion de créer des espaces aquatiques exceptionnels. 
                   Notre expertise s&apos;est développée au fil des années pour devenir une référence en Suisse Romande.
@@ -107,9 +113,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-20 bg-[#C3D5FD]">
-        <div className="container mx-auto px-4">
+  {/* Our Values */}
+  <section className="section-spacing bg-white/60">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +150,7 @@ export default function AboutPage() {
               {
                 icon: Shield,
                 title: "Garantie Qualité",
-                description: "Tous nos travaux sont garantis 10 ans, gage de notre confiance en notre savoir-faire."
+                description: "Chaque chantier est contrôlé par nos experts avec un suivi continu et des matériaux certifiés."
               },
               {
                 icon: Star,
@@ -162,15 +168,15 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#C3D5FD] border border-[#112A46]/20 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="rounded-2xl border border-brand-navy/10 bg-white/90 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
-                <div className="w-16 h-16 bg-amber-400 rounded-full flex items-center justify-center mb-6">
-                  <value.icon className="w-8 h-8 text-[#112A46]" />
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/60 text-brand-gold-dark">
+                  <value.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-[#112A46] mb-4">
+                <h3 className="text-xl font-bold text-brand-navy mb-4">
                   {value.title}
                 </h3>
-                <p className="text-[#112A46] opacity-80">
+                <p className="text-brand-navy/70">
                   {value.description}
                 </p>
               </motion.div>
@@ -179,9 +185,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-[#C3D5FD]">
-        <div className="container mx-auto px-4">
+  {/* Team Section */}
+  <section className="section-spacing">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -222,23 +228,21 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="rounded-2xl border border-brand-navy/10 bg-white/90 p-8 text-center shadow-lg"
               >
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <div className="text-3xl font-bold text-white">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
+                <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-brand-sky to-white text-3xl font-bold text-brand-navy shadow-inner">
+                  {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <h3 className="text-xl font-bold text-[#112A46] mb-2">
+                <h3 className="text-xl font-bold text-brand-navy mb-2">
                   {member.name}
                 </h3>
-                <p className="text-amber-600 font-semibold mb-2">
+                <p className="text-brand-gold-dark font-semibold mb-2">
                   {member.role}
                 </p>
-                <p className="text-[#112A46] opacity-70 text-sm mb-2">
+                <p className="text-brand-navy/60 text-sm mb-2">
                   {member.experience}
                 </p>
-                <p className="text-[#112A46] opacity-80 text-sm">
+                <p className="text-brand-navy/70 text-sm">
                   {member.speciality}
                 </p>
               </motion.div>
@@ -248,8 +252,8 @@ export default function AboutPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-800 text-[#C3D5FD]">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-gradient-to-br from-brand-navy to-brand-navy/85 text-brand-sky">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -289,8 +293,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="section-spacing bg-gradient-to-r from-brand-gold to-brand-gold-dark text-brand-navy">
+        <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

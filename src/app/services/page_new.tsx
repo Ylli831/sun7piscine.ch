@@ -15,7 +15,7 @@ const services = [
       "Piscines en béton armé",
       "Intégration paysagère",
       "Équipements haut de gamme",
-      "Garantie 10 ans structure"
+      "Accompagnement structurel durable"
     ],
     images: [
       "/sun7piscine-images/pool31-cool.jpg",
@@ -73,7 +73,7 @@ export default function ServicesPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Nos Services Premium
+              Nos Services
             </h1>
             <p className="text-xl md:text-2xl mb-8">
               Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d&apos;expérience
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                   </ul>
                   
                   <a
-                    href="#quote"
+                    href="/contact"
                     className="inline-block bg-amber-400 hover:bg-amber-500 text-[#112A46] font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                   >
                     Demander un devis
@@ -177,8 +177,8 @@ export default function ServicesPage() {
                 description: "Une expertise reconnue dans le domaine des piscines et spas"
               },
               {
-                title: "Garantie 10 Ans",
-                description: "Nous garantissons la qualité de nos constructions sur le long terme"
+                title: "Suivi Continu",
+                description: "Des visites de contrôle planifiées et une assistance prioritaire après la livraison"
               },
               {
                 title: "Équipe Certifiée",
@@ -189,7 +189,7 @@ export default function ServicesPage() {
                 description: "Un accompagnement sur mesure de la conception à la livraison"
               },
               {
-                title: "Matériaux Premium",
+                title: "Matériaux Haut de Gamme",
                 description: "Nous utilisons uniquement des équipements et matériaux de qualité"
               },
               {
@@ -294,7 +294,7 @@ export default function ServicesPage() {
             </p>
             <div className="space-x-4">
               <Link
-                href="/#quote"
+                href="/contact"
                 className="inline-block bg-amber-400 text-[#112A46] hover:bg-amber-500 font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
                 Demander un Devis
@@ -303,7 +303,7 @@ export default function ServicesPage() {
                 href="tel:+41793463200"
                 className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
-                079 346 32 00
+                +41 79 346 32 00
               </a>
             </div>
           </motion.div>

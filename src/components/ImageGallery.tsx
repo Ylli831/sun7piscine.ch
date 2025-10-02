@@ -21,7 +21,7 @@ const galleryImages = [
   { src: "/sun7piscine-images/pool32-cool.jpg", title: "Piscine Moderne 12", category: "construction" },
   { src: "/sun7piscine-images/pool33-cool.jpg", title: "Piscine Moderne 13", category: "construction" },
   { src: "/sun7piscine-images/pool34-cool.jpg", title: "Piscine Moderne 14", category: "construction" },
-  { src: "/sun7piscine-images/poo27-cool.jpg", title: "Piscine Premium", category: "construction" },
+  { src: "/sun7piscine-images/poo27-cool.jpg", title: "Piscine Signature", category: "construction" },
   
   // After images (renovations)
   { src: "/sun7piscine-images/pool-after1.jpg", title: "Rénovation Complète 1", category: "renovation" },

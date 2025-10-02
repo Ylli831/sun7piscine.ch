@@ -37,7 +37,7 @@ const portfolioCategories = [
   },
   {
     title: "Spas & Jacuzzis",
-    description: "Espaces de détente premium",
+    description: "Espaces de détente exclusifs",
     images: [
       "/sun7piscine-images/pool-jacuzzi.jpg",
       "/sun7piscine-images/pool-inside1.jpg",
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                <span>Garantie 10 ans</span>
+                <span>Suivi personnalisé continu</span>
               </div>
             </div>
           </motion.div>
@@ -208,7 +208,7 @@ export default function PortfolioPage() {
                 href="tel:+41793463200"
                 className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"
               >
-                079 346 32 00
+                +41 79 346 32 00
               </a>
             </div>
           </motion.div>
