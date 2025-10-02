@@ -115,7 +115,7 @@ export default function FAQ() {
         >
           <a
             href="/faq"
-            className="inline-flex items-center gap-2 bg-[#112A46] text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-[#112A46] text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C3D5FD] focus-visible:ring-offset-[#112A46]"
           >
             Voir Toutes les Questions
             <ChevronDown className="w-5 h-5 rotate-[-90deg]" />
@@ -140,13 +140,13 @@ export default function FAQ() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+41793463200"
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/60 focus-visible:ring-offset-2"
               >
                 📞 079 346 32 00
               </a>
               <a
                 href="mailto:info@sun7piscine.ch"
-                className="inline-flex items-center justify-center gap-2 bg-white/20 border-2 border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-white/20 border-2 border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white/30 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
               >
                 ✉️ info@sun7piscine.ch
               </a>

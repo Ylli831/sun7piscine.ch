@@ -190,7 +190,7 @@ export default function ServicesPremium() {
         <div className="text-center">
           <motion.button
             onClick={() => setShowAllServices(!showAllServices)}
-            className="inline-flex items-center gap-3 bg-[#112A46] hover:bg-[#112A46]/90 text-[#C3D5FD] font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#112A46] hover:bg-[#112A46]/90 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C3D5FD] focus-visible:ring-offset-[#112A46]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

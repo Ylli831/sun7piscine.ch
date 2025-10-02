@@ -200,19 +200,6 @@ export default function ProjectsCarousel() {
           </div>
         </div>
 
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mt-16"
-        >
-          <div className="inline-flex items-center space-x-4 bg-[#C3D5FD] border border-[#112A46]/20 rounded-full px-6 py-3 shadow-lg">
-            <div className="text-[#112A46] font-semibold">
-              💧 Glissez pour révéler la transformation
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

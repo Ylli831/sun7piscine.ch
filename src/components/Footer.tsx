@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
 
@@ -25,7 +26,17 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-[#C3D5FD]" style={{color: '#C3D5FD'}}>SUN7 Piscine</h3>
+            <h3 className="text-2xl font-bold text-[#C3D5FD] flex items-center gap-3">
+              <Image
+                src="/logo-without-bg.png"
+                alt="SUN7 Piscine"
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain"
+                priority
+              />
+              SUN7 Piscine
+            </h3>
             <p className="text-[#C3D5FD] opacity-90 leading-relaxed" style={{color: '#C3D5FD'}}>
               Votre partenaire de confiance pour piscines et spas en Suisse Romande.
               Plus de 20 ans d&apos;expérience dans la construction, rénovation et entretien.

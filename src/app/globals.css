@@ -35,21 +35,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Override all text to use default colors */
-* {
-  color: var(--default-text);
-}
-
 /* Override backgrounds for common classes */
 .bg-white {
   background-color: var(--default-bg) !important;
-}
-
-/* Only override text-white in specific non-overlay contexts */
-section:not([class*="bg-gradient"]) .text-white,
-div:not([class*="bg-gradient"]) .text-white,
-.text-white:not(.hero-text):not(.overlay-text) {
-  color: var(--default-text) !important;
 }
 
 .text-gray-800,
@@ -83,7 +71,6 @@ div:not([class*="bg-gradient"]) .text-white,
 .overlay-text,
 [class*="bg-gradient"] .text-white,
 [class*="bg-blue"] .text-white,
-[class*="bg-gradient"] *,
 header .text-white {
   color: #C3D5FD !important; /* Force light blue text for hero section */
 }
