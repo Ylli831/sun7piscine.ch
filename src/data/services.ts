@@ -84,7 +84,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
   },
   {
     slug: "renovation",
-    title: "Rénovation d'Exception",
+    title: "Rénovation",
     subtitle: "Transformation Totale",
     excerpt: "Transformations complètes et modernisation",
     description:
