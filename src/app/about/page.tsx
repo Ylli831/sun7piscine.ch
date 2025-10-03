@@ -5,10 +5,21 @@ import { Award, Users, Clock, Shield, Star, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
+import WaterDropCursor from "../../components/effects/WaterDropCursor";
+import ScrollProgress from "../../components/effects/ScrollProgress";
+import TiltCard from "../../components/effects/TiltCard";
+import MagneticButton from "../../components/effects/MagneticButton";
+import RippleEffect, { useRipple } from "../../components/effects/RippleEffect";
+import HoverGlow from "../../components/effects/HoverGlow";
 
 export default function AboutPage() {
+  const { ripples: contactRipples, createRipple: createContactRipple } = useRipple();
+  const { ripples: realisationsRipples, createRipple: createRealisationsRipple } = useRipple();
+
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
+      <WaterDropCursor />
       <WaterPipeScrollIndicator />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
@@ -19,16 +30,20 @@ export default function AboutPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
               className="mx-auto max-w-4xl text-center text-brand-navy"
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-navy/70">
                 Notre histoire
               </div>
               <h1 className="mt-4 text-balance text-4xl font-bold lg:text-5xl">
-                À propos de <span style={{ color: '#fed700' }}>SUN7</span> Piscine
+                À propos de{" "}
+                <span style={{ color: '#fed700' }}>
+                  SUN7
+                </span>{" "}
+                Piscine
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-brand-navy/70 lg:text-xl">
                 Plus de 20 ans d&apos;excellence suisse dans la création, la rénovation et l&apos;entretien de piscines d&apos;exception en Suisse Romande.
@@ -179,17 +194,24 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="group rounded-2xl border border-brand-navy/10 bg-white/90 p-10 shadow-precise card-hover-lift corner-decoration relative overflow-hidden"
                 >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/60 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}>
-                    <value.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
-                    {value.title}
-                  </h3>
-                  <p className="text-brand-navy/70">
-                    {value.description}
-                  </p>
+                  <TiltCard
+                    tiltAmount={15}
+                    scale={1.03}
+                    className="group rounded-2xl border border-brand-navy/10 bg-white/90 p-10 shadow-precise corner-decoration relative overflow-hidden h-full"
+                  >
+                    <HoverGlow intensity={0.3}>
+                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/60 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}>
+                        <value.icon className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
+                        {value.title}
+                      </h3>
+                      <p className="text-brand-navy/70">
+                        {value.description}
+                      </p>
+                    </HoverGlow>
+                  </TiltCard>
                 </motion.div>
               ))}
             </div>
@@ -260,19 +282,27 @@ export default function AboutPage() {
                 Vous avez un projet ? Parlons-en ! Notre équipe est là pour vous accompagner
                 et réaliser la piscine de vos rêves.
               </p>
-              <div className="space-x-4">
-                <Link
-                  href="/#contact"
-                  className="inline-block bg-amber-400 text-[#112A46] hover:bg-amber-500 font-semibold py-4 px-8 rounded-full transition-colors duration-200"
-                >
-                  Nous Contacter
-                </Link>
-                <a
-                  href="/portfolio"
-                  className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200"
-                >
-                  Voir Nos Réalisations
-                </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <MagneticButton strength={0.4}>
+                  <Link
+                    href="/#contact"
+                    onClick={createContactRipple}
+                    className="inline-block bg-amber-400 text-[#112A46] hover:bg-amber-500 font-semibold py-4 px-8 rounded-full transition-colors duration-200 shimmer-effect relative overflow-hidden"
+                  >
+                    <RippleEffect ripples={contactRipples} color="rgba(255, 255, 255, 0.6)" />
+                    Nous Contacter
+                  </Link>
+                </MagneticButton>
+                <MagneticButton strength={0.3}>
+                  <a
+                    href="/realisations"
+                    onClick={createRealisationsRipple}
+                    className="inline-block border-2 border-[#C3D5FD] hover:bg-[#C3D5FD] hover:text-[#112A46] text-[#C3D5FD] font-semibold py-4 px-8 rounded-full transition-colors duration-200 relative overflow-hidden"
+                  >
+                    <RippleEffect ripples={realisationsRipples} color="rgba(254, 215, 0, 0.3)" />
+                    Voir Nos Réalisations
+                  </a>
+                </MagneticButton>
               </div>
             </motion.div>
           </div>

@@ -174,7 +174,7 @@ export default function Footer() {
               {[
                 { label: "À propos", href: "/about" },
                 { label: "Nos Services", href: "/services" },
-                { label: "Réalisations", href: "/portfolio" },
+                { label: "Réalisations", href: "/realisations" },
                 { label: "Demander un devis", href: "/contact#contact" },
                 { label: "Contact", href: "/#contact" },
                 { label: "FAQ", href: "/faq" }

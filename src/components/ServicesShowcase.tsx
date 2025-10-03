@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import TiltCard from "./effects/TiltCard";
+import MagneticButton from "./effects/MagneticButton";
+import RippleEffect, { useRipple } from "./effects/RippleEffect";
+import { TextRevealByWord } from "./effects/TextReveal";
 
 import { serviceDetails } from "../data/services";
 
@@ -20,6 +24,8 @@ const services = serviceDetails.map((service) => ({
 
 export default function ServicesShowcase() {
   const [showAllServices, setShowAllServices] = useState(false);
+  const { ripples: ctaRipples, createRipple: createCtaRipple } = useRipple();
+  const { ripples: phoneRipples, createRipple: createPhoneRipple } = useRipple();
 
   return (
     <section className="relative min-h-screen section-muted py-20 text-brand-navy">
@@ -34,7 +40,14 @@ export default function ServicesShowcase() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-            Services <span style={{ color: '#fed700' }}>Signature</span>
+            <TextRevealByWord>
+              Services
+            </TextRevealByWord>{" "}
+            <span style={{ color: '#fed700' }}>
+              <TextRevealByWord delay={0.3}>
+                Signature
+              </TextRevealByWord>
+            </span>
           </h2>
           <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto leading-relaxed">
             L&apos;excellence suisse au service de vos projets aquatiques. 
@@ -42,7 +55,7 @@ export default function ServicesShowcase() {
           </p>
         </motion.div>
 
-        {/* Services Grid - Compact View */}
+        {/* Services Grid - Compact View with 3D Tilt */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {services.map((service, index) => (
             <motion.div
@@ -51,35 +64,41 @@ export default function ServicesShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-6 shadow-precise card-hover-lift corner-decoration relative overflow-hidden"
             >
-              {/* Icon */}
-              <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 4px 14px rgba(254, 215, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-                <service.icon className="w-8 h-8" />
-              </div>
-              
-              {/* Content */}
-              <div className="space-y-3">
-                <div className="px-3 py-1 bg-brand-navy/10 rounded-full inline-block">
-                  <span className="text-xs font-semibold text-brand-navy">{service.subtitle}</span>
+              <TiltCard 
+                tiltAmount={10}
+                scale={1.03}
+                glareEffect={true}
+                className="group bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-6 shadow-precise corner-decoration relative overflow-hidden h-full"
+              >
+                {/* Icon */}
+                <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 4px 14px rgba(254, 215, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+                  <service.icon className="w-8 h-8" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-brand-navy leading-tight group-hover:text-brand-gold transition-colors duration-300">
-                  {service.title}
-                </h3>
-                
-                <p className="text-sm text-brand-navy/70">
-                  {service.shortDesc}
-                </p>
-                
-                <Link
-                  href={service.link}
-                  className="inline-flex items-center gap-2 text-brand-gold hover:text-brand-gold-dark font-semibold text-sm transition-colors duration-200 group-hover:gap-3"
-                >
-                  En savoir plus
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" style={{ color: '#fed700' }} />
-                </Link>
-              </div>
+                {/* Content */}
+                <div className="space-y-3">
+                  <div className="px-3 py-1 bg-brand-navy/10 rounded-full inline-block">
+                    <span className="text-xs font-semibold text-brand-navy">{service.subtitle}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-brand-navy leading-tight group-hover:text-brand-gold transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-sm text-brand-navy/70">
+                    {service.shortDesc}
+                  </p>
+                  
+                  <Link
+                    href={service.link}
+                    className="inline-flex items-center gap-2 text-brand-gold hover:text-brand-gold-dark font-semibold text-sm transition-colors duration-200 group-hover:gap-3"
+                  >
+                    En savoir plus
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" style={{ color: '#fed700' }} />
+                  </Link>
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
@@ -195,18 +214,26 @@ export default function ServicesShowcase() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-xl hover-scale relative overflow-hidden"
-            >
-              Devis Gratuit Personnalisé
-            </a>
-            <a
-              href="tel:+41793463200"
-              className="border-2 border-brand-navy/30 text-brand-navy hover:text-brand-gold hover:border-brand-gold font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-brand-navy/5 hover-scale"
-            >
-              +41 79 346 32 00
-            </a>
+            <MagneticButton strength={0.4}>
+              <a
+                href="/contact"
+                onClick={createCtaRipple}
+                className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-xl hover-scale relative overflow-hidden block"
+              >
+                <RippleEffect ripples={ctaRipples} color="rgba(255, 255, 255, 0.6)" />
+                Devis Gratuit Personnalisé
+              </a>
+            </MagneticButton>
+            <MagneticButton strength={0.3}>
+              <a
+                href="tel:+41793463200"
+                onClick={createPhoneRipple}
+                className="border-2 border-brand-navy/30 text-brand-navy hover:text-brand-gold hover:border-brand-gold font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-brand-navy/5 hover-scale relative overflow-hidden block"
+              >
+                <RippleEffect ripples={phoneRipples} color="rgba(254, 215, 0, 0.4)" />
+                +41 79 346 32 00
+              </a>
+            </MagneticButton>
           </div>
         </motion.div>
       </div>

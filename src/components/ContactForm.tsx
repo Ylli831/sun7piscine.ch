@@ -56,10 +56,10 @@ export default function ContactForm() {
     <motion.form
       id="form"
       onSubmit={handleSubmit}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.4 }}
   className="relative w-full overflow-hidden rounded-3xl border border-brand-navy/10 bg-white/95 p-8 shadow-xl backdrop-blur lg:p-10"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/5 via-transparent to-brand-gold/5" />

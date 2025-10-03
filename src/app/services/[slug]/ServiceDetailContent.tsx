@@ -117,9 +117,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               <motion.div
                 key={highlight.title}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="h-full w-full rounded-2xl border border-white/15 bg-white/16 p-6 text-center backdrop-blur-lg shadow-[0px_24px_60px_rgba(17,42,70,0.18)]"
               >
@@ -136,9 +135,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
           <div className="space-y-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               className="space-y-4 text-center"
             >
               <div className="flex justify-center">
@@ -153,8 +151,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ staggerChildren: 0.08, duration: 0.4 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ staggerChildren: 0.05, duration: 0.3 }}
               className="grid gap-4 sm:grid-cols-2"
             >
               {service.features.map((feature) => (
@@ -162,8 +160,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                   key={feature}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.3 }}
                   whileHover={{ y: -6 }}
                   className="flex items-start gap-3 rounded-2xl border border-brand-navy/10 bg-white/95 p-5 shadow-[0px_18px_40px_rgba(17,42,70,0.12)]"
                 >
@@ -176,8 +174,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.3 }}
               className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]"
             >
               <h3 className="text-xl font-semibold text-brand-navy">Votre interlocuteur dédié</h3>
@@ -196,9 +194,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
 
           <motion.aside
             initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="flex flex-col gap-6"
           >
             <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
@@ -229,9 +226,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                   <motion.div
                     key={step.title}
                     initial={{ opacity: 0, x: -15 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.03 }}
                     whileHover={{ x: 2 }}
                     className="flex gap-4 rounded-2xl bg-brand-sky/5 p-3"
                   >
@@ -255,13 +251,13 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4 }}
             className="mb-10 flex flex-wrap items-center justify-center gap-4 text-center"
           >
             <h2 className="w-full text-3xl font-bold text-brand-navy sm:text-4xl">Réalisations récentes</h2>
             <Link
-              href="/portfolio"
+              href="/realisations"
               className="inline-flex items-center gap-2 rounded-full border border-brand-navy/15 px-4 py-2 text-sm font-semibold text-brand-navy transition hover:border-brand-gold/60 hover:text-brand-gold"
             >
               Voir toutes nos réalisations
@@ -275,8 +271,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 key={`${service.slug}-gallery-${index}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
                 whileHover={{ scale: 1.03 }}
                 className="group relative h-52 overflow-hidden rounded-2xl shadow-[0px_22px_50px_rgba(17,42,70,0.18)]"
               >
@@ -301,15 +297,15 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4 }}
         className="pb-20"
       >
-        <div className="mx-auto max-w-4xl rounded-3xl bg-brand-navy text-white p-8 sm:p-12 text-center shadow-2xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+        <div className="mx-auto max-w-4xl rounded-3xl p-8 sm:p-12 text-center shadow-2xl" style={{ backgroundColor: '#112A46', color: '#ffffff' }}>
+          <h2 className="text-3xl font-bold sm:text-4xl text-white">
             Prêt à lancer votre projet {service.title.toLowerCase()} ?
           </h2>
-          <p className="mt-4 text-sm text-white/75 sm:text-base">
+          <p className="mt-4 text-sm sm:text-base text-white opacity-75">
             Parlons-en autour d&apos;un rendez-vous ou d&apos;un appel vidéo. Nous vous présentons un plan d&apos;action détaillé et un devis transparent.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

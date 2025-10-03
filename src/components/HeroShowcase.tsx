@@ -3,10 +3,15 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Star, Phone, CheckCircle, Award } from "lucide-react";
+import MagneticButton from "./effects/MagneticButton";
+import RippleEffect, { useRipple } from "./effects/RippleEffect";
+import AnimatedCounter from "./effects/AnimatedCounter";
 
 export default function HeroShowcase() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+  const { ripples: devisRipples, createRipple: createDevisRipple } = useRipple();
+  const { ripples: phoneRipples, createRipple: createPhoneRipple } = useRipple();
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -56,15 +61,15 @@ export default function HeroShowcase() {
         
         {/* Excellence Badge */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="hero-text text-brand-sky space-y-8"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
             style={{ borderColor: 'rgba(254, 215, 0, 0.3)' }}
           >
@@ -74,9 +79,9 @@ export default function HeroShowcase() {
 
           {/* Main Heading */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-4"
           >
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-brand-sky">
@@ -93,31 +98,39 @@ export default function HeroShowcase() {
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a
-              href="/contact"
-              className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover-scale text-center relative overflow-hidden"
-            >
-              <span className="whitespace-nowrap relative z-10">Devis Gratuit Personnalisé</span>
-            </a>
-            <a
-              href="tel:+41793463200"
-              className="border-2 border-brand-sky/30 text-brand-sky hover:text-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-brand-sky/5 backdrop-blur-sm text-center flex items-center justify-center gap-3 hover-scale group"
-            >
-              <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="whitespace-nowrap">+41 79 346 32 00</span>
-            </a>
+            <MagneticButton strength={0.4}>
+              <a
+                href="/contact"
+                onClick={createDevisRipple}
+                className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover-scale text-center relative overflow-hidden block"
+              >
+                <RippleEffect ripples={devisRipples} color="rgba(255, 255, 255, 0.6)" />
+                <span className="whitespace-nowrap relative z-10">Devis Gratuit Personnalisé</span>
+              </a>
+            </MagneticButton>
+            <MagneticButton strength={0.3}>
+              <a
+                href="tel:+41793463200"
+                onClick={createPhoneRipple}
+                className="border-2 border-brand-sky/30 text-brand-sky hover:text-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-brand-sky/5 backdrop-blur-sm text-center flex items-center justify-center gap-3 hover-scale group relative overflow-hidden"
+              >
+                <RippleEffect ripples={phoneRipples} color="rgba(254, 215, 0, 0.3)" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="whitespace-nowrap">+41 79 346 32 00</span>
+              </a>
+            </MagneticButton>
           </motion.div>
 
           {/* Trust Indicators */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap items-center gap-8 pt-8 border-t border-brand-sky/20"
           >
             <div className="flex items-center gap-3">
@@ -126,20 +139,24 @@ export default function HeroShowcase() {
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <span className="text-brand-sky opacity-90 text-sm font-medium">20+ ans d&apos;expérience</span>
+              <span className="text-brand-sky opacity-90 text-sm font-medium">
+                <AnimatedCounter to={20} suffix="+ ans d'expérience" duration={2.5} />
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4" style={{ color: '#fed700' }} />
-              <span className="text-brand-sky opacity-90 text-sm font-medium">500+ projets réalisés</span>
+              <span className="text-brand-sky opacity-90 text-sm font-medium">
+                <AnimatedCounter to={500} suffix="+ projets réalisés" duration={2.5} />
+              </span>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Right Side - Animation */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="relative flex items-center justify-center"
         >
           <div className="relative w-full">

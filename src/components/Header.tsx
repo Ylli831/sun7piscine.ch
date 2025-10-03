@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex gap-5 items-center" aria-label="Navigation principale">
-          <Link href="/" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" style={{ ['--hover-color' as any]: '#fed700' }} onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
+          <Link href="/" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             Accueil
           </Link>
           <div className="relative group">
@@ -63,7 +63,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <Link href="/portfolio" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
+          <Link href="/realisations" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             Réalisations
           </Link>
           <Link href="/about" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
@@ -108,7 +108,7 @@ export default function Header() {
       >
         <div className="mt-2 flex flex-col items-center gap-4 py-4">
           <div className="w-full max-w-3xl mx-auto">
-            <Link href="/" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center" style={{ ['--hover-color' as any]: '#fed700' }} onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+            <Link href="/" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
               Accueil
             </Link>
 
@@ -149,7 +149,7 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/portfolio" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center mt-4" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+            <Link href="/realisations" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center mt-4" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
               Réalisations
             </Link>
 

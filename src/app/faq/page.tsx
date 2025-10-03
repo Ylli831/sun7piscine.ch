@@ -109,26 +109,32 @@ export default function FAQPage() {
       <WaterPipeScrollIndicator />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-700 text-[#C3D5FD] py-32">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 right-8 h-64 w-64 rounded-full bg-brand-gold/20 blur-3xl" />
+          <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-brand-gold-dark/10 blur-[140px]" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center"
           >
             <Link 
               href="/"
-              className="inline-flex items-center gap-2 text-[#C3D5FD] hover:text-white mb-8 transition-colors duration-200"
+              className="inline-flex items-center gap-2 text-brand-navy/70 hover:text-brand-navy mb-8 transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5" style={{ color: '#fed700' }} />
               Retour à l&apos;accueil
             </Link>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-navy/70 mb-6">
+              Aide & Support
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-brand-navy">
               Questions Fréquentes
             </h1>
-            <p className="text-xl md:text-2xl mb-8">
+            <p className="text-xl md:text-2xl mb-8 text-brand-navy/80">
               Toutes les réponses à vos questions sur nos services de piscines et spas
             </p>
           </motion.div>
@@ -136,14 +142,14 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-20 bg-[#C3D5FD]">
+      <section className="py-20 bg-gradient-to-b from-white via-brand-sky/10 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
           
           {/* Category Filter */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="mb-12"
           >
             <div className="flex flex-wrap gap-3 justify-center">
@@ -232,9 +238,10 @@ export default function FAQPage() {
   <section className="section-spacing bg-white">
         <div className="container-custom text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4 }}
             className="mx-auto max-w-3xl"
           >
             <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-brand-goldBright/30 bg-brand-goldBright/10 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-goldDark">

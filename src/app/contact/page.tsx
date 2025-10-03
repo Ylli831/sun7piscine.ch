@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Clock, Sparkles } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
+import WaterDropCursor from "../../components/effects/WaterDropCursor";
+import ScrollProgress from "../../components/effects/ScrollProgress";
+import TiltCard from "../../components/effects/TiltCard";
 
 const responseHighlights = [
   {
@@ -26,6 +29,8 @@ const responseHighlights = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-brand-sky/10 to-white text-brand-navy">
+      <ScrollProgress />
+      <WaterDropCursor />
       <WaterPipeScrollIndicator />
 
   <section className="relative overflow-hidden py-16 sm:py-20">
@@ -33,9 +38,9 @@ export default function ContactPage() {
         <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "url(/layered-waves-navbar.png)", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="container-custom relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="mx-auto max-w-3xl space-y-6 text-center text-white"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-gold">
@@ -53,16 +58,21 @@ export default function ContactPage() {
             {responseHighlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group rounded-2xl border border-white/10 bg-white p-6 text-left text-brand-navy shadow-precise card-hover-lift"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
               >
+                <TiltCard
+                  tiltAmount={15}
+                  scale={1.03}
+                  className="group rounded-2xl border border-white/10 bg-white p-6 text-left text-brand-navy shadow-precise h-full"
+                >
                 <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 15px rgba(254, 215, 0, 0.2)' }}>
                   <highlight.icon className="h-5 w-5" />
                 </div>
                 <h2 className="text-base font-semibold group-hover:text-brand-gold transition-colors duration-300">{highlight.title}</h2>
                 <p className="mt-2 text-sm text-brand-navy/70">{highlight.description}</p>
+                </TiltCard>
               </motion.div>
             ))}
           </div>
@@ -75,10 +85,10 @@ export default function ContactPage() {
             <ContactForm />
 
             <motion.aside
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4 }}
             className="flex w-full flex-col gap-6"
           >
             <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-lg" aria-labelledby="contact-direct">
