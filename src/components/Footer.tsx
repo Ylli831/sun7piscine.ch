@@ -28,7 +28,7 @@ export default function Footer() {
           >
             <h3 className="text-2xl font-bold flex items-center gap-3">
               <Image
-                src="/logo-without-bg.png"
+                src="/sun7piscine-logo-footer.png"
                 alt="SUN7 Piscine"
                 width={220}
                 height={120}
