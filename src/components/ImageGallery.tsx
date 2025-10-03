@@ -168,22 +168,24 @@ export default function ImageGallery() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.4 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="group relative overflow-hidden rounded-xl shadow-precise card-hover-lift cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
-                <div className="relative aspect-square">
+                <div className="relative aspect-square image-overlay-reveal">
                   <Image
                     src={image.src}
                     alt={image.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0MyRDVGRCIvPjwvc3ZnPg=="
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     <h3 className="font-semibold text-sm mb-1">{image.title}</h3>
-                    <div className="text-xs opacity-80 capitalize">
+                    <div className="text-xs opacity-90 capitalize">
                       {categories.find(cat => cat.id === image.category)?.label}
                     </div>
                   </div>
@@ -244,14 +246,14 @@ export default function ImageGallery() {
                 onClick={prevImage}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={24} style={{ color: '#fed700' }} />
               </button>
               
               <button
                 onClick={nextImage}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={24} style={{ color: '#fed700' }} />
               </button>
 
               {/* Close Button */}

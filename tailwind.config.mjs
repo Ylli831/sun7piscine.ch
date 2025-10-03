@@ -14,8 +14,8 @@ const config = {
           navy: "#112A46",
           sky: "#C3D5FD",
           skyMuted: "#AEC3EF",
-          gold: "#F59E0B",
-          goldDark: "#B45309",
+          gold: "#FED700",
+          goldDark: "#E6C200",
           goldBright: "#FED700",
         },
         pool: {

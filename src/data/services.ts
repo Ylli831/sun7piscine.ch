@@ -71,7 +71,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     gallery: [
       "/sun7piscine-images/pool22-cool.jpg",
       "/sun7piscine-images/pool34-cool.jpg",
-      "/sun7piscine-images/pool35-cool.jpg"
+      "/sun7piscine-images/pool35.jpg"
     ],
     hero: {
       eyebrow: "Service Signature",

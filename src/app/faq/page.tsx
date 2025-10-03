@@ -82,18 +82,7 @@ const allFaqData: FAQItem[] = [
     question: "Proposez-vous des garanties sur vos travaux ?",
     answer: "Nous assurons un accompagnement sérénité sur toute la durée de vie de votre piscine : contrôles programmés, assistance prioritaire et suivi personnalisé avec nos experts. Notre assurance responsabilité civile couvre chacun de nos chantiers et nous restons votre interlocuteur privilégié pour le service après-vente."
   },
-  {
-    category: "Garanties & Qualité",
-    question: "Êtes-vous assurés et certifiés ?",
-    answer: "SUN7 dispose de toutes les assurances professionnelles obligatoires : responsabilité civile entreprise, assurance travaux et couvertures spécifiques au secteur. Nos techniciens sont certifiés, formés en continu et nous sommes membres des principales associations suisses de la piscine."
-  },
-
   // Coverage & Contact
-  {
-    category: "Couverture & Contact",
-    question: "Dans quelles régions intervenez-vous ?",
-    answer: "Nous couvrons toute la Suisse Romande : Genève, Vaud, Valais, Fribourg, Neuchâtel et Jura. Notre base à Meyrin nous permet d'intervenir rapidement. Pour les projets importants, nous nous déplaçons également en Suisse alémanique."
-  },
   {
     category: "Couverture & Contact",
     question: "Comment obtenir un devis ?",
@@ -133,7 +122,7 @@ export default function FAQPage() {
               href="/"
               className="inline-flex items-center gap-2 text-[#C3D5FD] hover:text-white mb-8 transition-colors duration-200"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5" style={{ color: '#fed700' }} />
               Retour à l&apos;accueil
             </Link>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -211,7 +200,7 @@ export default function FAQPage() {
                     transition={{ duration: 0.2 }}
                     className="flex-shrink-0 mt-2"
                   >
-                    <ChevronDown className="w-6 h-6 text-[#112A46] transition-colors duration-200 group-hover:text-brand-goldBright" />
+                    <ChevronDown className="w-6 h-6 transition-colors duration-200" style={{ color: '#fed700' }} />
                   </motion.div>
                 </button>
                 

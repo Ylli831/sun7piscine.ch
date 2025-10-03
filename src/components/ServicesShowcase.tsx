@@ -34,7 +34,7 @@ export default function ServicesShowcase() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-            Services Signature
+            Services <span style={{ color: '#fed700' }}>Signature</span>
           </h2>
           <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto leading-relaxed">
             L&apos;excellence suisse au service de vos projets aquatiques. 
@@ -51,10 +51,10 @@ export default function ServicesShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-6 shadow-precise card-hover-lift corner-decoration relative overflow-hidden"
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center shadow-lg mb-4">
+              <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 4px 14px rgba(254, 215, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1)' }}>
                 <service.icon className="w-8 h-8" />
               </div>
               
@@ -64,7 +64,7 @@ export default function ServicesShowcase() {
                   <span className="text-xs font-semibold text-brand-navy">{service.subtitle}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-brand-navy leading-tight">
+                <h3 className="text-xl font-bold text-brand-navy leading-tight group-hover:text-brand-gold transition-colors duration-300">
                   {service.title}
                 </h3>
                 
@@ -74,10 +74,10 @@ export default function ServicesShowcase() {
                 
                 <Link
                   href={service.link}
-                  className="inline-flex items-center gap-2 text-brand-gold hover:text-brand-gold-dark font-semibold text-sm transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-brand-gold hover:text-brand-gold-dark font-semibold text-sm transition-colors duration-200 group-hover:gap-3"
                 >
                   En savoir plus
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" style={{ color: '#fed700' }} />
                 </Link>
               </div>
             </motion.div>
@@ -105,7 +105,7 @@ export default function ServicesShowcase() {
                   {/* Content */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center shadow-lg">
+                      <div className="w-16 h-16 bg-brand-gold text-brand-navy rounded-2xl flex items-center justify-center" style={{ boxShadow: '0 4px 20px rgba(254, 215, 0, 0.4)' }}>
                         <service.icon className="w-8 h-8" />
                       </div>
                       <div className="px-4 py-2 bg-brand-navy/10 backdrop-blur-md rounded-full border border-brand-navy/15">
@@ -128,7 +128,7 @@ export default function ServicesShowcase() {
                           key={feature}
                           className="flex items-center gap-3 bg-brand-navy/5 backdrop-blur-sm p-3 rounded-lg border border-brand-navy/10"
                         >
-                          <div className="w-2 h-2 bg-brand-gold rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-brand-gold rounded-full flex-shrink-0" style={{ boxShadow: '0 0 8px rgba(254, 215, 0, 0.6)' }}></div>
                           <span className="text-brand-navy font-medium text-sm">{feature}</span>
                         </div>
                       ))}
@@ -139,7 +139,7 @@ export default function ServicesShowcase() {
                       className="inline-flex items-center gap-3 ripple-button bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
                     >
                       Découvrir ce service
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5" style={{ color: '#fed700' }} />
                     </Link>
                   </div>
 
@@ -168,12 +168,12 @@ export default function ServicesShowcase() {
             {showAllServices ? (
               <>
                 Voir moins
-                <ChevronUp className="w-5 h-5" />
+                <ChevronUp className="w-5 h-5" style={{ color: '#fed700' }} />
               </>
             ) : (
               <>
                 Voir tous nos services
-                <ChevronDown className="w-5 h-5" />
+                <ChevronDown className="w-5 h-5" style={{ color: '#fed700' }} />
               </>
             )}
           </motion.button>
@@ -197,13 +197,13 @@ export default function ServicesShowcase() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="ripple-button bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
+              className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-xl hover-scale relative overflow-hidden"
             >
               Devis Gratuit Personnalisé
             </a>
             <a
               href="tel:+41793463200"
-              className="border-2 border-brand-navy/30 text-brand-navy hover:text-brand-gold hover:border-brand-gold font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-brand-navy/5"
+              className="border-2 border-brand-navy/30 text-brand-navy hover:text-brand-gold hover:border-brand-gold font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-brand-navy/5 hover-scale"
             >
               +41 79 346 32 00
             </a>

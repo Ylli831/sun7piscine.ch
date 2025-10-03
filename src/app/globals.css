@@ -7,8 +7,8 @@
   --color-brand-navy: #112A46;
   --color-brand-sky: #C3D5FD;
   --color-brand-sky-muted: #AEC3EF;
-  --color-brand-gold: #F59E0B;
-  --color-brand-gold-dark: #B45309;
+    --color-brand-gold: #fed700;
+  --color-brand-gold-dark: #e6c200;
   --color-brand-gold-bright: #FED700;
   --color-surface: #F5F7FB;
   --color-surface-muted: #E7EDF6;
@@ -50,15 +50,17 @@ body {
 
 /* Keep light text for dark hero overlays */
 .hero-text,
-.hero-text *,
 .hero-text h1,
 .hero-text h2, 
 .hero-text h3,
 .hero-text p,
-.hero-text span,
-.hero-text div,
 .overlay-text {
-  color: var(--color-text-on-dark) !important;
+  color: var(--color-text-on-dark);
+}
+
+/* Gold accent text that overrides hero-text */
+.gold-text {
+  color: #fed700 !important;
 }
 
 /* Header Styles */
@@ -343,6 +345,262 @@ body {
 /* Remove visual clutter */
 .no-bg-waves {
   background-image: none !important;
+}
+
+/* ============================================
+   DESIGN ENHANCEMENTS - Quick Wins
+   ============================================ */
+
+/* 1. IMPROVED TYPOGRAPHY */
+h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2, h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.subtitle {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* 2. ENHANCED SHADOWS - Swiss Precision */
+.shadow-precise {
+  box-shadow: 
+    0 1px 2px rgba(17, 42, 70, 0.04),
+    0 4px 8px rgba(17, 42, 70, 0.06),
+    0 8px 16px rgba(17, 42, 70, 0.08);
+}
+
+.shadow-precise-lg {
+  box-shadow: 
+    0 2px 4px rgba(17, 42, 70, 0.04),
+    0 8px 16px rgba(17, 42, 70, 0.08),
+    0 16px 32px rgba(17, 42, 70, 0.12),
+    0 24px 48px rgba(17, 42, 70, 0.16);
+}
+
+/* 3. SHIMMER EFFECT for CTAs */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.7s ease;
+}
+
+.shimmer-effect:hover::after {
+  left: 100%;
+}
+
+/* 4. GRADIENT GOLD SHINE */
+.gradient-gold-shine {
+  background: linear-gradient(
+    135deg,
+    #D4AF37 0%,
+    #F2D16B 25%,
+    #D4AF37 50%,
+    #C9A32A 75%,
+    #D4AF37 100%
+  );
+  background-size: 200% 200%;
+  animation: shine 3s ease infinite;
+}
+
+@keyframes shine {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 5. GLASS EFFECT - Premium overlays */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* 6. CARD HOVER - Lift with gold glow */
+.card-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 4px 8px rgba(17, 42, 70, 0.08),
+    0 12px 24px rgba(17, 42, 70, 0.12),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+/* 7. SKELETON LOADER */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(195, 213, 253, 0.2) 25%,
+    rgba(195, 213, 253, 0.4) 50%,
+    rgba(195, 213, 253, 0.2) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 8. SMOOTH SCALE on hover */
+.hover-scale {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* 9. DECORATIVE SWISS GRID PATTERN */
+.swiss-grid-pattern {
+  position: relative;
+}
+
+.swiss-grid-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(17, 42, 70, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 10. IMAGE OVERLAY with icon reveal */
+.image-overlay-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay-reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(17, 42, 70, 0.9) 0%,
+    rgba(17, 42, 70, 0.5) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-overlay-reveal:hover::after {
+  opacity: 1;
+}
+
+/* 11. FOCUS STATES - Accessibility */
+*:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+/* 12. SECTION SPACING - Responsive */
+.section-spacing {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* 13. ANIMATED BORDER GRADIENT */
+.border-gradient-animated {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+}
+
+.border-gradient-animated::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: linear-gradient(45deg, #D4AF37, #C3D5FD, #D4AF37, #C3D5FD);
+  background-size: 300% 300%;
+  animation: gradient-rotate 4s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 14. CORNER DECORATION */
+.corner-decoration::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to bottom left, rgba(212, 175, 55, 0.1), transparent);
+  border-radius: 0 0 0 100%;
+  transition: all 0.4s ease;
+}
+
+.corner-decoration:hover::after {
+  width: 160px;
+  height: 160px;
+}
+
+/* 15. FLOATING LABEL ANIMATION */
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: rgba(17, 42, 70, 0.5);
+}
+
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
+  top: -0.5rem;
+  font-size: 0.75rem;
+  color: #D4AF37;
+  background: white;
+  padding: 0 0.5rem;
 }
 
 /* Improved focus states */

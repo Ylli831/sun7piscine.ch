@@ -66,8 +66,9 @@ export default function HeroShowcase() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+            style={{ borderColor: 'rgba(254, 215, 0, 0.3)' }}
           >
-            <Award className="w-5 h-5 text-amber-400" />
+            <Award className="w-5 h-5" style={{ color: '#fed700' }} />
             <span className="text-sm font-semibold text-brand-sky">Pisciniste d&apos;exception depuis 20 ans</span>
           </motion.div>
 
@@ -80,7 +81,7 @@ export default function HeroShowcase() {
           >
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-brand-sky">
               Piscines & Spas
-              <span className="block text-3xl lg:text-4xl xl:text-5xl text-amber-400 mt-2">
+              <span className="gold-text block text-3xl lg:text-4xl xl:text-5xl mt-2">
                 haut de gamme
               </span>
             </h1>
@@ -99,15 +100,15 @@ export default function HeroShowcase() {
           >
             <a
               href="/contact"
-              className="ripple-button bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-center"
+              className="ripple-button shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover-scale text-center relative overflow-hidden"
             >
-              <span className="whitespace-nowrap">Devis Gratuit Personnalisé</span>
+              <span className="whitespace-nowrap relative z-10">Devis Gratuit Personnalisé</span>
             </a>
             <a
               href="tel:+41793463200"
-              className="border-2 border-brand-sky/30 text-brand-sky hover:text-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-brand-sky/5 backdrop-blur-sm text-center flex items-center justify-center gap-3"
+              className="border-2 border-brand-sky/30 text-brand-sky hover:text-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-brand-sky/5 backdrop-blur-sm text-center flex items-center justify-center gap-3 hover-scale group"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               <span className="whitespace-nowrap">+41 79 346 32 00</span>
             </a>
           </motion.div>
@@ -120,7 +121,7 @@ export default function HeroShowcase() {
             className="flex flex-wrap items-center gap-8 pt-8 border-t border-brand-sky/20"
           >
             <div className="flex items-center gap-3">
-              <div className="flex text-amber-400">
+              <div className="flex" style={{ color: '#fed700' }}>
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -128,7 +129,7 @@ export default function HeroShowcase() {
               <span className="text-brand-sky opacity-90 text-sm font-medium">20+ ans d&apos;expérience</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
+              <CheckCircle className="w-4 h-4" style={{ color: '#fed700' }} />
               <span className="text-brand-sky opacity-90 text-sm font-medium">500+ projets réalisés</span>
             </div>
           </motion.div>
@@ -174,12 +175,13 @@ export default function HeroShowcase() {
             {/* Floating quality badge */}
             <motion.div
               className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20"
+              style={{ borderColor: 'rgba(254, 215, 0, 0.3)', boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}
               animate={{ 
                 y: [0, -8, 0]
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="flex items-center gap-2 text-brand-gold font-semibold text-sm">
+              <div className="gold-text flex items-center gap-2 font-semibold text-sm">
                 <Award className="w-4 h-4" />
                 Signature Suisse
               </div>

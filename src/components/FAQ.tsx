@@ -26,10 +26,6 @@ const faqData: FAQItem[] = [
     question: "Proposez-vous des garanties sur vos travaux ?",
     answer: "Nous assurons un accompagnement sérénité sur toute la durée de vie de votre piscine : contrôles programmés, assistance prioritaire et suivi personnalisé avec nos experts. Notre assurance responsabilité civile couvre chacun de nos chantiers et nous restons votre interlocuteur privilégié pour le service après-vente.",
   },
-  {
-    question: "Dans quelles régions intervenez-vous ?",
-    answer: "Nous couvrons toute la Suisse Romande : Genève, Vaud, Valais, Fribourg, Neuchâtel et Jura. Notre base à Meyrin nous permet d'intervenir rapidement. Pour les projets importants, nous nous déplaçons également en Suisse alémanique.",
-  },
 ];
 
 export default function FAQ() {

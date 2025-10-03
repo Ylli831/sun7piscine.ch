@@ -55,13 +55,13 @@ export default function ContactPage() {
                 key={highlight.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="rounded-2xl border border-white/10 bg-white p-6 text-left text-brand-navy shadow-xl"
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group rounded-2xl border border-white/10 bg-white p-6 text-left text-brand-navy shadow-precise card-hover-lift"
               >
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold-dark">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 15px rgba(254, 215, 0, 0.2)' }}>
                   <highlight.icon className="h-5 w-5" />
                 </div>
-                <h2 className="text-base font-semibold">{highlight.title}</h2>
+                <h2 className="text-base font-semibold group-hover:text-brand-gold transition-colors duration-300">{highlight.title}</h2>
                 <p className="mt-2 text-sm text-brand-navy/70">{highlight.description}</p>
               </motion.div>
             ))}
@@ -89,12 +89,12 @@ export default function ContactPage() {
                 Appelez-nous ou écrivez-nous pour une réponse immédiate.
               </p>
               <div className="mt-6 space-y-4 text-sm font-medium">
-                <a href="tel:+41793463200" className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10">
-                  <Phone className="h-5 w-5 text-brand-gold" />
+                <a href="tel:+41793463200" className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10 hover-scale">
+                  <Phone className="h-5 w-5 text-brand-gold group-hover:rotate-12 transition-transform duration-300" />
                   <span>+41 79 346 32 00</span>
                 </a>
-                <a href="mailto:info@sun7piscine.ch" className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10">
-                  <Mail className="h-5 w-5 text-brand-gold" />
+                <a href="mailto:info@sun7piscine.ch" className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10 hover-scale">
+                  <Mail className="h-5 w-5 text-brand-gold group-hover:-translate-y-1 transition-transform duration-300" />
                   <span>info@sun7piscine.ch</span>
                 </a>
               </div>
@@ -112,9 +112,9 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=Esplanade%20des%20R%C3%A9cr%C3%A9ations%2022%2C%201217%20Meyrin"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10"
+                  className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10 hover-scale"
                 >
-                  <MapPin className="h-5 w-5 text-brand-gold" />
+                  <MapPin className="h-5 w-5 text-brand-gold group-hover:scale-110 transition-transform duration-300" />
                   <span>Esplanade des Récréations 22, 1217 Meyrin</span>
                 </a>
                 <div className="flex items-start gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -36,12 +36,6 @@ export default function BeforeAfterSlider({
     updateSliderPosition(e.clientX);
   }, [isDragging, updateSliderPosition]);
 
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    updateSliderPosition(e.touches[0].clientX);
-  }, [isDragging, updateSliderPosition]);
-
   const handleStart = useCallback(() => {
     setIsDragging(true);
   }, []);
@@ -49,6 +43,24 @@ export default function BeforeAfterSlider({
   const handleEnd = useCallback(() => {
     setIsDragging(false);
   }, []);
+
+  // Use direct DOM event listener for touch events with { passive: false }
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      updateSliderPosition(e.touches[0].clientX);
+    };
+
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      container.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [isDragging, updateSliderPosition]);
 
   const handleClick = useCallback((e: React.MouseEvent) => {
     if (!isDragging) {
@@ -78,7 +90,6 @@ export default function BeforeAfterSlider({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleEnd}
         onMouseUp={handleEnd}
-        onTouchMove={handleTouchMove}
         onTouchEnd={handleEnd}
         onClick={handleClick}
         style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}

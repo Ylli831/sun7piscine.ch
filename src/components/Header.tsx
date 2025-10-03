@@ -8,12 +8,13 @@ import { serviceDetails } from "../data/services";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
 
   return (
     <header
       className="site-header flex flex-col fixed top-0 z-50 w-full transition-all duration-500"
       style={{
-        height: open ? "360px" : "var(--header-height)",
+        height: open ? "700px" : "var(--header-height)",
   backgroundSize: "100% 100%",
   backgroundPosition: "center bottom",
   backgroundRepeat: "no-repeat",
@@ -22,17 +23,18 @@ export default function Header() {
     >
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4" style={{ height: 'var(--header-height)' }}>
         <Link href="/" className="flex items-center gap-3 pl-2" aria-label="Accueil">
-          <Image src="/logo-without-bg.png" alt="SUN 7" width={160} height={160} priority />
+          <Image src="/logo-without-bg.png" alt="SUN 7" width={100} height={100} priority style={{ width: 'auto', height: 'auto' }} />
         </Link>
 
         <nav className="hidden md:flex gap-5 items-center" aria-label="Navigation principale">
-          <Link href="/" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
+          <Link href="/" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" style={{ ['--hover-color' as any]: '#fed700' }} onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             Accueil
           </Link>
           <div className="relative group">
             <Link
               href="/services"
-              className="flex items-center gap-2 text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5"
+              className="flex items-center gap-2 text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}
             >
               Services
             </Link>
@@ -44,9 +46,11 @@ export default function Header() {
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="flex items-start gap-3 rounded-xl px-3 py-2 text-left text-[#112A46] transition-all duration-200 hover:bg-[#C3D5FD]/40 hover:text-amber-500"
+                      className="flex items-start gap-3 rounded-xl px-3 py-2 text-left text-[#112A46] transition-all duration-200 hover:bg-[#C3D5FD]/40"
+                      onMouseEnter={(e) => { e.currentTarget.style.color = '#fed700'; e.currentTarget.style.boxShadow = '0 0 15px rgba(254, 215, 0, 0.15)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = '#112A46'; e.currentTarget.style.boxShadow = 'none'; }}
                     >
-                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C3D5FD]/40 text-amber-500">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C3D5FD]/40" style={{ color: '#fed700' }}>
                         <service.icon className="h-4 w-4" />
                       </span>
                       <span>
@@ -59,18 +63,21 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <Link href="/portfolio" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
+          <Link href="/portfolio" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             Réalisations
           </Link>
-          <Link href="/about" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
+          <Link href="/about" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             À Propos
           </Link>
-          <Link href="/faq" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-amber-400 hover:-translate-y-0.5">
+          <Link href="/faq" className="text-[#112A46] font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}>
             FAQ
           </Link>
           <Link 
             href="/contact"
-            className="ripple-button bg-cyan-400 hover:bg-cyan-500 text-[#112A46] font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="ripple-button text-[#112A46] font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
+            style={{ backgroundColor: '#fed700', boxShadow: '0 4px 14px rgba(254, 215, 0, 0.3)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e6c200'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(254, 215, 0, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#fed700'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(254, 215, 0, 0.3)'; }}
           >
             Devis Gratuit
           </Link>
@@ -91,42 +98,79 @@ export default function Header() {
         </button>
       </div>
 
-      <div className={`w-full md:hidden px-4 transition-all duration-300 overflow-hidden ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div
+        className="w-full md:hidden px-4 transition-all duration-300 overflow-hidden"
+        style={{
+          maxHeight: open ? 'calc(100vh - var(--header-height))' : 0,
+          opacity: open ? 1 : 0,
+        }}
+        aria-hidden={!open}
+      >
         <div className="mt-2 flex flex-col items-center gap-4 py-4">
-          <Link href="/" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
-            Accueil
-          </Link>
-          <Link href="/services" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
-            Services
-          </Link>
-          <Link href="/portfolio" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
-            Réalisations
-          </Link>
-          <div className="w-full space-y-2">
-            {serviceDetails.map((service) => (
+          <div className="w-full max-w-3xl mx-auto">
+            <Link href="/" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center" style={{ ['--hover-color' as any]: '#fed700' }} onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+              Accueil
+            </Link>
+
+            {/* Services accordion - plain (no background) */}
+            <div className="mt-2">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300"
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'}
+                onClick={() => setShowServices((s) => !s)}
+                aria-expanded={showServices}
+              >
+                <span>Services</span>
+                <svg className={`h-5 w-5 transition-transform ${showServices ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <div className="w-full overflow-hidden pt-2" style={{ maxHeight: showServices ? '640px' : 0, transition: 'max-height 320ms ease' }}>
+                <Link href="/services" className="block w-full px-4 py-3 text-left text-[#112A46]/90 text-base font-medium transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(17, 42, 70, 0.9)'} onClick={() => setOpen(false)}>
+                  Tous les services
+                </Link>
+                <div className="mt-2 space-y-2 px-2">
+                  {serviceDetails.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="block w-full px-4 py-3 text-left text-[#112A46]/85 text-base font-medium transition-colors duration-300"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(17, 42, 70, 0.85)'}
+                      onClick={() => setOpen(false)}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link href="/portfolio" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center mt-4" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+              Réalisations
+            </Link>
+
+            <Link href="/about" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center mt-2" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+              À Propos
+            </Link>
+
+            <Link href="/faq" className="block text-[#112A46] font-bold text-lg px-4 py-3 transition-colors duration-300 text-center mt-2" onMouseEnter={(e) => e.currentTarget.style.color = '#fed700'} onMouseLeave={(e) => e.currentTarget.style.color = '#112A46'} onClick={() => setOpen(false)}>
+              FAQ
+            </Link>
+
+            <div className="flex justify-center mt-4">
               <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="w-full rounded-lg bg-white/70 px-4 py-2 text-left text-[#112A46]/80 text-base font-medium transition-colors duration-300 hover:bg-[#C3D5FD]/60 hover:text-amber-500"
+                href="/contact"
+                className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold text-lg px-6 py-2 rounded-full text-center transition-all duration-300"
                 onClick={() => setOpen(false)}
               >
-                {service.title}
+                Demander un Devis
               </Link>
-            ))}
+            </div>
           </div>
-          <Link href="/about" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
-            À Propos
-          </Link>
-          <Link href="/faq" className="text-[#112A46] font-bold text-lg px-4 py-2 rounded-md hover:text-amber-400 w-full text-center transition-colors duration-300" onClick={() => setOpen(false)}>
-            FAQ
-          </Link>
-          <Link 
-            href="/contact"
-            className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold text-lg px-6 py-2 rounded-full w-full max-w-xs text-center transition-all duration-300"
-            onClick={() => setOpen(false)}
-          >
-            Demander un Devis
-          </Link>
         </div>
       </div>
     </header>

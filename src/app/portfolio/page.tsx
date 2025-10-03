@@ -6,6 +6,7 @@ import ImageGallery from "../../components/ImageGallery";
 import Image from "next/image";
 import Link from "next/link";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
+import CountUpNumber from "../../components/CountUpNumber";
 
 const portfolioCategories = [
   {
@@ -61,7 +62,7 @@ export default function PortfolioPage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Notre Portfolio
+              Notre <span style={{ color: '#fed700' }}>Portfolio</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
               Plus de 20 ans d&apos;expérience dans la création et rénovation de piscines en Suisse Romande
@@ -72,11 +73,11 @@ export default function PortfolioPage() {
                 <span>200+ Projets Réalisés</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#fed700', boxShadow: '0 0 8px rgba(254, 215, 0, 0.5)' }}></div>
                 <span>98% Satisfaction Client</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#fed700', boxShadow: '0 0 8px rgba(254, 215, 0, 0.5)' }}></div>
                 <span>Suivi personnalisé continu</span>
               </div>
             </div>
@@ -100,7 +101,7 @@ export default function PortfolioPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#112A46] mb-6">
-              Nos Spécialités
+              Nos <span style={{ color: '#fed700' }}>Spécialités</span>
             </h2>
             <p className="text-xl text-[#112A46] opacity-80 max-w-3xl mx-auto">
               Chaque projet est unique. Découvrez nos différentes expertises et réalisations.
@@ -113,24 +114,25 @@ export default function PortfolioPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#C3D5FD] border border-[#112A46]/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="group bg-white border border-[#112A46]/10 rounded-2xl overflow-hidden shadow-precise hover:shadow-precise-lg card-hover-lift relative corner-decoration"
               >
                 <div className="grid grid-cols-3 gap-1 h-48">
                   {category.images.map((image, imgIndex) => (
-                    <div key={imgIndex} className="relative overflow-hidden">
+                    <div key={imgIndex} className="relative overflow-hidden image-overlay-reveal">
                       <Image
                         src={image}
                         alt={`${category.title} ${imgIndex + 1}`}
                         fill
-                        className="object-cover hover:scale-110 transition-transform duration-300"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 33vw, 20vw"
                       />
                     </div>
                   ))}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#112A46] mb-3">
+                  <h3 className="text-2xl font-bold text-[#112A46] mb-3 group-hover:text-brand-gold transition-colors duration-300">
                     {category.title}
                   </h3>
                   <p className="text-[#112A46] opacity-80">
@@ -158,20 +160,21 @@ export default function PortfolioPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "200+", label: "Projets Réalisés" },
-              { number: "20+", label: "Années d'Expérience" },
-              { number: "98%", label: "Satisfaction Client" },
-              { number: "50+", label: "Rénovations Annuelles" }
+              { number: 200, suffix: "+", label: "Projets Réalisés" },
+              { number: 20, suffix: "+", label: "Années d'Expérience" },
+              { number: 98, suffix: "%", label: "Satisfaction Client" },
+              { number: 50, suffix: "+", label: "Rénovations Annuelles" }
             ].map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
                 <div className="text-4xl md:text-5xl font-bold mb-2">
-                  {stat.number}
+                  <CountUpNumber end={stat.number} suffix={stat.suffix} duration={2} />
                 </div>
                 <div className="text-sm opacity-90">
                   {stat.label}

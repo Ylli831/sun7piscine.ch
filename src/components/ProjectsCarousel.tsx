@@ -165,7 +165,7 @@ export default function ProjectsCarousel() {
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet précédent"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} style={{ color: '#fed700' }} />
           </button>
           
           <button
@@ -173,7 +173,7 @@ export default function ProjectsCarousel() {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet suivant"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={24} style={{ color: '#fed700' }} />
           </button>
 
           {/* Dots Indicator */}

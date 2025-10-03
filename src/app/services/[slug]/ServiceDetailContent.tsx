@@ -74,7 +74,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               href="/services"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:border-brand-gold/60 hover:text-brand-gold"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-4 w-4" style={{ color: '#fed700' }} />
               Retour aux services
             </Link>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">
@@ -189,7 +189,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2 text-sm font-semibold text-brand-navy transition hover:bg-brand-gold-dark"
               >
                 Planifier un rendez-vous
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" style={{ color: '#fed700' }} />
               </Link>
             </motion.div>
           </div>
