@@ -67,7 +67,7 @@ export default function ContactForm() {
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-brand-navy">Contact rapide</h2>
           <p className="text-sm text-brand-navy/70">
-            Détaillez-nous votre projet, nous vous rappelons sous 24h ouvrées.
+            Détaillez-nous votre projet, nous vous recontactons sous 24 h ouvrées.
           </p>
         </div>
 
