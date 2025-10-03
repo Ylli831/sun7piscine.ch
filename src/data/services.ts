@@ -34,7 +34,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       "Entretien annuel complet",
       "Mise en route printanière",
       "Hivernage professionnel",
-      "Traitement eau avancé"
+      "Traitement de l’eau avancé"
     ],
     highlights: [
       {
