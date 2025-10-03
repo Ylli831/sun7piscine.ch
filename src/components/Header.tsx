@@ -74,10 +74,10 @@ export default function Header() {
           </Link>
           <Link 
             href="/contact"
-            className="ripple-button text-[#112A46] font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
-            style={{ backgroundColor: '#fed700', boxShadow: '0 4px 14px rgba(254, 215, 0, 0.3)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e6c200'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(254, 215, 0, 0.4)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#fed700'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(254, 215, 0, 0.3)'; }}
+            className="ripple-button text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
+            style={{ backgroundColor: '#22d3ee', boxShadow: '0 4px 14px rgba(34, 211, 238, 0.3)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#06b6d4'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(6, 182, 212, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#22d3ee'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(34, 211, 238, 0.3)'; }}
           >
             Devis Gratuit
           </Link>
@@ -164,7 +164,7 @@ export default function Header() {
             <div className="flex justify-center mt-4">
               <Link
                 href="/contact"
-                className="ripple-button bg-amber-400 hover:bg-amber-500 text-[#112A46] font-bold text-lg px-6 py-2 rounded-full text-center transition-all duration-300"
+                className="ripple-button bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-lg px-6 py-2 rounded-full text-center transition-all duration-300"
                 onClick={() => setOpen(false)}
               >
                 Demander un Devis

@@ -71,8 +71,8 @@ export default function WaterDropCursor() {
             <div
               className="w-full h-full rounded-full"
               style={{
-                background: "radial-gradient(circle, rgba(254, 215, 0, 0.4) 0%, transparent 70%)",
-                boxShadow: "0 0 10px rgba(254, 215, 0, 0.3)",
+                background: "radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%)",
+                boxShadow: "0 0 10px rgba(6, 182, 212, 0.3)",
               }}
             />
           </motion.div>
