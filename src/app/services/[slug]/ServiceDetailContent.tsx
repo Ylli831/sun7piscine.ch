@@ -42,7 +42,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
         initial={fadeUp.initial}
         animate={fadeUp.animate}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden py-20 text-white sm:py-24"
+        className="relative overflow-hidden py-20 sm:py-24"
       >
         <div className="absolute inset-0">
           <Image
@@ -103,10 +103,10 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
             })()}
 
             <div className="mt-6 w-full max-w-3xl space-y-4 text-center rounded-2xl border border-cyan-400/30 bg-cyan-400/20 p-8 backdrop-blur-lg shadow-[0px_24px_60px_rgba(6,182,212,0.25)]">
-              <h1 className="text-balance text-4xl font-bold leading-tight sm:text-5xl">
+              <h1 className="text-balance text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
                 {service.hero.heading}
               </h1>
-              <p className="mx-auto max-w-2xl text-base text-white/85 sm:text-lg">
+              <p className="mx-auto max-w-2xl text-base text-brand-navy/80 sm:text-lg">
                 {service.hero.subheading}
               </p>
             </div>
@@ -122,8 +122,8 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="h-full w-full rounded-2xl border border-cyan-400/30 bg-cyan-400/20 p-6 text-center backdrop-blur-lg shadow-[0px_24px_60px_rgba(6,182,212,0.25)]"
               >
-                <h2 className="text-base font-semibold text-white">{highlight.title}</h2>
-                <p className="mt-2 text-sm text-white/75">{highlight.description}</p>
+                <h2 className="text-base font-semibold text-brand-navy">{highlight.title}</h2>
+                <p className="mt-2 text-sm text-brand-navy/75">{highlight.description}</p>
               </motion.div>
             ))}
           </div>

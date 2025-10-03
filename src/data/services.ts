@@ -64,9 +64,13 @@ export const serviceDetails: readonly ServiceDetail[] = [
         description: "Nettoyage, réglages, contrôles techniques et ajustement des paramètres de l'eau."
       },
       {
-        title: "Reporting & conseils",
-        description: "Compte rendu détaillé après chaque intervention avec recommandations personnalisées."
-      }
+        title: "Suivi & conseils",
+        description: "Compte rendu détaillé après chaque intervention, avec recommandations personnalisées."
+      },
+      {
+        title: "Fourniture & livraison de produits",
+        description: "Approvisionnement en produits d’entretien professionnels, livrés directement chez vous."
+      },
     ],
     gallery: [
       "/sun7piscine-images/pool22-cool.jpg",
