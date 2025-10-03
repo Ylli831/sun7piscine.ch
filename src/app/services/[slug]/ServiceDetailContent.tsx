@@ -102,7 +102,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               );
             })()}
 
-            <div className="mt-6 w-full max-w-3xl space-y-4 text-center">
+            <div className="mt-6 w-full max-w-3xl space-y-4 text-center rounded-2xl border border-cyan-400/30 bg-cyan-400/20 p-8 backdrop-blur-lg shadow-[0px_24px_60px_rgba(6,182,212,0.25)]">
               <h1 className="text-balance text-4xl font-bold leading-tight sm:text-5xl">
                 {service.hero.heading}
               </h1>
@@ -120,7 +120,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="h-full w-full rounded-2xl border border-white/15 bg-white/16 p-6 text-center backdrop-blur-lg shadow-[0px_24px_60px_rgba(17,42,70,0.18)]"
+                className="h-full w-full rounded-2xl border border-cyan-400/30 bg-cyan-400/20 p-6 text-center backdrop-blur-lg shadow-[0px_24px_60px_rgba(6,182,212,0.25)]"
               >
                 <h2 className="text-base font-semibold text-white">{highlight.title}</h2>
                 <p className="mt-2 text-sm text-white/75">{highlight.description}</p>

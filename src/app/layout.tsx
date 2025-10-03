@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pisciniste Suisse Romande | SUN7 – Construction, Rénovation & Entretien",
   description: "Au bénéfice de plus de 20 ans d'expérience dans l'entretien et la rénovation de piscines en Suisse romande. Construction, rénovation, entretien de spas, bassins et piscines. Devis gratuit.",
-  keywords: "piscine suisse romande, construction piscine genève, rénovation piscine vaud, entretien piscine lausanne, pisciniste meyrin, spa suisse, piscine sur mesure, piscine haut de gamme, jacuzzi suisse",
+  keywords: "piscine suisse romande, construction piscine, rénovation piscine, entretien piscine, pisciniste, spa suisse, piscine sur mesure, piscine haut de gamme, jacuzzi suisse",
   authors: [{ name: "SUN7 Piscine" }],
   creator: "Atlas Studio",
   

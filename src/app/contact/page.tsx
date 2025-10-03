@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Sparkles } from "lucide-react";
+import { Mail, Phone, Clock, Sparkles } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
 import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 import WaterDropCursor from "../../components/effects/WaterDropCursor";
@@ -10,7 +10,7 @@ import TiltCard from "../../components/effects/TiltCard";
 
 const responseHighlights = [
   {
-    title: "Réponse sous 24h",
+    title: "Réponse sous 24 h",
     description: "Nos experts vous contactent rapidement avec des premières pistes concrètes.",
     icon: Mail
   },
@@ -20,9 +20,9 @@ const responseHighlights = [
     icon: Sparkles
   },
   {
-    title: "Intervention Suisse Romande",
-    description: "Présence locale pour vos chantiers, dépannages et entretiens réguliers.",
-    icon: MapPin
+    title: "Suisse Romande",
+    description: "Service dans toute la région, interventions rapides et flexibles.",
+    icon: Phone
   }
 ] as const;
 
@@ -110,23 +110,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-lg" aria-labelledby="contact-visit">
-              <h2 id="contact-visit" className="text-xl font-semibold text-brand-navy">
-                Nous rencontrer
+            <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-lg" aria-labelledby="contact-hours">
+              <h2 id="contact-hours" className="text-xl font-semibold text-brand-navy">
+                Horaires d&apos;ouverture
               </h2>
               <p className="mt-2 text-sm text-brand-navy/70">
-                Passez à notre showroom ou planifiez une visite technique sur votre site.
+                Nous sommes disponibles pour répondre à vos questions.
               </p>
               <div className="mt-6 space-y-4 text-sm font-medium">
-                <a
-                  href="https://maps.google.com/?q=Esplanade%20des%20R%C3%A9cr%C3%A9ations%2022%2C%201217%20Meyrin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy transition hover:border-brand-gold/60 hover:bg-brand-gold/10 hover-scale"
-                >
-                  <MapPin className="h-5 w-5 text-brand-gold group-hover:scale-110 transition-transform duration-300" />
-                  <span>Esplanade des Récréations 22, 1217 Meyrin</span>
-                </a>
                 <div className="flex items-start gap-3 rounded-2xl border border-brand-navy/15 px-4 py-3 text-brand-navy">
                   <Clock className="h-5 w-5 text-brand-gold" />
                   <div>

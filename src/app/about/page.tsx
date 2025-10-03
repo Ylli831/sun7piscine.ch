@@ -254,7 +254,7 @@ export default function AboutPage() {
                 Fondateur
               </p>
               <p className="text-brand-navy/60 text-sm mb-2">
-                15+ ans d&apos;expérience
+                20+ ans d&apos;expérience
               </p>
               <p className="text-brand-navy/70 text-sm">
                 Je conçois des projets de A à Z en plaçant l&apos;esthétique, la durabilité et la satisfaction client au cœur de chaque réalisation.

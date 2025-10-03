@@ -229,7 +229,7 @@ export default function ServicesPage() {
               {
                 icon: Shield,
                 title: "Suivi Personnalisé Continu",
-                description: "Des visites de contrôle planifiées et une assistance prioritaire après la livraison"
+                description: "Contrôles réguliers planifiés et assistance prioritaire après la livraison"
               },
               {
                 icon: Clock,

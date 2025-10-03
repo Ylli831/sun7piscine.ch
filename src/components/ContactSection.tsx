@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Calendar } from "lucide-react";
+import { Phone, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactSection() {
@@ -34,34 +34,28 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-  <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:gap-8">
+  <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3 lg:gap-8">
           {[{
             icon: Phone,
             title: "Par téléphone",
             highlight: "+41 79 346 32 00",
-            description: "Ligne directe Suisse Romande",
+            description: "Assistance rapide",
             href: "tel:+41793463200",
             cta: "Échanger maintenant"
           }, {
             icon: Mail,
             title: "Par email",
             highlight: "info@sun7piscine.ch",
-            description: "Réponse en 24h ouvrées",
+            description: "Réponse en 24 h ouvrées",
             href: "mailto:info@sun7piscine.ch",
             cta: "Envoyer un message"
           }, {
             icon: Calendar,
             title: "Rendez-vous",
-            highlight: "Visite technique",
-            description: "Planification sur place",
+            highlight: "Consultation",
+            description: "Planification rapide",
             href: "/contact#form",
-            cta: "Planifier" }, {
-            icon: MapPin,
-            title: "Notre showroom",
-            highlight: "Meyrin, Suisse",
-            description: "Esplanade des Récréations 22",
-            href: "https://maps.google.com/?q=Esplanade%20des%20R%C3%A9cr%C3%A9ations%2022%2C%201217%20Meyrin",
-            cta: "Itinéraire"
+            cta: "Planifier"
           }].map((card, index) => (
             <motion.div
               key={card.title}

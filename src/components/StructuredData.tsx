@@ -1,7 +1,7 @@
 export default function StructuredData() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "SUN7 Piscine",
     "image": "https://sun7piscine.ch/logo.png",
     "@id": "https://sun7piscine.ch",
@@ -9,19 +9,6 @@ export default function StructuredData() {
     "telephone": "+41793463200",
     "email": "info@sun7piscine.ch",
     "priceRange": "CHF",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Esplanade des Récréations 22",
-      "addressLocality": "Meyrin",
-      "postalCode": "1217",
-      "addressRegion": "Genève",
-      "addressCountry": "CH"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 46.2344,
-      "longitude": 6.0807
-    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -46,24 +33,6 @@ export default function StructuredData() {
       "ratingValue": "4.9",
       "reviewCount": "127"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Genève"
-      },
-      {
-        "@type": "City",
-        "name": "Lausanne"
-      },
-      {
-        "@type": "City",
-        "name": "Meyrin"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Suisse Romande"
-      }
-    ],
     "description": "Expert en construction, rénovation et entretien de piscines et spas en Suisse Romande. Plus de 20 ans d'expérience, 500+ projets réalisés. Devis gratuit.",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

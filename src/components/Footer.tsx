@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, Clock, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -115,23 +115,6 @@ export default function Footer() {
           >
             <h4 className="text-xl font-semibold text-white">Contact<span style={{ color: '#fed700' }}>.</span></h4>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#fed700' }} />
-                <div className="text-white/90">
-                  <div className="font-medium text-white">Adresse</div>
-                  <div className="text-sm text-white/80">
-                    <a
-                      href="https://www.google.com/maps/search/?api=1&query=Esplanade+des+R%C3%A9cr%C3%A9ations+22+1217+Meyrin"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline"
-                    >
-                      Esplanade des Récréations 22
-                    </a>
-                  </div>
-                  <div className="text-sm text-white/80">1217 Meyrin, Suisse</div>
-                </div>
-              </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 flex-shrink-0" style={{ color: '#fed700' }} />
                 <div className="text-white/90">
@@ -142,7 +125,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-white flex-shrink-0" />
+                <Mail className="w-5 h-5 flex-shrink-0" style={{ color: '#fed700' }} />
                 <div className="text-white/90">
                   <div className="font-medium text-white">Email</div>
                   <div className="text-sm text-white/80">
@@ -151,11 +134,19 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
+                <Clock className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#fed700' }} />
                 <div className="text-white/90">
                   <div className="font-medium text-white">Horaires</div>
                   <div className="text-sm text-white/80">Lun-Ven: 8h-18h</div>
                   <div className="text-sm text-white/80">Sam: 9h-16h</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#fed700' }} />
+                <div className="text-white/90">
+                  <div className="font-medium text-white">Adresse</div>
+                  <div className="text-sm text-white/80">1217 Meyrin, Genève</div>
+                  <div className="text-sm text-white/80">Suisse</div>
                 </div>
               </div>
             </div>

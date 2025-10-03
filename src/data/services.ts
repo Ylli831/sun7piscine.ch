@@ -42,8 +42,8 @@ export const serviceDetails: readonly ServiceDetail[] = [
         description: "Formules sur mesure selon la fréquence souhaitée et le niveau d'assistance."
       },
       {
-        title: "Techniciens certifiés",
-        description: "Équipe formée aux dernières normes d'équilibrage chimique et de sécurité."
+        title: "Permis",
+        description: "Permis pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques"
       },
       {
         title: "Suivi digitalisé",
@@ -65,7 +65,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       },
       {
         title: "Reporting & conseils",
-        description: "Compte rendu détaillé après chaque visite avec recommandations personnalisées."
+        description: "Compte rendu détaillé après chaque intervention avec recommandations personnalisées."
       }
     ],
     gallery: [
@@ -77,7 +77,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       eyebrow: "Service Signature",
       heading: "Entretien & Maintenance haut de gamme",
       subheading:
-        "Nous veillons sur votre piscine toute l'année avec des interventions précises, discrètes et documentées."
+        "Nous veillons sur votre piscine toute l’année avec des interventions discrètes et soignées."
     },
     metaDescription:
       "Service d'entretien et maintenance de piscines SUN7 : contrats sur mesure, suivi digitalisé et techniciens certifiés en Suisse Romande."
@@ -118,7 +118,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       },
       {
         title: "Sélection des matériaux",
-        description: "Choix des revêtements, éclairages, couvertures et accessoires en showroom."
+        description: "Choix des revêtements, éclairages, couvertures et accessoires premium."
       },
       {
         title: "Chantier maîtrisé",

@@ -63,12 +63,12 @@ const allFaqData: FAQItem[] = [
   {
     category: "Entretien & Services",
     question: "Que comprend votre service de rénovation ?",
-    answer: "Nos rénovations incluent : réfection de l'étanchéité, changement du revêtement (liner, carrelage), modernisation des équipements, amélioration de l'isolation, mise aux normes sécurité, modernisation du système de filtration. Devis gratuit après visite technique."
+    answer: "Nos rénovations incluent : réfection de l'étanchéité, changement du revêtement (liner, carrelage), modernisation des équipements, amélioration de l'isolation, mise aux normes sécurité, modernisation du système de filtration. Devis gratuit sur demande."
   },
   {
     category: "Entretien & Services",
     question: "Intervenez-vous en urgence pour les pannes ?",
-    answer: "Oui, nous proposons un service d'urgence 7j/7 pour les pannes critiques (fuites importantes, dysfonctionnements majeurs). Nos techniciens interviennent dans les 24h en Suisse Romande. Contactez-nous au +41 79 346 32 00 pour les urgences."
+    answer: "Oui, nous proposons un service d'urgence 7j/7 pour les pannes critiques (fuites importantes, dysfonctionnements majeurs). Nos techniciens interviennent dans les 24 h en Suisse Romande. Contactez-nous au +41 79 346 32 00 pour les urgences."
   },
   {
     category: "Entretien & Services",
@@ -86,7 +86,7 @@ const allFaqData: FAQItem[] = [
   {
     category: "Couverture & Contact",
     question: "Comment obtenir un devis ?",
-    answer: "Contactez-nous par téléphone (+41 79 346 32 00), email (info@sun7piscine.ch) ou via notre formulaire en ligne. Nous organisons une visite gratuite pour étudier votre terrain et comprendre vos besoins. Le devis détaillé vous est remis sous 48h."
+    answer: "Contactez-nous par téléphone (+41 79 346 32 00), email (info@sun7piscine.ch) ou via notre formulaire en ligne. Nous étudions votre projet et vos besoins spécifiques. Le devis détaillé vous est remis sous 48h."
   }
 ];
 
