@@ -1,14 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 import { Star, Phone, CheckCircle, Award } from "lucide-react";
 import MagneticButton from "./effects/MagneticButton";
 import RippleEffect, { useRipple } from "./effects/RippleEffect";
 import AnimatedCounter from "./effects/AnimatedCounter";
 
 export default function HeroShowcase() {
-  const [animationComplete, setAnimationComplete] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const { ripples: devisRipples, createRipple: createDevisRipple } = useRipple();
   const { ripples: phoneRipples, createRipple: createPhoneRipple } = useRipple();
@@ -20,13 +20,6 @@ export default function HeroShowcase() {
 
   const yPos = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimationComplete(true);
-    }, 4350);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <motion.section 
@@ -167,25 +160,24 @@ export default function HeroShowcase() {
             {/* Main animation container */}
             <div className="relative w-full flex items-center justify-center">
               <motion.div
-                className="relative w-full"
-                whileHover={{ 
+                className="relative w-full flex justify-center"
+                whileHover={{
                   scale: 1.02
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {!animationComplete ? (
-                  <img
-                    src="/gif-animation-sun7.gif"
-                    alt="Pool Animation"
+                {/* Even smaller constraints: 240px on small, 280px on md, 320px on lg */}
+                <div className="w-full max-w-[240px] md:max-w-[280px] lg:max-w-[320px] mx-auto flex-shrink-0">
+                  <Image
+                    src="/hero-video-fountain.gif"
+                    alt="Pool Fountain Animation"
+                    width={320}
+                    height={213}
                     className="w-full h-auto object-contain"
+                    priority
+                    quality={70}
                   />
-                ) : (
-                  <img
-                    src="/animation-frames/unscreen-036.png"
-                    alt="SUN7 Pool Services"
-                    className="w-full h-auto object-contain"
-                  />
-                )}
+                </div>
               </motion.div>
             </div>
 
