@@ -141,6 +141,8 @@ export default function PortfolioPage() {
                         src={image}
                         alt={`${category.title} ${imgIndex + 1}`}
                         fill
+                        loading="lazy"
+                        quality={70}
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 33vw, 20vw"
                       />

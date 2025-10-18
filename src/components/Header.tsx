@@ -24,30 +24,34 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex gap-5 items-center" aria-label="Navigation principale">
-          <Link href="/" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
-            Accueil
-          </Link>
           <div className="relative group">
             <Link
               href="/services"
-              className="flex items-center gap-2 text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
-              onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+              className="flex items-center gap-2 text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
             >
               Services
+              {/* Animated line expanding from center */}
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#fefe00] transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             </Link>
             <div className="pointer-events-none absolute left-1/2 top-full hidden w-72 -translate-x-1/2 pt-4 group-hover:pointer-events-auto group-hover:block group-focus-within:pointer-events-auto group-focus-within:block">
-              <div className="relative rounded-2xl border border-white/40 bg-white/95 p-4 shadow-2xl">
+              <div className="relative rounded-2xl border border-white/40 bg-white/95 p-4 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
                 <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/60 via-white/80 to-white/95" aria-hidden />
                 <div className="relative space-y-1">
-                  {serviceDetails.map((service) => (
+                  {serviceDetails.map((service, index) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="flex items-start gap-3 rounded-xl px-3 py-2 text-left text-[#00008f] transition-all duration-200 hover:bg-[#009dfe]/10"
+                      className="flex items-start gap-3 rounded-xl px-3 py-2 text-left text-[#00008f] transition-all duration-200 hover:bg-[#009dfe]/10 transform hover:translate-x-1"
+                      style={{
+                        animationDelay: `${index * 50}ms`,
+                        animation: 'slideInLeft 0.3s ease-out forwards'
+                      }}
                       onMouseEnter={(e) => { e.currentTarget.style.color = '#009dfe'; e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 157, 254, 0.15)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = '#00008f'; e.currentTarget.style.boxShadow = 'none'; }}
                     >
-                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#009dfe]/20" style={{ color: '#fefe00' }}>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#009dfe]/20 transition-all duration-200 hover:bg-[#009dfe]/30 hover:scale-110" style={{ color: '#fefe00' }}>
                         <service.icon className="h-4 w-4" />
                       </span>
                       <span>
@@ -60,21 +64,27 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <Link href="/realisations" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
+          <Link href="/realisations" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden group" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
             Réalisations
+            {/* Animated line expanding from center */}
+            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#fefe00] transition-all duration-300 -translate-x-1/2 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span>
           </Link>
-          <Link href="/about" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
+          <Link href="/about" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden group" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
             À Propos
+            {/* Animated line expanding from center */}
+            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#fefe00] transition-all duration-300 -translate-x-1/2 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span>
           </Link>
-          <Link href="/faq" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
+          <Link href="/faq" className="text-white font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden group" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
             FAQ
+            {/* Animated line expanding from center */}
+            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#fefe00] transition-all duration-300 -translate-x-1/2 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span>
           </Link>
           <Link 
             href="/contact"
-            className="ripple-button text-[#00008f] font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
-            style={{ backgroundColor: '#fefe00', boxShadow: '0 4px 14px rgba(254, 254, 0, 0.3)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e6e600'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(230, 230, 0, 0.4)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#fefe00'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(254, 254, 0, 0.3)'; }}
+            className="ripple-button text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
+            style={{ backgroundColor: '#009dfe', boxShadow: '0 4px 14px rgba(0, 157, 254, 0.3)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0088e0'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 136, 224, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#009dfe'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 157, 254, 0.3)'; }}
           >
             Devis Gratuit
           </Link>
@@ -105,9 +115,6 @@ export default function Header() {
       >
         <div className="mt-2 flex flex-col items-center gap-4 py-4">
           <div className="w-full max-w-3xl mx-auto">
-            <Link href="/" className="block text-white font-bold text-lg px-4 py-3 transition-colors duration-300 text-center" onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={() => setOpen(false)}>
-              Accueil
-            </Link>
 
             {/* Services accordion - plain (no background) */}
             <div className="mt-2">
@@ -130,11 +137,15 @@ export default function Header() {
                   Tous les services
                 </Link>
                 <div className="mt-2 space-y-2 px-2">
-                  {serviceDetails.map((service) => (
+                  {serviceDetails.map((service, index) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
                       className="block w-full px-4 py-3 text-left text-white/85 text-base font-medium transition-colors duration-300"
+                      style={{
+                        animationDelay: `${index * 50}ms`,
+                        animation: showServices ? 'slideInLeft 0.3s ease-out forwards' : 'none'
+                      }}
                       onMouseEnter={(e) => e.currentTarget.style.color = '#fefe00'}
                       onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)'}
                       onClick={() => setOpen(false)}
@@ -161,7 +172,7 @@ export default function Header() {
             <div className="flex justify-center mt-4">
               <Link
                 href="/contact"
-                className="ripple-button bg-[#fefe00] hover:bg-[#e6e600] text-[#00008f] font-bold text-lg px-6 py-2 rounded-full text-center transition-all duration-300"
+                className="ripple-button bg-[#009dfe] hover:bg-[#0088e0] text-white font-bold text-lg px-6 py-2 rounded-full text-center transition-all duration-300"
                 onClick={() => setOpen(false)}
               >
                 Demander un Devis

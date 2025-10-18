@@ -9,7 +9,6 @@ import ScrollProgress from "../../components/effects/ScrollProgress";
 import TiltCard from "../../components/effects/TiltCard";
 import MagneticButton from "../../components/effects/MagneticButton";
 import RippleEffect, { useRipple } from "../../components/effects/RippleEffect";
-import HoverGlow from "../../components/effects/HoverGlow";
 
 export default function AboutPage() {
   const { ripples: contactRipples, createRipple: createContactRipple } = useRipple();
@@ -198,17 +197,15 @@ export default function AboutPage() {
                     scale={1.03}
                     className="group rounded-2xl border border-brand-navy/10 bg-white/90 p-10 shadow-precise corner-decoration relative overflow-hidden h-full"
                   >
-                    <HoverGlow intensity={0.3}>
-                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/60 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}>
-                        <value.icon className="h-8 w-8" />
-                      </div>
-                      <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
-                        {value.title}
-                      </h3>
-                      <p className="text-brand-navy/70">
-                        {value.description}
-                      </p>
-                    </HoverGlow>
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/60 text-brand-gold-dark group-hover:scale-110 transition-transform duration-300">
+                      <value.icon className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
+                      {value.title}
+                    </h3>
+                    <p className="text-brand-navy/70">
+                      {value.description}
+                    </p>
                   </TiltCard>
                 </motion.div>
               ))}

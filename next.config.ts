@@ -3,13 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     // local images only; keep default loader for public/ usage
-    deviceSizes: [640, 768, 1024, 1280, 1600],
+    deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ['image/webp'],
     // Configure qualities to avoid warnings (70 is used in the codebase)
     qualities: [70, 75, 85, 90, 100],
     // default quality next/image will use when none is provided
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
     // Configure to handle special characters in filenames
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
@@ -30,9 +30,9 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://challenges.cloudflare.com",
-              "style-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https:",
-              "font-src 'self' data:",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self' https://cloudflareinsights.com https://*.cloudflare.com",
               "frame-src 'self' https://challenges.cloudflare.com",
               "worker-src 'self' blob:",

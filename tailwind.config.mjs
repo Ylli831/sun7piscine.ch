@@ -43,6 +43,8 @@ const config = {
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        'hero': ['Montserrat', 'Inter', ...defaultTheme.fontFamily.sans],
+        'display': ['Bebas Neue', 'Inter', ...defaultTheme.fontFamily.sans],
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-in-out",

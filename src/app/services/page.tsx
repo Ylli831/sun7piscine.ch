@@ -93,6 +93,8 @@ function ImageGallery({ service, index }: { service: { slug: string; title: stri
               alt={`${service.title} ${idx + 1}`}
               fill
               priority={index === 0 && idx === 0}
+              loading={index === 0 && idx === 0 ? undefined : "lazy"}
+              quality={70}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover"
             />

@@ -5,6 +5,7 @@ import ContactSection from "../components/ContactSection";
 import WhatsAppButton from "../components/WhatsAppButton";
 import BackToTop from "../components/BackToTop";
 import StructuredData from "../components/StructuredData";
+import PageTransition from "../components/PageTransition";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -76,12 +77,22 @@ export default function RootLayout({
     <html lang="fr" data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/sun7piscine.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" 
+          rel="stylesheet" 
+        />
         <StructuredData />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
 
-        <main className="page-surface">{children}</main>
+        <main className="page-surface">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
 
         <ContactSection />
 

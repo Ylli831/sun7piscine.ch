@@ -5,9 +5,10 @@ import Image, { ImageProps } from 'next/image';
 /**
  * SmartImage component that automatically handles images with special characters
  * Falls back to unoptimized mode for images with accented characters or spaces
+ * Supports quality prop for optimized images
  */
 export default function SmartImage(props: ImageProps) {
-  const { src, ...otherProps } = props;
+  const { src, quality = 70, ...otherProps } = props;
   
   // Check if the image path contains special characters that might cause issues
   const srcString = typeof src === 'string' ? src : '';
@@ -20,6 +21,7 @@ export default function SmartImage(props: ImageProps) {
   return (
     <Image
       src={src}
+      quality={quality}
       unoptimized={shouldUnoptimize}
       {...otherProps}
     />

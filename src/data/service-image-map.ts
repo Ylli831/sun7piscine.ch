@@ -13,9 +13,9 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_5831.jpeg'
   ],
   renovation: [
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Versoix.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Gland.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-1.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-2.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-2.jpeg',
     '/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_2527.JPG',
     '/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_4507.jpeg',
     '/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_1935.jpeg',
@@ -41,7 +41,7 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4052.jpeg',
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4053.jpeg',
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4054.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Netoyage .jpeg'
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg'
   ],
   construction: [
     '/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1810.jpeg',
@@ -100,13 +100,13 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_2796.JPG'
   ],
   'before-after': [
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Versoix.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Gland.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Mies.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Avant-Netoyage .jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Hivernage Avent.jpeg',
-    '/sun7piscine-photos/before and after/para edhe pas/Entretian-piscine interiure .jpeg'
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-1.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-2.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-2.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-3.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Hivernage-Avent.jpeg',
+    '/sun7piscine-photos/before and after/para edhe pas/Entretian-piscine-interiure.jpeg'
   ],
 };
 

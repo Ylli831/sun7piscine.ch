@@ -9,6 +9,7 @@ import TiltCard from "./effects/TiltCard";
 import MagneticButton from "./effects/MagneticButton";
 import RippleEffect, { useRipple } from "./effects/RippleEffect";
 import { TextRevealByWord } from "./effects/TextReveal";
+import ScrollGradient from "./effects/ScrollGradient";
 
 import { serviceDetails } from "../data/services";
 
@@ -29,8 +30,9 @@ export default function ServicesShowcase() {
   const { ripples: phoneRipples, createRipple: createPhoneRipple } = useRipple();
 
   return (
-    <section className="relative min-h-screen section-muted py-20 text-brand-navy">
-      <div className="max-w-7xl mx-auto px-4">
+    <ScrollGradient fromColor="rgba(195, 213, 253, 0.15)" toColor="rgba(0, 157, 254, 0.08)" intensity={0.4}>
+      <section className="relative min-h-screen section-muted py-20 text-brand-navy">
+        <div className="max-w-7xl mx-auto px-4">
         
         {/* Header Section */}
         <motion.div
@@ -40,7 +42,7 @@ export default function ServicesShowcase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
+          <h2 className="text-5xl lg:text-6xl font-bold text-brand-navy mb-6 font-display">
             <TextRevealByWord>
               Services
             </TextRevealByWord>{" "}
@@ -61,10 +63,14 @@ export default function ServicesShowcase() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.15,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               <TiltCard 
                 tiltAmount={10}
@@ -241,5 +247,6 @@ export default function ServicesShowcase() {
         </motion.div>
       </div>
     </section>
+    </ScrollGradient>
   );
 }

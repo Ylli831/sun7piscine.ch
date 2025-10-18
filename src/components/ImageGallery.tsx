@@ -59,10 +59,10 @@ const galleryImages = [
   { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7050.jpeg", title: "Couverture de Sécurité 4", category: "covered" },
   
   // Before/After Results
-  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Versoix.jpeg", title: "Résultat Versoix", category: "renovation" },
-  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg", title: "Résultat Gland", category: "renovation" },
-  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Mies.jpeg", title: "Résultat Mies", category: "renovation" },
-  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Netoyage.jpeg", title: "Résultat Nettoyage", category: "renovation" }
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-1.jpeg", title: "Résultat Rénovation 1", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-2.jpeg", title: "Résultat Rénovation 2", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-3.jpeg", title: "Résultat Rénovation 3", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Nettoyage.jpeg", title: "Résultat Nettoyage", category: "renovation" }
   ,
   // Additional Taponnet / Construction images (previously unreferenced)
   { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1899-2.jpeg", title: "Construction Taponnet - variant", category: "construction" },
@@ -236,6 +236,8 @@ export default function ImageGallery() {
                     src={image.src}
                     alt={image.title}
                     fill
+                    loading="lazy"
+                    quality={70}
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     placeholder="blur"

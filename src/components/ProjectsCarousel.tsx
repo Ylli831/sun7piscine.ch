@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import ScrollGradient from "./effects/ScrollGradient";
 
 interface ProjectData {
   id: number;
@@ -17,34 +18,34 @@ interface ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 0,
-    title: "Rénovation Versoix",
+    title: "Rénovation Complète",
     description: "Transformation complète d'une piscine vieillissante en oasis moderne",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Versoix.jpeg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Versoix.jpeg",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-1.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-1.jpeg",
     category: "renovation"
   },
   {
     id: 1,
-    title: "Rénovation Gland",
+    title: "Rénovation Moderne",
     description: "Modernisation complète avec nouveau revêtement",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Gland.jpeg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-2.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-2.jpeg",
     category: "renovation"
   },
   {
     id: 2,
-    title: "Rénovation Mies",
+    title: "Remise à Neuf",
     description: "Remise à neuf complète avec équipements modernes",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Mies.jpeg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Mies.jpeg",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-3.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-3.jpeg",
     category: "renovation"
   },
   {
     id: 3,
     title: "Nettoyage Professionnel",
     description: "Nettoyage et remise en état spectaculaire",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Netoyage.jpeg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Netoyage.jpeg",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Nettoyage.jpeg",
     category: "renovation"
   },
   {
@@ -103,15 +104,16 @@ export default function ProjectsCarousel() {
   };
 
   return (
-    <section className="py-20 section-muted text-brand-navy">
-      <div className="container mx-auto px-4">
+    <ScrollGradient fromColor="rgba(0, 157, 254, 0.08)" toColor="rgba(195, 213, 253, 0.12)" intensity={0.35}>
+      <section className="py-20 section-muted text-brand-navy">
+        <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mb-6 font-display">
             Nos Réalisations
           </h2>
           <p className="text-xl text-[#00008f]/80 max-w-3xl mx-auto">
@@ -186,5 +188,6 @@ export default function ProjectsCarousel() {
 
       </div>
     </section>
+    </ScrollGradient>
   );
 }

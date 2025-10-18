@@ -607,7 +607,19 @@ a:focus-visible {
   padding: 0 0.5rem;
 }
 
-/* Improved focus states */
+/* Slide in from left animation for dropdown items */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Better focus states */
 :focus-visible {
   outline: 2px solid var(--color-accent-400);
   outline-offset: 2px;
