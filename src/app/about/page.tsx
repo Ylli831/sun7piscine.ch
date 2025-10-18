@@ -90,8 +90,8 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     <div className="relative h-48 rounded-lg overflow-hidden">
                       <Image
-                        src="/sun7piscine-images/pool34-cool.jpg"
-                        alt="Équipe SUN7"
+                        src="/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_4250.jpeg"
+                        alt="Nouvelle construction piscine"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
                         className="object-cover"
@@ -99,8 +99,8 @@ export default function AboutPage() {
                     </div>
                     <div className="relative h-32 rounded-lg overflow-hidden">
                       <Image
-                        src="/sun7piscine-images/pool29-cool.jpg"
-                        alt="Travaux en cours"
+                        src="/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7050.jpeg"
+                        alt="Installation couverture"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
                         className="object-cover"
@@ -110,8 +110,8 @@ export default function AboutPage() {
                   <div className="space-y-4 mt-8">
                     <div className="relative h-32 rounded-lg overflow-hidden">
                       <Image
-                        src="/sun7piscine-images/pool19-cool.jpg"
-                        alt="Finitions de qualité"
+                        src="/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_3321.jpeg"
+                        alt="Rénovation PVC armé"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
                         className="object-cover"
@@ -119,7 +119,7 @@ export default function AboutPage() {
                     </div>
                     <div className="relative h-48 rounded-lg overflow-hidden">
                       <Image
-                        src="/sun7piscine-images/pool31-cool.jpg"
+                        src="/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_3623.jpeg"
                         alt="Piscine terminée"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
