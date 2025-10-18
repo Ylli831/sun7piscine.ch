@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import SmartImage from "./SmartImage";
 
 // All real images from sun7piscine-photos
 const galleryImages = [
@@ -232,7 +232,7 @@ export default function ImageGallery() {
                 onClick={() => openLightbox(index)}
               >
                 <div className="relative aspect-square image-overlay-reveal">
-                  <Image
+                  <SmartImage
                     src={image.src}
                     alt={image.title}
                     fill
@@ -283,7 +283,7 @@ export default function ImageGallery() {
                 exit={{ scale: 0.8, opacity: 0 }}
                 className="relative"
               >
-                <Image
+                <SmartImage
                   src={filteredImages[selectedImage].src}
                   alt={filteredImages[selectedImage].title}
                   width={1200}

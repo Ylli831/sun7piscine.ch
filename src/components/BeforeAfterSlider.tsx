@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import SmartImage from "./SmartImage";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -99,12 +99,11 @@ export default function BeforeAfterSlider({
       >
         {/* Before Image (base layer - left side) */}
         <div className="absolute inset-0">
-          <Image
+          <SmartImage
             src={beforeImage}
             alt="Pool Before Renovation"
             fill
             priority
-            loading="eager"
             className="object-cover select-none pointer-events-none transition-all duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}
@@ -124,12 +123,11 @@ export default function BeforeAfterSlider({
             clipPath: `inset(0 0 0 ${sliderPosition}%)`
           }}
         >
-          <Image
+          <SmartImage
             src={afterImage}
             alt="Pool After Renovation"
             fill
             priority
-            loading="eager"
             className="object-cover select-none pointer-events-none transition-all duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}

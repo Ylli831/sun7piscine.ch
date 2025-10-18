@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import ProjectsCarousel from "../../components/ProjectsCarousel";
 import ImageGallery from "../../components/ImageGallery";
-import Image from "next/image";
+import SmartImage from "../../components/SmartImage";
 import Link from "next/link";
 import WaterDropCursor from "../../components/effects/WaterDropCursor";
 import ScrollProgress from "../../components/effects/ScrollProgress";
@@ -13,39 +13,39 @@ import AnimatedCounter from "../../components/effects/AnimatedCounter";
 
 const portfolioCategories = [
   {
-    title: "Rénovations",
-    description: "Transformation complète de piscines existantes",
+    title: "Rénovations PVC",
+    description: "Transformation complète avec revêtement PVC armé",
     images: [
-      "/sun7piscine-images/pool22-cool.jpg",
-      "/sun7piscine-images/pool23-cool.jpg",
-      "/sun7piscine-images/pool27.jpg"
+      "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/0a4b7d3b-3b8b-4c4e-ab96-a714020120e8.jpg",
+      "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/1000048687.jpg",
+      "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_3568.jpeg"
     ]
   },
   {
     title: "Constructions Nouvelles",
     description: "Création de piscines sur mesure",
     images: [
-      "/sun7piscine-images/pool31-cool.jpg",
-      "/sun7piscine-images/pool32-cool.jpg",
-      "/sun7piscine-images/pool33-cool.jpg"
+      "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1810.jpeg",
+      "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_3268.jpeg",
+      "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/1000034488.jpeg"
     ]
   },
   {
-    title: "Piscines Couvertes",
-    description: "Solutions d'intérieur et de protection",
+    title: "Couvertures & Sécurité",
+    description: "Solutions de protection et couverture solaire",
     images: [
-      "/sun7piscine-images/pool-covered2.jpg",
-      "/sun7piscine-images/pool-covered3.jpg",
-      "/sun7piscine-images/pool-covered4.jpg"
+      "/sun7piscine-photos/Couverture de sécurité et Solaire/1000033862.jpeg",
+      "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG",
+      "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7050.jpeg"
     ]
   },
   {
-    title: "Spas & Jacuzzis",
-    description: "Espaces de détente exclusifs",
+    title: "Rénovations Peinture",
+    description: "Rénovation complète avec peinture spécialisée",
     images: [
-      "/sun7piscine-images/pool-jacuzzi.jpg",
-      "/sun7piscine-images/pool-inside1.jpg",
-      "/sun7piscine-images/pool-inside2.jpg"
+      "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3669.jpeg",
+      "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3938.jpeg",
+      "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_2173.jpeg"
     ]
   }
 ];
@@ -137,7 +137,7 @@ export default function PortfolioPage() {
                 <div className="grid grid-cols-3 gap-1 h-48">
                   {category.images.map((image, imgIndex) => (
                     <div key={imgIndex} className="relative overflow-hidden image-overlay-reveal">
-                      <Image
+                      <SmartImage
                         src={image}
                         alt={`${category.title} ${imgIndex + 1}`}
                         fill
