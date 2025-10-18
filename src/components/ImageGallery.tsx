@@ -5,57 +5,116 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-// All the cool pool images from your collection
+// All real images from sun7piscine-photos
 const galleryImages = [
-  { src: "/sun7piscine-images/pool5-cool.jpg", title: "Piscine Moderne 1", category: "construction" },
-  { src: "/sun7piscine-images/pool8-cool.jpg", title: "Piscine Moderne 2", category: "construction" },
-  { src: "/sun7piscine-images/pool9-cool.jpg", title: "Piscine Moderne 3", category: "construction" },
-  { src: "/sun7piscine-images/pool12-cool.jpg", title: "Piscine Moderne 4", category: "construction" },
-  { src: "/sun7piscine-images/pool13-cool.jpg", title: "Piscine Moderne 5", category: "construction" },
-  { src: "/sun7piscine-images/pool18-cool.jpg", title: "Piscine Moderne 6", category: "construction" },
-  { src: "/sun7piscine-images/pool19-cool.jpg", title: "Piscine Moderne 7", category: "construction" },
-  { src: "/sun7piscine-images/pool22-cool.jpg", title: "Piscine Moderne 8", category: "construction" },
-  { src: "/sun7piscine-images/pool23-cool.jpg", title: "Piscine Moderne 9", category: "construction" },
-  { src: "/sun7piscine-images/pool29-cool.jpg", title: "Piscine Moderne 10", category: "construction" },
-  { src: "/sun7piscine-images/pool31-cool.jpg", title: "Piscine Moderne 11", category: "construction" },
-  { src: "/sun7piscine-images/pool32-cool.jpg", title: "Piscine Moderne 12", category: "construction" },
-  { src: "/sun7piscine-images/pool33-cool.jpg", title: "Piscine Moderne 13", category: "construction" },
-  { src: "/sun7piscine-images/pool34-cool.jpg", title: "Piscine Moderne 14", category: "construction" },
-  { src: "/sun7piscine-images/poo27-cool.jpg", title: "Piscine Signature", category: "construction" },
+  // Nouvelles Constructions - Taponnet
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1810.jpeg", title: "Nouvelle Construction Taponnet", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1899.jpeg", title: "Construction Taponnet 2", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3033.jpeg", title: "Construction Taponnet 3", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3036.jpeg", title: "Construction Taponnet 4", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3561.jpeg", title: "Construction Taponnet 5", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5154.JPG", title: "Construction Taponnet 6", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5821.jpeg", title: "Construction Taponnet 7", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6770.jpeg", title: "Construction Taponnet 8", category: "construction" },
   
-  // After images (renovations)
-  { src: "/sun7piscine-images/pool-after1.jpg", title: "Rénovation Complète 1", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after2.jpg", title: "Rénovation Complète 2", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after3.jpg", title: "Rénovation Complète 3", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after4.jpg", title: "Rénovation Complète 4", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after5.jpg", title: "Rénovation Complète 5", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after6.jpg", title: "Rénovation Complète 6", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after7.jpg", title: "Rénovation Complète 7", category: "renovation" },
-  { src: "/sun7piscine-images/pool-after8.jpg", title: "Rénovation Complète 8", category: "renovation" },
-  { src: "/sun7piscine-images/pool-afterfill1.jpg", title: "Remise en Eau 1", category: "renovation" },
-  { src: "/sun7piscine-images/pool-afterfill2.jpg", title: "Remise en Eau 2", category: "renovation" },
+  // Nouvelles Constructions - Châtelaine
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_3268.jpeg", title: "Construction Châtelaine 1", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_4199.jpeg", title: "Construction Châtelaine 2", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_4248.jpeg", title: "Construction Châtelaine 3", category: "construction" },
   
-  // Covered pools
-  { src: "/sun7piscine-images/pool-covered2.jpg", title: "Piscine Couverte 1", category: "covered" },
-  { src: "/sun7piscine-images/pool-covered3.jpg", title: "Piscine Couverte 2", category: "covered" },
-  { src: "/sun7piscine-images/pool-covered4.jpg", title: "Piscine Couverte 3", category: "covered" },
-  { src: "/sun7piscine-images/pool-covered5.jpg", title: "Piscine Couverte 4", category: "covered" },
-  { src: "/sun7piscine-images/poolcovered1-variant1.jpg", title: "Couverture Automatique 1", category: "covered" },
-  { src: "/sun7piscine-images/poolcovered1-variant2.jpg", title: "Couverture Automatique 2", category: "covered" },
+  // Nouvelles Constructions - Chêne-Bourg
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/1000034488.jpeg", title: "Construction Chêne-Bourg 1", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0005.jpeg", title: "Construction Chêne-Bourg 2", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0162.jpeg", title: "Construction Chêne-Bourg 3", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0534.jpeg", title: "Construction Chêne-Bourg 4", category: "construction" },
   
-  // Indoor/Spa
-  { src: "/sun7piscine-images/pool-inside1.jpg", title: "Piscine Intérieure 1", category: "indoor" },
-  { src: "/sun7piscine-images/pool-inside2.jpg", title: "Piscine Intérieure 2", category: "indoor" },
-  { src: "/sun7piscine-images/pool-inside3.jpg", title: "Piscine Intérieure 3", category: "indoor" },
-  { src: "/sun7piscine-images/pool-jacuzzi.jpg", title: "Spa & Jacuzzi", category: "indoor" }
+  // Rénovations PVC Armé
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/0a4b7d3b-3b8b-4c4e-ab96-a714020120e8.jpg", title: "Rénovation PVC 1", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/1000048687.jpg", title: "Rénovation PVC 2", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/1000051699.jpg", title: "Rénovation PVC 3", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_0649.jpeg", title: "Rénovation PVC 4", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_3321.jpeg", title: "Rénovation PVC 5", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_3568.jpeg", title: "Rénovation PVC 6", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_6637.jpeg", title: "Rénovation PVC 7", category: "renovation" },
+  
+  // Rénovations Peinture
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3669.jpeg", title: "Rénovation Peinture 1", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3938.jpeg", title: "Rénovation Peinture 2", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3940.jpeg", title: "Rénovation Peinture 3", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3967.jpeg", title: "Rénovation Peinture 4", category: "renovation" },
+  
+  // Rénovations Cessy
+  { src: "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_2173.jpeg", title: "Rénovation Cessy 1", category: "renovation" },
+  { src: "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_3464.jpeg", title: "Rénovation Cessy 2", category: "renovation" },
+  { src: "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4052.jpeg", title: "Rénovation Cessy 3", category: "renovation" },
+  
+  // Couvertures et Sécurité
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/1000033862.jpeg", title: "Couverture de Sécurité 1", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_0540.jpeg", title: "Couverture Solaire 1", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_1074.jpeg", title: "Couverture Solaire 2", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_2796.JPG", title: "Couverture de Sécurité 2", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3433.jpeg", title: "Couverture Solaire 3", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG", title: "Couverture de Sécurité 3", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_5831.jpeg", title: "Couverture Solaire 4", category: "covered" },
+  { src: "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7050.jpeg", title: "Couverture de Sécurité 4", category: "covered" },
+  
+  // Before/After Results
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Versoix.jpeg", title: "Résultat Versoix", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg", title: "Résultat Gland", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Mies.jpeg", title: "Résultat Mies", category: "renovation" },
+  { src: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Netoyage.jpeg", title: "Résultat Nettoyage", category: "renovation" }
+  ,
+  // Additional Taponnet / Construction images (previously unreferenced)
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1899-2.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3037.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3561-2.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3562.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3646-2.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3646.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3769-2.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3769.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3916.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3918.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3920.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5680.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5833.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6355.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6749.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6772.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6773.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_7127.jpeg", title: "Construction Taponnet - variant", category: "construction" },
+  // Additional chatlaine & chene-bourge
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_3623.jpeg", title: "Construction Chatlaine - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_4246.jpeg", title: "Construction Chatlaine - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chatlaine/chatlaine/IMG_4250.jpeg", title: "Construction Chatlaine - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/1000035039.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/1000039468.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0005-2.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0163.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0242.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0250.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_0543.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_1348.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_3947.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" },
+  { src: "/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_3948.jpeg", title: "Construction Chêne-Bourg - extra", category: "construction" }
+,
+  // PVC exported files
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/1000048689.jpg", title: "Rénovation PVC - extra", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/2ab8e373-1ab9-47a1-95df-7b73061558c7.jpg", title: "Rénovation PVC - extra", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/4d2bbe0a-0741-4c14-8bbb-c79f58abe58b.jpg", title: "Rénovation PVC - extra", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/ceab40f0-c5d3-455b-b537-cde390e8d257.jpg", title: "Rénovation PVC - extra", category: "renovation" },
+  { src: "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/dca20f98-8967-43ef-8e2a-4bde3fd74473.jpg", title: "Rénovation PVC - extra", category: "renovation" },
+
+  // Cessy duplicates
+  { src: "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_3464-2.jpeg", title: "Rénovation Cessy - variant", category: "renovation" },
+  { src: "/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_3465.jpeg", title: "Rénovation Cessy - variant", category: "renovation" }
 ];
 
 const categories = [
   { id: "all", label: "Toutes" },
   { id: "construction", label: "Constructions" },
   { id: "renovation", label: "Rénovations" },
-  { id: "covered", label: "Couvertes" },
-  { id: "indoor", label: "Intérieures & Spas" }
+  { id: "covered", label: "Couvertures & Sécurité" }
 ];
 
 export default function ImageGallery() {
@@ -130,10 +189,10 @@ export default function ImageGallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#112A46] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mb-6">
             Galerie Complète
           </h2>
-          <p className="text-xl text-[#112A46] opacity-80 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-[#00008f] opacity-80 max-w-3xl mx-auto mb-8">
             Découvrez l&apos;ensemble de nos réalisations classées par catégorie
           </p>
 
@@ -145,8 +204,8 @@ export default function ImageGallery() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 ${
                   selectedCategory === category.id
-                    ? "bg-amber-400 text-[#112A46] shadow-lg scale-105"
-                    : "bg-white border border-[#112A46]/20 text-[#112A46] hover:bg-[#C3D5FD]/20"
+                    ? "bg-[#fefe00] text-[#00008f] shadow-lg scale-105"
+                    : "bg-white border border-[#009dfe]/30 text-[#00008f] hover:bg-[#009dfe]/10"
                 }`}
               >
                 {category.label}
@@ -201,7 +260,7 @@ export default function ImageGallery() {
           animate={{ opacity: 1 }}
           className="text-center mt-12"
         >
-          <p className="text-[#112A46] opacity-70">
+          <p className="text-[#00008f] opacity-70">
             {filteredImages.length} projet{filteredImages.length > 1 ? "s" : ""} affiché{filteredImages.length > 1 ? "s" : ""}
           </p>
         </motion.div>
@@ -246,14 +305,14 @@ export default function ImageGallery() {
                 onClick={prevImage}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronLeft size={24} style={{ color: '#fed700' }} />
+                <ChevronLeft size={24} style={{ color: '#fefe00' }} />
               </button>
               
               <button
                 onClick={nextImage}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors duration-200"
               >
-                <ChevronRight size={24} style={{ color: '#fed700' }} />
+                <ChevronRight size={24} style={{ color: '#fefe00' }} />
               </button>
 
               {/* Close Button */}

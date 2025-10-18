@@ -42,7 +42,7 @@ export default function HeroShowcase() {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
           <img
-            src="/sun7piscine-images/pool31-cool.jpg"
+            src="/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5821.jpeg"
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -64,9 +64,9 @@ export default function HeroShowcase() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-            style={{ borderColor: 'rgba(254, 215, 0, 0.3)' }}
+            style={{ borderColor: 'rgba(254, 254, 0, 0.3)' }}
           >
-            <Award className="w-5 h-5" style={{ color: '#fed700' }} />
+            <Award className="w-5 h-5" style={{ color: '#fefe00' }} />
             <span className="text-sm font-semibold text-brand-sky">Pisciniste d&apos;exception depuis 20 ans</span>
           </motion.div>
 
@@ -127,7 +127,7 @@ export default function HeroShowcase() {
             className="flex flex-wrap items-center gap-8 pt-8 border-t border-brand-sky/20"
           >
             <div className="flex items-center gap-3">
-              <div className="flex" style={{ color: '#fed700' }}>
+              <div className="flex" style={{ color: '#fefe00' }}>
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -137,7 +137,7 @@ export default function HeroShowcase() {
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4" style={{ color: '#fed700' }} />
+              <CheckCircle className="w-4 h-4" style={{ color: '#fefe00' }} />
               <span className="text-brand-sky opacity-90 text-sm font-medium">
                 <AnimatedCounter to={500} suffix="+ projets réalisés" duration={2.5} />
               </span>
@@ -184,13 +184,13 @@ export default function HeroShowcase() {
             {/* Floating quality badge */}
             <motion.div
               className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20"
-              style={{ borderColor: 'rgba(254, 215, 0, 0.3)', boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}
+              style={{ borderColor: 'rgba(254, 254, 0, 0.3)', boxShadow: '0 0 20px rgba(254, 254, 0, 0.15)' }}
               animate={{ 
                 y: [0, -8, 0]
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="gold-text flex items-center gap-2 font-semibold text-sm">
+              <div className="text-[#fefe00] flex items-center gap-2 font-semibold text-sm">
                 <Award className="w-4 h-4" />
                 Signature Suisse
               </div>

@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --header-height: 100px;
+  --header-height: 88px;
   --ff-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 
-  --color-brand-navy: #112A46;
+  --color-brand-blue: #009dfe;
+  --color-brand-navy: #00008f;
+  --color-brand-yellow: #fefe00;
   --color-brand-sky: #C3D5FD;
   --color-brand-sky-muted: #AEC3EF;
-    --color-brand-gold: #fed700;
-  --color-brand-gold-dark: #e6c200;
-  --color-brand-gold-bright: #FED700;
+  --color-brand-gold: #fefe00;
+  --color-brand-gold-dark: #e6e600;
+  --color-brand-gold-bright: #fefe00;
   --color-surface: #F5F7FB;
   --color-surface-muted: #E7EDF6;
-  --color-text: #112A46;
+  --color-text: #00008f;
   --color-text-on-dark: #F7FAFF;
 }
 
@@ -25,7 +27,10 @@ html {
 }
 
 body {
-  padding: 0;
+  /* leave a top offset so fixed header doesn't overlap page content */
+  padding-top: var(--header-height);
+  padding-left: 0;
+  padding-right: 0;
   margin: 0;
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
@@ -65,8 +70,7 @@ body {
 
 /* Header Styles */
 .site-header {
-  background: url("/layered-waves-navbar.png") center bottom no-repeat;
-  background-size: 100% 100%;
+  background: linear-gradient(135deg, #009dfe 0%, #00008f 100%);
   height: var(--header-height);
   transition: all 0.3s ease;
 }

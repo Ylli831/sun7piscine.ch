@@ -1,400 +1,290 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Hammer, Settings, Award, Shield, Clock, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
-import WaterDropCursor from "../../components/effects/WaterDropCursor";
-import ScrollProgress from "../../components/effects/ScrollProgress";
-import TiltCard from "../../components/effects/TiltCard";
-import MagneticButton from "../../components/effects/MagneticButton";
-import RippleEffect, { useRipple } from "../../components/effects/RippleEffect";
-import HoverGlow from "../../components/effects/HoverGlow";
+import { useState, useRef } from "react";
+import { serviceDetails } from "../../data/services";
 
-const services = [
-  {
-    icon: Hammer,
-    title: "Construction de Piscines",
-    description: "Conception et construction de piscines sur mesure, adaptées à vos besoins et à votre terrain.",
-    features: [
-      "Étude personnalisée de votre projet",
-      "Piscines en béton armé",
-      "Intégration paysagère",
-      "Équipements haut de gamme",
-      "Accompagnement structurel durable"
-    ],
-    images: [
-      "/sun7piscine-images/pool31-cool.jpg",
-      "/sun7piscine-images/pool32-cool.jpg",
-      "/sun7piscine-images/pool33-cool.jpg"
-    ]
-  },
-  {
-    icon: Wrench,
-    title: "Rénovation de Piscines",
-    description: "Remise à neuf complète de votre piscine existante pour lui redonner tout son éclat.",
-    features: [
-      "Réfection de l'étanchéité",
-      "Changement du revêtement",
-      "Mise aux normes sécurité",
-      "Modernisation des équipements",
-      "Amélioration esthétique"
-    ],
-    images: [
-      "/sun7piscine-images/pool-after1.jpg",
-      "/sun7piscine-images/pool-after2.jpg",
-      "/sun7piscine-images/pool-after3.jpg"
-    ]
-  },
-  {
-    icon: Settings,
-    title: "Entretien & Maintenance",
-    description: "Service complet d'entretien pour maintenir votre piscine en parfait état toute l'année.",
-    features: [
-      "Nettoyage régulier",
-      "Équilibrage chimique",
-      "Maintenance des équipements",
-      "Hivernage et remise en service",
-      "Intervention d'urgence"
-    ],
-    images: [
-      "/sun7piscine-images/pool34-cool.jpg",
-      "/sun7piscine-images/pool35.jpg",
-      "/sun7piscine-images/pool36.jpg"
-    ]
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 }
   }
-];
+};
 
-export default function ServicesPage() {
-  const { ripples: ctaRipples, createRipple: createCtaRipple } = useRipple();
-  const { ripples: phoneRipples, createRipple: createPhoneRipple } = useRipple();
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeOut" as const } 
+  }
+};
+
+// Separate component for each gallery to avoid state conflicts
+function ImageGallery({ service, index }: { service: any; index: number }) {
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (imageKey: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredImage(imageKey);
+    }, 500); // Reduced to 500ms for better responsiveness
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setHoveredImage(null);
+  };
+
+  if (service.gallery.length === 0) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-br from-[#00008f]/5 to-[#fefe00]/5 rounded-2xl h-96 flex items-center justify-center border border-[#00008f]/10"
+      >
+        <span className="text-[#00008f]/40 font-medium">Galerie</span>
+      </motion.div>
+    );
+  }
 
   return (
-    <div className="min-h-screen relative">
-      <ScrollProgress />
-      <WaterDropCursor />
-      <WaterPipeScrollIndicator />
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
-        <div className="absolute inset-0">
-          <div className="absolute -top-24 right-8 h-64 w-64 rounded-full bg-brand-gold/20 blur-3xl" />
-          <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-brand-gold-dark/10 blur-[140px]" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
+    <div className="grid grid-cols-2 gap-4">
+      {service.gallery.slice(0, 4).map((img: string, idx: number) => {
+        const imageKey = `${service.slug}-${idx}`;
+        const isHovered = hoveredImage === imageKey;
+        const isAnyHovered = hoveredImage !== null;
+        
+        let gridClass = '';
+        let heightClass = '';
+        
+        if (idx === 0) {
+          gridClass = isAnyHovered && !isHovered ? 'col-span-1' : 'col-span-2';
+          heightClass = isAnyHovered && !isHovered ? 'h-40' : 'h-80';
+        } else {
+          gridClass = isHovered ? 'col-span-2' : 'col-span-1';
+          heightClass = isHovered ? 'h-80' : 'h-40';
+        }
+
+        return (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto text-center"
+            key={img}
+            className={`relative rounded-lg overflow-hidden shadow-lg cursor-pointer ${gridClass} ${heightClass}`}
+            onMouseEnter={() => handleMouseEnter(imageKey)}
+            onMouseLeave={handleMouseLeave}
+            layout
+            transition={{ 
+              layout: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }
+            }}
           >
+            <Image
+              src={img}
+              alt={`${service.title} ${idx + 1}`}
+              fill
+              priority={index === 0 && idx === 0}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover"
+            />
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
-              className="inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-navy/70 mb-6"
+              className="absolute inset-0 bg-gradient-to-t from-[#00008f]/40 via-transparent to-transparent"
+              animate={{
+                opacity: isHovered ? 0 : 1
+              }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative overflow-hidden py-20 md:py-28"
+      >
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <Award className="w-4 h-4" style={{ color: '#fed700' }} />
-              Excellence Suisse
-            </motion.div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-brand-navy">
-              Nos{" "}
-              <span className="gold-text">
-                Services
+              <span className="text-sm font-semibold tracking-widest uppercase text-[#00008f]/60 mb-4 inline-block">
+                Nos Expertises
               </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-brand-navy/80 leading-relaxed">
-              Solutions complètes pour vos piscines et spas en Suisse Romande avec plus de 20 ans d&apos;expérience
-            </p>
-          </motion.div>
+              <h1 className="text-5xl md:text-6xl font-bold text-[#00008f] leading-tight mb-6">
+                Services
+              </h1>
+              <p className="text-xl text-[#00008f]/70 leading-relaxed max-w-xl">
+                De la conception à l'entretien, nous proposons des solutions complètes et personnalisées pour votre piscine.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Decorative line */}
+          <motion.div
+            className="mt-12 h-px w-20 bg-gradient-to-r from-[#fefe00] to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
         </div>
-      </section>
+      </motion.section>
 
-      {/* Services Detail Section */}
-      <section className="section-spacing py-20 bg-gradient-to-b from-white via-brand-sky/10 to-white">
-        <div className="container mx-auto px-4">
-          <div className="space-y-24">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
+      {/* Services Grid */}
+      <motion.section
+        className="py-20 md:py-28 border-t border-[#00008f]/10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="space-y-20">
+            {serviceDetails.map((service, index) => (
+              <motion.article
+                key={service.slug}
+                variants={itemVariants}
+                className="group"
               >
-                {/* Content */}
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-brand-gold rounded-2xl flex items-center justify-center" style={{ boxShadow: '0 4px 20px rgba(254, 215, 0, 0.3)' }}>
-                      <service.icon className="w-8 h-8 text-brand-navy" />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-brand-navy">
-                      {service.title}
-                    </h2>
-                  </div>
-                  <p className="text-lg text-brand-navy/80 mb-8 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  {/* Features */}
-                  <ul className="space-y-4 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-3 rounded-lg border border-brand-navy/10">
-                        <div className="w-2 h-2 bg-brand-gold rounded-full flex-shrink-0" style={{ boxShadow: '0 0 8px rgba(254, 215, 0, 0.6)' }}></div>
-                        <span className="text-brand-navy font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <MagneticButton strength={0.4}>
-                    <Link
-                      href="/contact"
-                      onClick={createCtaRipple}
-                      className="inline-flex items-center gap-2 shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover-scale relative overflow-hidden"
-                    >
-                      <RippleEffect ripples={ctaRipples} color="rgba(255, 255, 255, 0.6)" />
-                      <span className="relative z-10">Demander un devis</span>
-                      <ArrowRight className="w-5 h-5 relative z-10" />
-                    </Link>
-                  </MagneticButton>
-                </div>
-
-                {/* Images */}
-                <div className={`grid grid-cols-2 gap-4 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                  {service.images.slice(0, 3).map((image, imageIndex) => (
+                <div className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Content */}
+                  <div>
                     <motion.div
-                      key={imageIndex}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.3, delay: imageIndex * 0.05 }}
-                      whileHover={{ scale: 1.05 }}
-                      className={`group relative rounded-xl overflow-hidden shadow-precise ${
-                        imageIndex === 0 ? 'col-span-2 h-64' : 'h-48'
-                      }`}
-                      style={{ position: 'relative' }}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
                     >
-                      <Image
-                        src={image}
-                        alt={`${service.title} ${imageIndex + 1}`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-300"
-                        loading={imageIndex === 0 ? "eager" : "lazy"}
-                        quality={85}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <span className="text-xs font-semibold tracking-widest uppercase text-[#fefe00]">
+                        Service {index + 1}
+                      </span>
+                      <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mt-3 mb-2">
+                        {service.title}
+                      </h2>
+                      <p className="text-lg text-[#00008f]/60 font-medium mb-6">
+                        {service.subtitle}
+                      </p>
                     </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Why Choose Us */}
-      <section className="section-spacing py-20 bg-white/60 relative">
-        <div className="absolute inset-0 swiss-grid-pattern opacity-20"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
-              Pourquoi Choisir{" "}
-              <span className="gold-text">
-                SUN7
-              </span>{" "}
-              ?
-            </h2>
-            <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto leading-relaxed">
-              Notre expertise et notre engagement qualité font de nous le partenaire idéal pour votre projet
-            </p>
-          </motion.div>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-[#00008f]/70 text-base leading-relaxed mb-8 max-w-lg"
+                    >
+                      {service.description}
+                    </motion.p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: "20+ Années d'Expérience",
-                description: "Une expertise reconnue dans le domaine des piscines et spas"
-              },
-              {
-                icon: Shield,
-                title: "Suivi Personnalisé Continu",
-                description: "Contrôles réguliers planifiés et assistance prioritaire après la livraison"
-              },
-              {
-                icon: Clock,
-                title: "Équipe Certifiée",
-                description: "Des professionnels formés aux dernières techniques et normes"
-              },
-              {
-                icon: Award,
-                title: "Matériaux Haut de Gamme",
-                description: "Nous utilisons uniquement des équipements et matériaux de qualité"
-              },
-              {
-                icon: Shield,
-                title: "Garantie Tranquillité",
-                description: "Un accompagnement continu avec contrôles programmés et assistance prioritaire"
-              },
-              {
-                icon: Clock,
-                title: "Service Après-Vente",
-                description: "Un service client réactif pour l'entretien et les dépannages"
-              }
-            ].map((reason, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <TiltCard
-                  tiltAmount={15}
-                  scale={1.03}
-                  className="group bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-8 shadow-precise corner-decoration text-center relative overflow-hidden h-full"
-                >
-                  <HoverGlow intensity={0.3}>
-                    <div className="mb-6 flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-brand-sky/60 group-hover:scale-110 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(254, 215, 0, 0.15)' }}>
-                      <reason.icon className="h-8 w-8 text-brand-gold-dark" />
-                    </div>
-                    <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
-                      {reason.title}
-                    </h3>
-                    <p className="text-brand-navy/70 leading-relaxed">
-                      {reason.description}
-                    </p>
-                  </HoverGlow>
-                </TiltCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                    {/* Features */}
+                    <motion.ul
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className="space-y-3 mb-8"
+                    >
+                      {service.features.map((feature: string) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#fefe00]/10 flex-shrink-0 mt-0.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#fefe00]" />
+                          </span>
+                          <span className="text-[#00008f]/70 font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </motion.ul>
 
-      {/* Process Section */}
-      <section className="section-spacing py-20 bg-gradient-to-b from-white via-brand-sky/10 to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
-              Notre <span className="gold-text">Processus</span>
-            </h2>
-            <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto leading-relaxed">
-              De l&apos;étude à la réalisation, découvrez comment nous menons votre projet
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                number: "01",
-                title: "Consultation",
-                description: "Analyse de vos besoins et étude de faisabilité"
-              },
-              {
-                number: "02", 
-                title: "Conception",
-                description: "Plans détaillés et devis personnalisé"
-              },
-              {
-                number: "03",
-                title: "Réalisation", 
-                description: "Construction avec suivi qualité rigoureux"
-              },
-              {
-                number: "04",
-                title: "Livraison",
-                description: "Formation et mise en service complète"
-              }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group relative bg-white/90 backdrop-blur-sm border border-brand-navy/10 rounded-2xl p-8 shadow-precise card-hover-lift text-center overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-                <div className="relative">
-                  <div className="text-6xl font-bold mb-6 gold-text group-hover:scale-110 transition-transform duration-300" style={{ textShadow: '0 0 30px rgba(254, 215, 0, 0.3)' }}>
-                    {step.number}
+                    {/* CTA Button */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="inline-flex items-center gap-3 text-[#00008f] font-semibold hover:gap-4 transition-all duration-300 group/link"
+                      >
+                        Découvrir
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" />
+                      </Link>
+                    </motion.div>
                   </div>
-                  <h3 className="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-navy/70 leading-relaxed">
-                    {step.description}
-                  </p>
+
+                  {/* Image Gallery */}
+                  <ImageGallery service={service} index={index} />
                 </div>
-              </motion.div>
+
+                {/* Divider */}
+                {index < serviceDetails.length - 1 && (
+                  <motion.div
+                    className="mt-20 h-px bg-gradient-to-r from-transparent via-[#00008f]/10 to-transparent"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                  />
+                )}
+              </motion.article>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="section-spacing py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-sky-700 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-0 h-96 w-96 rounded-full bg-brand-gold/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-brand-gold/10 blur-[140px]" />
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <motion.section
+        className="py-20 md:py-28 bg-gradient-to-br from-[#00008f] to-[#00008f]/90 relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#fefe00]/5 rounded-full blur-3xl -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#fefe00]/5 rounded-full blur-3xl -ml-48 -mb-48" />
+
+        <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.4 }}
-            className="max-w-3xl mx-auto"
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Prêt à Commencer Votre <span className="gold-text">Projet</span> ?
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Prêt à transformer votre piscine ?
             </h2>
-            <p className="text-xl mb-10 opacity-90 leading-relaxed text-white">
-              Contactez-nous dès aujourd&apos;hui pour une consultation gratuite et un devis personnalisé
+            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+              Contactez nos experts pour discuter de votre projet et découvrir comment nous pouvons vous aider.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <MagneticButton strength={0.4}>
-                <Link
-                  href="/contact"
-                  onClick={createCtaRipple}
-                  className="inline-flex items-center justify-center gap-2 shimmer-effect bg-brand-gold hover:bg-brand-gold-dark text-brand-navy font-bold py-4 px-8 rounded-full transition-all duration-300 hover-scale relative overflow-hidden"
-                >
-                  <RippleEffect ripples={ctaRipples} color="rgba(255, 255, 255, 0.6)" />
-                  <span className="relative z-10">Demander un Devis</span>
-                  <ArrowRight className="w-5 h-5 relative z-10" />
-                </Link>
-              </MagneticButton>
-              <MagneticButton strength={0.3}>
-                <a
-                  href="tel:+41793463200"
-                  onClick={createPhoneRipple}
-                  className="inline-block border-2 border-white/30 hover:bg-white/10 hover:border-brand-gold text-white hover:text-brand-gold font-semibold py-4 px-8 rounded-full transition-all duration-300 hover-scale backdrop-blur-sm relative overflow-hidden"
-                >
-                  <RippleEffect ripples={phoneRipples} color="rgba(254, 215, 0, 0.3)" />
-                  +41 79 346 32 00
-                </a>
-              </MagneticButton>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#fefe00] hover:bg-[#fefe00]/90 text-[#00008f] px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+            >
+              Nous contacter
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </main>
   );
 }

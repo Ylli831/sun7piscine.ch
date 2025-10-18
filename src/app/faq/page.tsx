@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ChevronDown, Phone, Mail } from "lucide-react";
-import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 
 interface FAQItem {
   question: string;
@@ -106,7 +105,6 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen">
-      <WaterPipeScrollIndicator />
       
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">

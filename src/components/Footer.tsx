@@ -10,12 +10,11 @@ export default function Footer() {
     <footer 
       className="relative text-white"
       style={{
-        background: 'url(/layered-waves-footer.png) no-repeat center center',
-        backgroundSize: '100% 100%'
+        background: 'linear-gradient(135deg, #009dfe 0%, #00008f 100%)'
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-cyan-700/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-cyan-700/20"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -26,17 +25,15 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold flex items-center gap-3">
+            <div className="flex items-center">
               <Image
-                src="/sun7piscine-logo-footer.png"
+                src="/logo-without-bg.png"
                 alt="SUN7 Piscine"
-                width={220}
-                height={120}
-                className="h-24 w-42 object-contain"
-                priority
+                width={80}
+                height={80}
+                className="h-auto w-auto"
               />
-              <span className="sr-only">SUN7 Piscine</span>
-            </h3>
+            </div>
             <p className="text-white/90 leading-relaxed">
               Votre partenaire de confiance pour piscines et spas en Suisse Romande.
               Plus de 20 ans d&apos;expérience dans la construction, rénovation et entretien.

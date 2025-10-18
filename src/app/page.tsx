@@ -4,7 +4,6 @@ import HeroShowcase from "../components/HeroShowcase";
 import ServicesShowcase from "../components/ServicesShowcase";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import FAQ from "../components/FAQ";
-import WaterPipeScrollIndicator from "../components/WaterPipeScrollIndicator";
 import WaterDropCursor from "../components/effects/WaterDropCursor";
 import ScrollProgress from "../components/effects/ScrollProgress";
 
@@ -13,7 +12,6 @@ export default function Home() {
     <div className="min-h-screen relative">
       <ScrollProgress />
       <WaterDropCursor />
-      <WaterPipeScrollIndicator />
       <HeroShowcase />
       <ServicesShowcase />
       

@@ -77,9 +77,9 @@ export default function BeforeAfterSlider({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-[#112A46] mb-4">{title}</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-[#00008f] mb-4">{title}</h3>
           {description && (
-            <p className="text-lg text-[#112A46] max-w-2xl mx-auto">{description}</p>
+            <p className="text-lg text-[#00008f] max-w-2xl mx-auto">{description}</p>
           )}
         </motion.div>
       )}
@@ -109,9 +109,9 @@ export default function BeforeAfterSlider({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             draggable={false}
           />
-          <div className="absolute bottom-6 left-6 bg-gradient-to-r from-[#112A46] to-[#1e40af] text-[#C3D5FD] px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
+          <div className="absolute bottom-6 left-6 bg-gradient-to-r from-[#00008f] to-[#009dfe] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#fefe00] rounded-full animate-pulse"></div>
               AVANT
             </span>
           </div>

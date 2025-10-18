@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: "SUN7 Piscine" }],
   creator: "Atlas Studio",
   
+  metadataBase: new URL('https://sun7piscine.ch'),
   openGraph: {
     type: "website",
     locale: "fr_CH",

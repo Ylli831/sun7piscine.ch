@@ -17,59 +17,43 @@ interface ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 0,
-    title: "Transformation Spectaculaire",
-    description: "Métamorphose complète d'une piscine - notre projet phare",
-    beforeImage: "/before1.jpg",
-    afterImage: "/after1.jpg",
+    title: "Rénovation Versoix",
+    description: "Transformation complète d'une piscine vieillissante en oasis moderne",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Versoix.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Versoix.jpeg",
     category: "renovation"
   },
   {
     id: 1,
-    title: "Rénovation Complète - Piscine Familiale",
-    description: "Transformation complète d'une piscine vieillissante en oasis moderne",
-    beforeImage: "/sun7piscine-images/pool-before1.jpg",
-    afterImage: "/sun7piscine-images/pool-after1.jpg",
+    title: "Rénovation Gland",
+    description: "Modernisation complète avec nouveau revêtement",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Gland.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apres-Gland.jpeg",
     category: "renovation"
   },
   {
     id: 2,
-    title: "Modernisation et Finitions",
-    description: "Mise à jour des finitions et amélioration de l'étanchéité",
-    beforeImage: "/sun7piscine-images/pool-before2.jpg",
-    afterImage: "/sun7piscine-images/pool-after2.jpg",
+    title: "Rénovation Mies",
+    description: "Remise à neuf complète avec équipements modernes",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Mies.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Mies.jpeg",
     category: "renovation"
   },
   {
     id: 3,
-    title: "Réaménagement Total",
-    description: "Changement complet du design et des matériaux",
-    beforeImage: "/sun7piscine-images/pool-before3.jpg",
-    afterImage: "/sun7piscine-images/pool-after3.jpg",
+    title: "Nettoyage Professionnel",
+    description: "Nettoyage et remise en état spectaculaire",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Netoyage.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/Apreus-Netoyage.jpeg",
     category: "renovation"
   },
   {
     id: 4,
-    title: "Restauration Signature",
-    description: "Remise à neuf complète avec équipements haut de gamme",
-    beforeImage: "/sun7piscine-images/pool-before4.jpg",
-    afterImage: "/sun7piscine-images/pool-after4.jpg",
-    category: "renovation"
-  },
-  {
-    id: 5,
-    title: "Transformation Moderne",
-    description: "Passage d'un style classique à un design contemporain",
-    beforeImage: "/sun7piscine-images/pool-before5.jpg",
-    afterImage: "/sun7piscine-images/pool-after5.jpg",
-    category: "renovation"
-  },
-  {
-    id: 6,
-    title: "Rénovation Élégante",
-    description: "Amélioration esthétique et fonctionnelle",
-    beforeImage: "/sun7piscine-images/pool-before6.jpg",
-    afterImage: "/sun7piscine-images/pool-after6.jpg",
-    category: "renovation"
+    title: "Hivernage Professionnel",
+    description: "Préparation et protection pour l'hiver",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Hivernage-Avent.jpeg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/hivenages-apreus.jpeg",
+    category: "maintenance"
   }
 ];
 
@@ -127,10 +111,10 @@ export default function ProjectsCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mb-6">
             Nos Réalisations
           </h2>
-          <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto">
+          <p className="text-xl text-[#00008f]/80 max-w-3xl mx-auto">
             Découvrez comment nous transformons vos espaces aquatiques. 
             Faites glisser pour voir la différence avant/après de nos projets.
           </p>
@@ -162,18 +146,18 @@ export default function ProjectsCarousel() {
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#009dfe]/90 hover:bg-[#009dfe] text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet précédent"
           >
-            <ChevronLeft size={24} style={{ color: '#fed700' }} />
+            <ChevronLeft size={24} style={{ color: '#fefe00' }} />
           </button>
           
           <button
             onClick={nextProject}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-brand-sky/90 hover:bg-brand-sky text-brand-navy rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#009dfe]/90 hover:bg-[#009dfe] text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
             aria-label="Projet suivant"
           >
-            <ChevronRight size={24} style={{ color: '#fed700' }} />
+            <ChevronRight size={24} style={{ color: '#fefe00' }} />
           </button>
 
           {/* Dots Indicator */}
@@ -184,8 +168,8 @@ export default function ProjectsCarousel() {
                 onClick={() => goToProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-200 ${
                   index === currentProject
-                    ? "bg-brand-navy scale-125"
-                    : "bg-brand-navy/30 hover:bg-brand-navy/50"
+                    ? "bg-[#009dfe] scale-125"
+                    : "bg-[#00008f]/30 hover:bg-[#00008f]/50"
                 }`}
                 aria-label={`Aller au projet ${index + 1}`}
               />
@@ -194,7 +178,7 @@ export default function ProjectsCarousel() {
 
           {/* Project Counter */}
           <div className="text-center mt-4">
-            <span className="text-sm text-brand-navy/80">
+            <span className="text-sm text-[#00008f]/80">
               {currentProject + 1} / {projectsData.length}
             </span>
           </div>

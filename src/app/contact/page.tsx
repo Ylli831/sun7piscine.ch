@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Clock, Sparkles } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
-import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 import WaterDropCursor from "../../components/effects/WaterDropCursor";
 import ScrollProgress from "../../components/effects/ScrollProgress";
 import TiltCard from "../../components/effects/TiltCard";
@@ -31,7 +30,6 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gradient-to-b from-white via-brand-sky/10 to-white text-brand-navy">
       <ScrollProgress />
       <WaterDropCursor />
-      <WaterPipeScrollIndicator />
 
   <section className="relative overflow-hidden py-16 sm:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy/90 to-brand-sky/70" />

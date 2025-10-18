@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 
 import type { ServiceDetail } from "../../../data/services";
-import WaterPipeScrollIndicator from "../../../components/WaterPipeScrollIndicator";
 
 type ServiceDetailContentProps = {
   service: Omit<ServiceDetail, "icon">;
@@ -36,7 +35,6 @@ const iconMap: Record<string, typeof Settings> = {
 export default function ServiceDetailContent({ service }: ServiceDetailContentProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-brand-sky/5 to-white text-brand-navy">
-      <WaterPipeScrollIndicator />
 
       <motion.section
         initial={fadeUp.initial}

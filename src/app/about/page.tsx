@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Award, Users, Clock, Shield, Star, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 import WaterDropCursor from "../../components/effects/WaterDropCursor";
 import ScrollProgress from "../../components/effects/ScrollProgress";
 import TiltCard from "../../components/effects/TiltCard";
@@ -20,7 +19,6 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <ScrollProgress />
       <WaterDropCursor />
-      <WaterPipeScrollIndicator />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
         <div className="absolute inset-0">

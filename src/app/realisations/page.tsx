@@ -5,7 +5,6 @@ import ProjectsCarousel from "../../components/ProjectsCarousel";
 import ImageGallery from "../../components/ImageGallery";
 import Image from "next/image";
 import Link from "next/link";
-import WaterPipeScrollIndicator from "../../components/WaterPipeScrollIndicator";
 import WaterDropCursor from "../../components/effects/WaterDropCursor";
 import ScrollProgress from "../../components/effects/ScrollProgress";
 import MagneticButton from "../../components/effects/MagneticButton";
@@ -59,7 +58,6 @@ export default function PortfolioPage() {
     <div className="min-h-screen">
       <ScrollProgress />
       <WaterDropCursor />
-      <WaterPipeScrollIndicator />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/30 to-white py-28 lg:py-32">
         <div className="absolute inset-0">

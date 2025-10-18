@@ -50,25 +50,22 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-spacing relative overflow-hidden bg-gradient-to-br from-white via-brand-sky/20 to-white">
-      <div className="absolute -top-24 right-12 h-72 w-72 rounded-full bg-brand-goldBright/20 blur-3xl" />
-      <div className="absolute -bottom-32 left-8 h-80 w-80 rounded-full bg-brand-goldBright/10 blur-3xl" />
-
+    <section id="services" className="section-spacing relative overflow-hidden bg-gradient-to-br from-white via-white/30 to-white">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <span className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-brand-navy/70">
+          <span className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-[#00008f]/70">
             Excellence & savoir-faire
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00008f] mb-4">
             Nos Services d&apos;Excellence
           </h2>
-          <p className="text-xl text-brand-navy/70 max-w-3xl mx-auto">
+          <p className="text-lg text-[#00008f]/70 max-w-3xl mx-auto">
             De la conception à l&apos;entretien, profitez d&apos;un accompagnement sur mesure avec des experts reconnus en Suisse Romande.
           </p>
         </motion.div>
@@ -81,34 +78,33 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="group h-full rounded-3xl border border-brand-navy/10 bg-white/90 p-8 shadow-lg ring-1 ring-transparent transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:ring-brand-goldBright/30"
+              className="group h-full rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
-              <div className="mb-6 flex items-center gap-4">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-goldBright/20 text-brand-gold-dark transition-transform duration-300 group-hover:scale-105">
-                  <service.icon className="h-7 w-7" />
+              <div className="mb-4 flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fefe00]/20 text-[#00008f] transition-transform duration-300 group-hover:scale-105">
+                  <service.icon className="h-6 w-6" />
                 </span>
                 <div className="text-left">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-brand-goldBright/80">Service {index + 1}</div>
-                  <h3 className="text-2xl font-bold text-brand-navy">{service.title}</h3>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#00008f]/60">Service {index + 1}</div>
+                  <h3 className="text-xl font-bold text-[#00008f]">{service.title}</h3>
                 </div>
               </div>
 
-              <p className="text-brand-navy/70 leading-relaxed">
+              <p className="text-[#00008f]/70 leading-relaxed">
                 {service.description}
               </p>
 
-              <ul className="mt-6 space-y-3 text-sm text-brand-navy/70">
+              <ul className="mt-4 space-y-2 text-sm text-[#00008f]/70">
                 {service.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-center gap-3">
-                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-brand-goldBright"></span>
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#fefe00]"></span>
                     <span>{highlight}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-brand-goldBright/40 to-transparent" />
-              <div className="mt-4 text-sm font-semibold text-brand-navy/70">
-                Besoin de plus de détails ? <span className="text-brand-goldBright">Parlons de votre projet.</span>
+              <div className="mt-6 text-sm font-semibold text-[#00008f]/70">
+                Besoin de plus de détails ? <span className="text-[#fefe00]">Parlons de votre projet.</span>
               </div>
             </motion.div>
           ))}
