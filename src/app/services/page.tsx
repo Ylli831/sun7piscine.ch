@@ -25,7 +25,7 @@ const itemVariants = {
 };
 
 // Separate component for each gallery to avoid state conflicts
-function ImageGallery({ service, index }: { service: any; index: number }) {
+function ImageGallery({ service, index }: { service: { slug: string; title: string; gallery: string[] }; index: number }) {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -134,7 +134,7 @@ export default function ServicesPage() {
                 Services
               </h1>
               <p className="text-xl text-[#00008f]/70 leading-relaxed max-w-xl">
-                De la conception à l'entretien, nous proposons des solutions complètes et personnalisées pour votre piscine.
+                De la conception à l&apos;entretien, nous proposons des solutions complètes et personnalisées pour votre piscine.
               </p>
             </motion.div>
           </div>

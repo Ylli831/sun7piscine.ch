@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
@@ -164,10 +165,12 @@ export default function ServicesShowcase() {
 
                   {/* Image */}
                   <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                 </div>

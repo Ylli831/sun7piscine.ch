@@ -41,11 +41,6 @@ export default function HeroShowcase() {
           className="w-full h-full object-cover"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
-          <img
-            src="/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_5821.jpeg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
         </video>
       </motion.div>
 
