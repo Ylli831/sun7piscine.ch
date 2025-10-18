@@ -214,31 +214,28 @@ export default function ImageGallery() {
           </div>
         </motion.div>
 
-        {/* Images Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
+        {/* Images Grid - Pinterest Masonry Style */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           <AnimatePresence>
             {filteredImages.map((image, index) => (
               <motion.div
                 key={image.src}
-                layout
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-xl shadow-precise card-hover-lift cursor-pointer"
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                className="group relative overflow-hidden rounded-xl shadow-precise card-hover-lift cursor-pointer break-inside-avoid mb-6"
                 onClick={() => openLightbox(index)}
               >
-                <div className="relative aspect-square image-overlay-reveal">
+                <div className="relative image-overlay-reveal">
                   <SmartImage
                     src={image.src}
                     alt={image.title}
-                    fill
+                    width={400}
+                    height={index % 3 === 0 ? 500 : index % 3 === 1 ? 300 : 400}
                     loading="lazy"
                     quality={70}
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0MyRDVGRCIvPjwvc3ZnPg=="
@@ -254,7 +251,7 @@ export default function ImageGallery() {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Results count */}
         <motion.div
