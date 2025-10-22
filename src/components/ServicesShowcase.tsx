@@ -44,17 +44,16 @@ export default function ServicesShowcase() {
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-brand-navy mb-6 font-display">
             <TextRevealByWord>
-              Services
+              Nos
             </TextRevealByWord>{" "}
             <span style={{ color: '#fed700' }}>
               <TextRevealByWord delay={0.3}>
-                Signature
+                prestations
               </TextRevealByWord>
             </span>
           </h2>
           <p className="text-xl text-brand-navy/80 max-w-3xl mx-auto leading-relaxed">
-            L&apos;excellence suisse au service de vos projets aquatiques. 
-            Chaque détail compte, chaque réalisation est unique.
+            C&apos;est du savoir-faire technique et du service sur mesure.
           </p>
         </motion.div>
 

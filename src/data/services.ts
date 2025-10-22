@@ -25,18 +25,30 @@ export const serviceDetails: readonly ServiceDetail[] = [
     excerpt: "Entretien professionnel toute l'année",
     description: "Un service d'entretien complet qui maintient votre piscine dans un état parfait toute l'année.",
     icon: Settings,
-    image: getServicePrimary("entretien") ?? "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_1308.jpeg",
-    features: ["Entretien annuel complet", "Mise en route printanière", "Hivernage professionnel"],
+    image: getServicePrimary("entretien") ?? "/sun7piscine-photos/entreitenmaintenance.jpg",
+    features: [
+      "Entretien annuel",
+      "Mise en route (printemps)",
+      "Hivernage (automne)",
+      "Vidange",
+      "Nettoyage",
+      "Remplissage",
+      "Traitement manuel",
+      "Traitement automatique (Sel, Chlore, Brome, Oxygène actif, Etc.)",
+      "Système de filtration",
+      "Conseils en entretien"
+    ],
     highlights: [
       { title: "Contrats modulables", description: "Formules sur mesure." },
-      { title: "Suivi digitalisé", description: "Rapports photo et historique." }
+      { title: "Suivi digitalisé", description: "Rapports photo et historique." },
+      { title: "Expertise professionnelle", description: "Techniciens certifiés." }
     ],
     process: [
       { title: "Diagnostic initial", description: "Analyse complète." },
       { title: "Interventions régulières", description: "Nettoyage et réglages." }
     ],
     gallery: getServiceGallery("entretien"),
-    hero: { eyebrow: "Service Signature", heading: "Entretien & Maintenance haut de gamme", subheading: "Interventions discrètes et soignées." },
+    hero: { eyebrow: "Service Signature", heading: "Entretien & Maintenance", subheading: "Interventions rapide discrète et soignée." },
     metaDescription: "Service d'entretien et maintenance de piscines SUN7."
   },
   {
@@ -47,9 +59,19 @@ export const serviceDetails: readonly ServiceDetail[] = [
     description: "Redonnez vie à votre piscine avec nos solutions de rénovation haut de gamme.",
     icon: Wrench,
     image: getServicePrimary("renovation") ?? "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-1.jpeg",
-    features: ["PVC armé renforcé", "Éclairage LED intelligent"],
-    highlights: [{ title: "Design repensé", description: "Nouvelle identité visuelle." }],
-    process: [{ title: "Audit & vision", description: "Inventaire technique." }],
+    features: [
+      "PVC armé renforcé",
+      "Éclairage LED intelligent",
+      "Nage à contre-courant",
+      "Pompe à chaleur",
+      "Aménagements (escaliers, etc.)"
+    ],
+    highlights: [
+      { title: "Design repensé", description: "Nouvelle identité visuelle." },
+      { title: "Matériaux premium", description: "Qualité et durabilité." },
+      { title: "Garantie étendue", description: "Protection longue durée." }
+    ],
+    process: [],
     gallery: getServiceGallery("renovation"),
     hero: { eyebrow: "Transformation totale", heading: "Rénovation sur mesure", subheading: "Esthétique, confort et performance." },
     metaDescription: "SUN7 Rénovation piscine."
@@ -62,8 +84,23 @@ export const serviceDetails: readonly ServiceDetail[] = [
     description: "Conception et réalisation de piscines uniques.",
     icon: Hammer,
     image: getServicePrimary("construction") ?? "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_4507.jpeg",
-    features: ["Design 3D personnalisé", "Piscine à débordement"],
-    highlights: [{ title: "Design architectural", description: "Intégration au paysage." }],
+    features: [
+      "Piscine béton skimmer",
+      "Piscine à débordement",
+      "Piscine miroir",
+      "Piscine d'intérieur",
+      "Piscine coque polyester",
+      "Piscine inox",
+      "Piscine avec plage immergée",
+      "Piscines collectives",
+      "Mini piscine",
+      "Couloir de nage"
+    ],
+    highlights: [
+      { title: "Design architectural", description: "Intégration au paysage." },
+      { title: "Projet clé en main", description: "De A à Z." },
+      { title: "Suivi personnalisé", description: "Chef de projet dédié." }
+    ],
     process: [{ title: "Étude & conception", description: "Modélisation 3D." }],
     gallery: getServiceGallery("construction"),
     hero: { eyebrow: "Création d'Exception", heading: "Construction de piscines sur-mesure", subheading: "Esthétique, durabilité et performance." },
@@ -77,8 +114,18 @@ export const serviceDetails: readonly ServiceDetail[] = [
     description: "Solutions de sécurité de pointe conformes aux normes suisses.",
     icon: Shield,
     image: getServicePrimary("securite") ?? "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG",
-    features: ["Couvertures automatiques", "Alarmes connectées"],
-    highlights: [{ title: "Conformité totale", description: "Normes et certification." }],
+    features: [
+      "Diagnostic de sécurité enfants",
+      "Mise aux normes",
+      "Accessoires : installation et maintenance de couvertures de sécurité automatiques et manuelles Solaires (chauffantes)",
+      "Bâches d'hiver",
+      "Bâches 4 saison"
+    ],
+    highlights: [
+      { title: "Conformité totale", description: "Normes et certification." },
+      { title: "Protection enfants", description: "Sécurité maximale." },
+      { title: "Installation rapide", description: "Intervention efficace." }
+    ],
     process: [{ title: "Installation certifiée", description: "Pose par techniciens agréés." }],
     gallery: getServiceGallery("securite"),
     hero: { eyebrow: "Protection maximale", heading: "Sécurisez votre piscine", subheading: "Dispositifs discrets et intelligents." },

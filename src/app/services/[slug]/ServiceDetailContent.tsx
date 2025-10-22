@@ -169,25 +169,27 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               ))}
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]"
-            >
-              <h3 className="text-xl font-semibold text-brand-navy">Votre interlocuteur dédié</h3>
-              <p className="mt-2 text-sm text-brand-navy/70">
-                Un chef de projet SUN7 coordonne chaque étape et reste disponible pour toutes vos questions.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2 text-sm font-semibold text-brand-navy transition hover:bg-brand-gold-dark"
+            {service.slug !== 'construction' && service.slug !== 'securite' && (
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]"
               >
-                Planifier un rendez-vous
-                <ArrowRight className="h-4 w-4" style={{ color: '#fed700' }} />
-              </Link>
-            </motion.div>
+                <h3 className="text-xl font-semibold text-brand-navy">Votre interlocuteur dédié</h3>
+                <p className="mt-2 text-sm text-brand-navy/70">
+                  Un chef de projet SUN7 coordonne chaque étape et reste disponible pour toutes vos questions.
+                </p>
+                <Link
+                  href="/contact"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2 text-sm font-semibold text-brand-navy transition hover:bg-brand-gold-dark"
+                >
+                  Planifier un rendez-vous
+                  <ArrowRight className="h-4 w-4" style={{ color: '#fed700' }} />
+                </Link>
+              </motion.div>
+            )}
           </div>
 
           <motion.aside
@@ -217,29 +219,31 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               </a>
             </div>
 
-            <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
-              <h3 className="text-xl font-semibold text-brand-navy">Notre méthodologie</h3>
-              <div className="mt-4 space-y-4">
-                {service.process.map((step, index) => (
-                  <motion.div
-                    key={step.title}
-                    initial={{ opacity: 0, x: -15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.3 + index * 0.03 }}
-                    whileHover={{ x: 2 }}
-                    className="flex gap-4 rounded-2xl bg-brand-sky/5 p-3"
-                  >
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-gold/15 text-sm font-semibold text-brand-gold-dark">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h4 className="text-sm font-semibold text-brand-navy">{step.title}</h4>
-                      <p className="text-sm text-brand-navy/70">{step.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
+            {service.process.length > 0 && (
+              <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
+                <h3 className="text-xl font-semibold text-brand-navy">Notre méthodologie</h3>
+                <div className="mt-4 space-y-4">
+                  {service.process.map((step, index) => (
+                    <motion.div
+                      key={step.title}
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.3 + index * 0.03 }}
+                      whileHover={{ x: 2 }}
+                      className="flex gap-4 rounded-2xl bg-brand-sky/5 p-3"
+                    >
+                      <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-gold/15 text-sm font-semibold text-brand-gold-dark">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h4 className="text-sm font-semibold text-brand-navy">{step.title}</h4>
+                        <p className="text-sm text-brand-navy/70">{step.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </motion.aside>
         </div>
       </section>

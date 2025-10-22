@@ -1,5 +1,6 @@
 export const serviceImageMap: Record<string, string[]> = {
   entretien: [
+    '/sun7piscine-photos/entreitenmaintenance.jpg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_1308.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_4253.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3433.jpeg',
@@ -36,7 +37,6 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3968.jpeg',
     '/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3941.jpeg',
     '/sun7piscine-photos/Rénovation étanchéité de piscine Peinture/Divonne/IMG_3669.jpeg',
-    '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_2173.jpeg',
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_3464.jpeg',
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4052.jpeg',
     '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_4053.jpeg',
@@ -44,6 +44,7 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg'
   ],
   construction: [
+    '/sun7piscine-photos/rénovations piscine/Cessy framce/Cessy framce/IMG_2173.jpeg',
     '/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1810.jpeg',
     '/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_1899.jpeg',
     '/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_3033.jpeg',
