@@ -167,27 +167,6 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
           </div>
 
           <aside className="flex flex-col gap-6">
-            <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
-              <h3 className="text-xl font-semibold text-brand-navy">Prêt pour votre projet ?</h3>
-              <p className="mt-2 text-sm text-brand-navy/70">
-                Contactez notre équipe pour définir les prochaines étapes.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-navy/15 bg-brand-gold px-4 py-2 text-sm font-semibold text-brand-navy transition hover:bg-brand-gold-dark"
-              >
-                Devis personnalisé
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href="tel:+41793463200"
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-navy/15 px-4 py-2 text-sm font-semibold text-brand-navy transition hover:border-brand-gold/60 hover:text-brand-gold"
-              >
-                <Phone className="h-4 w-4" />
-                +41 79 346 32 00
-              </a>
-            </div>
-
             {service.process.length > 0 && (
               <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
                 <h3 className="text-xl font-semibold text-brand-navy">Notre méthodologie</h3>

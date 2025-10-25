@@ -59,7 +59,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     excerpt: "Transformations complètes et modernisation",
     description: "Redonnez vie à votre piscine avec nos solutions de rénovation haut de gamme.",
     icon: Wrench,
-    image: getServicePrimary("renovation") ?? "/sun7piscine-photos/before and after/para edhe pas/Apres-Renovation-1.jpeg",
+    image: "/sun7piscine-photos/hero-renovation.jpeg",
     features: [
       "PVC armé renforcé",
       "Éclairage LED intelligent",
