@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 import type { ServiceDetail } from "../../../data/services";
+import ImageModal from "../../../components/ImageModal";
 
 type ServiceDetailContentProps = {
   service: Omit<ServiceDetail, "icon">;
@@ -33,8 +35,16 @@ const iconMap: Record<string, typeof Settings> = {
 };
 
 export default function ServiceDetailContent({ service }: ServiceDetailContentProps) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-brand-sky/5 to-white text-brand-navy">
+      <ImageModal
+        isOpen={selectedImage !== null}
+        onClose={() => setSelectedImage(null)}
+        imageSrc={selectedImage || ""}
+        imageAlt={service.title}
+      />
 
       <motion.section
         initial={fadeUp.initial}
@@ -230,19 +240,15 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.3, delay: index * 0.03 }}
                 whileHover={{ scale: 1.03 }}
-                className="group relative h-52 overflow-hidden rounded-2xl shadow-[0px_22px_50px_rgba(17,42,70,0.18)]"
+                className="group relative h-52 overflow-hidden rounded-2xl shadow-[0px_22px_50px_rgba(17,42,70,0.18)] cursor-pointer"
+                onClick={() => setSelectedImage(image)}
               >
                 <Image
                   src={image}
                   alt={`${service.title} ${index + 1}`}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-brand-navy/40 opacity-0 backdrop-blur-sm transition group-hover:opacity-80"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </motion.div>
             ))}

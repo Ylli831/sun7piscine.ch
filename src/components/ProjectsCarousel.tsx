@@ -58,11 +58,35 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 5,
-    title: "Hivernage Professionnel",
-    description: "Préparation et protection pour l'hiver",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Hivernage-Avent.jpeg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/hivenages-apreus.jpeg",
-    category: "maintenance"
+    title: "Nouvelle Construction",
+    description: "Construction sur-mesure d'une piscine moderne et élégante",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before6.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after6.jpg",
+    category: "construction"
+  },
+  {
+    id: 6,
+    title: "Construction Personnalisée",
+    description: "Création d'un espace aquatique unique et moderne",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before7.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after7.jpg",
+    category: "construction"
+  },
+  {
+    id: 7,
+    title: "Rénovation d'Excellence",
+    description: "Transformation complète avec finitions haut de gamme",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before8.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after8.jpg",
+    category: "renovation"
+  },
+  {
+    id: 8,
+    title: "Construction Moderne",
+    description: "Création d'une piscine contemporaine avec équipements de pointe",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before10.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after10.jpg",
+    category: "construction"
   }
 ];
 
