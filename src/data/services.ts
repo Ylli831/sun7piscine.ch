@@ -21,7 +21,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
   {
     slug: "entretien",
     title: "Entretien & Maintenance",
-    subtitle: "Service Signature",
+    subtitle: "",
     excerpt: "Entretien professionnel toute l'année",
     description: "Un service d'entretien complet qui maintient votre piscine dans un état parfait toute l'année.",
     icon: Settings,
@@ -48,7 +48,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Interventions régulières", description: "Nettoyage et réglages." }
     ],
     gallery: getServiceGallery("entretien"),
-    hero: { eyebrow: "Service Signature", heading: "Entretien & Maintenance", subheading: "Interventions rapide discrète et soignée." },
+    hero: { eyebrow: "Entretien & Maintenance", heading: "Entretien & Maintenance", subheading: "Interventions rapide discrète et soignée." },
     metaDescription: "Service d'entretien et maintenance de piscines SUN7."
   },
   {
@@ -115,7 +115,8 @@ export const serviceDetails: readonly ServiceDetail[] = [
     icon: Shield,
     image: getServicePrimary("securite") ?? "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG",
     features: [
-      "Diagnostic de sécurité enfants",
+      "Diagnostic",
+      "Couverture sur mesure",
       "Mise aux normes",
       "Accessoires : installation et maintenance de couvertures de sécurité automatiques et manuelles Solaires (chauffantes)",
       "Bâches d'hiver",

@@ -62,23 +62,20 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
         />
 
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-wrap items-center justify-center gap-4 text-left"
-          >
+          <div className="flex w-full items-center justify-center mb-8 relative">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:border-brand-gold/60 hover:text-brand-gold"
+              className="absolute left-0 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 backdrop-blur-md px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:border-brand-gold/60 hover:text-brand-gold hover:bg-white/30"
             >
               <ArrowLeft className="h-4 w-4" style={{ color: '#fed700' }} />
               Retour aux services
             </Link>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">
-              {service.hero.eyebrow}
-            </div>
-          </motion.div>
+            {service.slug !== 'entretien' && (
+              <div className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-md px-6 py-3 text-base font-bold uppercase tracking-[0.2em] text-brand-navy shadow-lg">
+                {service.hero.eyebrow}
+              </div>
+            )}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,12 +128,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.5fr,1fr]">
           <div className="space-y-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="space-y-4 text-center"
-            >
+            <div className="space-y-4 text-center">
               <div className="flex justify-center">
                 <span className="inline-flex items-center justify-center rounded-full bg-brand-sky/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-sky">
                   expertise sun7
@@ -144,60 +136,22 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               </div>
               <h2 className="text-3xl font-bold text-brand-navy sm:text-4xl">Ce que nous réalisons pour vous</h2>
               <p className="mx-auto max-w-2xl text-base text-brand-navy/70 sm:text-lg">{service.description}</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ staggerChildren: 0.05, duration: 0.3 }}
-              className="grid gap-4 sm:grid-cols-2"
-            >
+            <div className="grid gap-4 sm:grid-cols-2">
               {service.features.map((feature) => (
-                <motion.div
+                <div
                   key={feature}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ y: -6 }}
                   className="flex items-start gap-3 rounded-2xl border border-brand-navy/10 bg-white/95 p-5 shadow-[0px_18px_40px_rgba(17,42,70,0.12)]"
                 >
                   <CheckCircle className="mt-0.5 h-5 w-5 text-brand-gold" />
                   <span className="text-sm font-semibold text-brand-navy/80">{feature}</span>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-
-            {service.slug !== 'construction' && service.slug !== 'securite' && (
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.3 }}
-                className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]"
-              >
-                <h3 className="text-xl font-semibold text-brand-navy">Votre interlocuteur dédié</h3>
-                <p className="mt-2 text-sm text-brand-navy/70">
-                  Un chef de projet SUN7 coordonne chaque étape et reste disponible pour toutes vos questions.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2 text-sm font-semibold text-brand-navy transition hover:bg-brand-gold-dark"
-                >
-                  Planifier un rendez-vous
-                  <ArrowRight className="h-4 w-4" style={{ color: '#fed700' }} />
-                </Link>
-              </motion.div>
-            )}
+            </div>
           </div>
 
-          <motion.aside
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            className="flex flex-col gap-6"
-          >
+          <aside className="flex flex-col gap-6">
             <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-[0px_28px_60px_rgba(17,42,70,0.16)]">
               <h3 className="text-xl font-semibold text-brand-navy">Prêt pour votre projet ?</h3>
               <p className="mt-2 text-sm text-brand-navy/70">
@@ -244,7 +198,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                 </div>
               </div>
             )}
-          </motion.aside>
+          </aside>
         </div>
       </section>
 
