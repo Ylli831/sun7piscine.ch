@@ -18,6 +18,14 @@ interface ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 0,
+    title: "Transformation Spectaculaire",
+    description: "Rénovation complète d'une piscine avec des résultats impressionnants",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after.jpg",
+    category: "renovation"
+  },
+  {
+    id: 1,
     title: "Rénovation Complète",
     description: "Transformation complète d'une piscine vieillissante en oasis moderne",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-1.jpeg",
@@ -25,7 +33,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 1,
+    id: 2,
     title: "Rénovation Moderne",
     description: "Modernisation complète avec nouveau revêtement",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-2.jpeg",
@@ -33,7 +41,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 2,
+    id: 3,
     title: "Remise à Neuf",
     description: "Remise à neuf complète avec équipements modernes",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-3.jpeg",
@@ -41,7 +49,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 3,
+    id: 4,
     title: "Nettoyage Professionnel",
     description: "Nettoyage et remise en état spectaculaire",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg",
@@ -49,7 +57,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 4,
+    id: 5,
     title: "Hivernage Professionnel",
     description: "Préparation et protection pour l'hiver",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Hivernage-Avent.jpeg",
