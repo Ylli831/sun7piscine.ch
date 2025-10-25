@@ -85,7 +85,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               <ArrowLeft className="h-4 w-4" style={{ color: '#fed700' }} />
               Retour aux services
             </Link>
-            {service.slug !== 'entretien' && (
+            {service.slug !== 'entretien' && service.hero.eyebrow && (
               <div className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-md px-6 py-3 text-base font-bold uppercase tracking-[0.2em] text-brand-navy shadow-lg">
                 {service.hero.eyebrow}
               </div>

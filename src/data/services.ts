@@ -78,7 +78,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
     ],
     gallery: getServiceGallery("renovation"),
-    hero: { eyebrow: "Transformation totale", heading: "Rénovation sur mesure", subheading: "Esthétique, confort et performance." },
+    hero: { eyebrow: "", heading: "Rénovation sur mesure", subheading: "Esthétique, confort et performance." },
     metaDescription: "SUN7 Rénovation piscine."
   },
   {
@@ -88,7 +88,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     excerpt: "Piscines sur-mesure de A à Z",
     description: "Conception et réalisation de piscines uniques.",
     icon: Hammer,
-    image: getServicePrimary("construction") ?? "/sun7piscine-photos/Rénovation étanchéité de piscine en PVC ARMÉ/Pvc/IMG_4507.jpeg",
+    image: "/sun7piscine-photos/Nouvelle Construction/Taponnet/Taponnet/IMG_6770.jpeg",
     features: [
       "Piscine béton skimmer",
       "Piscine à débordement",
@@ -112,7 +112,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
     ],
     gallery: getServiceGallery("construction"),
-    hero: { eyebrow: "Création d'Exception", heading: "Construction de piscines sur-mesure", subheading: "Esthétique, durabilité et performance." },
+    hero: { eyebrow: "", heading: "Construction de piscines sur-mesure", subheading: "Esthétique, durabilité et performance." },
     metaDescription: "SUN7 Construction de piscines."
   },
   {
@@ -142,7 +142,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
     ],
     gallery: getServiceGallery("securite"),
-    hero: { eyebrow: "Protection maximale", heading: "Sécurisez votre piscine", subheading: "Dispositifs discrets et intelligents." },
+    hero: { eyebrow: "", heading: "Sécurisez votre piscine", subheading: "Dispositifs discrets et intelligents." },
     metaDescription: "Solutions de sécurité piscine SUN7."
   }
 ];
