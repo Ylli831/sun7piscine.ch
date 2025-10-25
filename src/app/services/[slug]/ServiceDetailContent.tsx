@@ -36,6 +36,11 @@ const iconMap: Record<string, typeof Settings> = {
 
 export default function ServiceDetailContent({ service }: ServiceDetailContentProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [visibleImages, setVisibleImages] = useState(12); // Show 12 images initially
+
+  const handleLoadMore = () => {
+    setVisibleImages(prev => Math.min(prev + 12, service.gallery.length));
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-brand-sky/5 to-white text-brand-navy">
@@ -232,7 +237,7 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
           </motion.div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {service.gallery.map((image, index) => (
+            {service.gallery.slice(0, visibleImages).map((image, index) => (
               <motion.div
                 key={`${service.slug}-gallery-${index}`}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -249,10 +254,25 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  quality={75}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCgAB//2Q=="
                 />
               </motion.div>
             ))}
           </div>
+
+          {visibleImages < service.gallery.length && (
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={handleLoadMore}
+                className="inline-flex items-center gap-2 rounded-full border border-brand-navy/15 bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-lg transition hover:border-brand-gold/60 hover:bg-brand-gold hover:text-white"
+              >
+                Voir plus de photos ({service.gallery.length - visibleImages} restantes)
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
