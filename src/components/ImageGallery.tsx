@@ -120,10 +120,23 @@ const categories = [
 export default function ImageGallery() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(16); // Show 16 images initially
 
   const filteredImages = selectedCategory === "all" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  const displayedImages = filteredImages.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredImages.length;
+
+  const loadMore = () => {
+    setVisibleCount(prev => Math.min(prev + 16, filteredImages.length));
+  };
+
+  // Reset visible count when category changes
+  useEffect(() => {
+    setVisibleCount(16);
+  }, [selectedCategory]);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -217,13 +230,13 @@ export default function ImageGallery() {
         {/* Images Grid - Pinterest Masonry Style */}
         <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           <AnimatePresence>
-            {filteredImages.map((image, index) => (
+            {displayedImages.map((image, index) => (
               <motion.div
                 key={image.src}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.4, delay: index * 0.03 }}
+                transition={{ duration: 0.4, delay: (index % 16) * 0.03 }}
                 className="group relative overflow-hidden rounded-xl shadow-precise card-hover-lift cursor-pointer break-inside-avoid mb-6"
                 onClick={() => openLightbox(index)}
               >
@@ -253,14 +266,28 @@ export default function ImageGallery() {
           </AnimatePresence>
         </div>
 
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="flex justify-center mt-12">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              onClick={loadMore}
+              className="inline-flex items-center gap-2 rounded-full border border-brand-navy/15 bg-brand-gold px-8 py-4 text-base font-semibold text-brand-navy shadow-lg transition hover:bg-brand-gold-dark hover:scale-105"
+            >
+              Voir plus de photos ({filteredImages.length - visibleCount} restantes)
+            </motion.button>
+          </div>
+        )}
+
         {/* Results count */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
           <p className="text-[#00008f] opacity-70">
-            {filteredImages.length} projet{filteredImages.length > 1 ? "s" : ""} affiché{filteredImages.length > 1 ? "s" : ""}
+            Affichage de {displayedImages.length} sur {filteredImages.length} projet{filteredImages.length > 1 ? "s" : ""}
           </p>
         </motion.div>
       </div>

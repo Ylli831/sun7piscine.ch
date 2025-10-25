@@ -45,7 +45,8 @@ export const serviceDetails: readonly ServiceDetail[] = [
     ],
     process: [
       { title: "Diagnostic initial", description: "Analyse complète." },
-      { title: "Interventions régulières", description: "Nettoyage et réglages." }
+      { title: "Interventions régulières", description: "Nettoyage et réglages." },
+      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
     ],
     gallery: getServiceGallery("entretien"),
     hero: { eyebrow: "Entretien & Maintenance", heading: "Entretien & Maintenance", subheading: "Interventions rapide discrète et soignée." },
@@ -71,7 +72,11 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Matériaux premium", description: "Qualité et durabilité." },
       { title: "Garantie étendue", description: "Protection longue durée." }
     ],
-    process: [],
+    process: [
+      { title: "Diagnostic initial", description: "Analyse complète." },
+      { title: "Interventions régulières", description: "Nettoyage et réglages." },
+      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+    ],
     gallery: getServiceGallery("renovation"),
     hero: { eyebrow: "Transformation totale", heading: "Rénovation sur mesure", subheading: "Esthétique, confort et performance." },
     metaDescription: "SUN7 Rénovation piscine."
@@ -101,7 +106,11 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Projet clé en main", description: "De A à Z." },
       { title: "Suivi personnalisé", description: "Chef de projet dédié." }
     ],
-    process: [{ title: "Étude & conception", description: "Modélisation 3D." }],
+    process: [
+      { title: "Étude & conception", description: "Modélisation 3D." },
+      { title: "Interventions régulières", description: "Nettoyage et réglages." },
+      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+    ],
     gallery: getServiceGallery("construction"),
     hero: { eyebrow: "Création d'Exception", heading: "Construction de piscines sur-mesure", subheading: "Esthétique, durabilité et performance." },
     metaDescription: "SUN7 Construction de piscines."
@@ -127,7 +136,11 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Protection enfants", description: "Sécurité maximale." },
       { title: "Installation rapide", description: "Intervention efficace." }
     ],
-    process: [{ title: "Installation certifiée", description: "Pose par techniciens agréés." }],
+    process: [
+      { title: "Installation certifiée", description: "Pose par techniciens agréés." },
+      { title: "Interventions régulières", description: "Nettoyage et réglages." },
+      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+    ],
     gallery: getServiceGallery("securite"),
     hero: { eyebrow: "Protection maximale", heading: "Sécurisez votre piscine", subheading: "Dispositifs discrets et intelligents." },
     metaDescription: "Solutions de sécurité piscine SUN7."

@@ -1,6 +1,9 @@
 export const serviceImageMap: Record<string, string[]> = {
   entretien: [
     '/sun7piscine-photos/entreitenmaintenance.jpg',
+    '/sun7piscine-photos/entretian/image1.jpg',
+    '/sun7piscine-photos/entretian/image2.jpg',
+    '/sun7piscine-photos/entretian/image3.jpg',
     '/sun7piscine-photos/entretian/IMG_0232.JPG',
     '/sun7piscine-photos/entretian/IMG_0499.jpeg',
     '/sun7piscine-photos/entretian/IMG_1223.jpeg',
