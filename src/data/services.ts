@@ -94,9 +94,71 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Garantie étendue", description: "Protection longue durée." }
     ],
     process: [
-      { title: "Diagnostic initial", description: "Analyse complète." },
-      { title: "Interventions régulières", description: "Nettoyage et réglages." },
-      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+      {
+        title: "Diagnostic complet 🔍",
+        description: `Avant toute intervention, nous réalisons une analyse détaillée de votre installation :
+
+État du revêtement, de l’étanchéité et de la structure du bassin
+
+Vérification des circuits hydrauliques, électriques et du local technique
+
+Identification des besoins techniques ou esthétiques du client
+
+
+Objectif : définir un plan de rénovation précis, durable et sur mesure.`
+      },
+      {
+        title: "Étude et conception du projet 🧩",
+        description: `Chaque projet est conçu selon vos envies et les contraintes techniques du site :
+
+Conseils personnalisés sur les matériaux (PVC armé, carrelage, mosaïque, etc.)
+
+Sélection des équipements performants et économes en énergie
+
+Planification des travaux selon la saison et la disponibilité du bassin
+
+
+Résultat : un projet clair, maîtrisé et conforme aux normes suisses.`
+      },
+      {
+        title: "Réalisation et installation 🛠",
+        description: `Nos techniciens qualifiés réalisent les travaux avec précision et professionnalisme :
+
+Pose et soudure de PVC armé renforcé selon les règles de l’art
+
+Installation de pompes à chaleur, systèmes de filtration, et éclairages LED
+
+Finitions sur mesure : escaliers, margelles, aménagements et accessoires
+
+
+Engagement : propreté du chantier, respect des délais, et contrôle qualité à chaque étape.`
+      },
+      {
+        title: "Tests et mise en service 💧",
+        description: `Une fois la rénovation terminée, nous effectuons :
+
+Le remplissage du bassin et la mise en route des équipements
+
+Les réglages hydrauliques et thermiques
+
+Le contrôle complet de l’étanchéité, du débit et des automatismes
+
+
+But : garantir la performance et la fiabilité de votre nouvelle installation.`
+      },
+      {
+        title: "Garantie & suivi client 🤝",
+        description: `Sun7 Sylejmani Piscine reste à vos côtés après la rénovation :
+
+Garantie sur les matériaux et la main-d’œuvre (selon le type de travaux)
+
+Suivi technique et conseils d’entretien personnalisés
+
+Service après-travaux rapide et à l’écoute de vos besoins
+
+
+Notre promesse : une rénovation haut de gamme, durable, réalisée avec passion et savoir-faire.`
+      }
     ],
     gallery: getServiceGallery("renovation"),
     hero: { eyebrow: "", heading: "Rénovation sur mesure", subheading: "Esthétique, confort et performance." },
