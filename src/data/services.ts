@@ -44,9 +44,30 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Expertise professionnelle", description: "Techniciens certifiés." }
     ],
     process: [
-      { title: "Diagnostic initial", description: "Analyse complète." },
-      { title: "Interventions régulières", description: "Nettoyage et réglages." },
-      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+      {
+        title: "Notre approche",
+        description: `Notre approche repose sur l’expérience, la rigueur et la confiance.\nChaque piscine est unique : nous adaptons nos interventions pour garantir une eau saine, claire et équilibrée toute l’année.`
+      },
+      {
+        title: "Diagnostic initial 🔍",
+        description: `Chaque intervention débute par une analyse complète de votre installation:\n\nContrôle de la qualité de l’eau (pH, chlore, TAC, stabilisant, etc.)\n\nVérification du système de filtration, du local technique et des pompes\n\nInspection visuelle du bassin, des joints et des équipements\n\nObjectif : établir un état des lieux précis pour un entretien sur mesure.`
+      },
+      {
+        title: "Entretien préventif 🧼",
+        description: `Nous privilégions un entretien régulier et préventif pour éviter les pannes et les eaux troubles :\n\nNettoyage complet du bassin, des filtres et des skimmers\n\nRéglages et contrôle des automatismes\n\nUtilisation de produits adaptés à votre système (manuel ou automatique)\n\nRésultat : une eau claire, équilibrée et sans surconsommation de produits.`
+      },
+      {
+        title: "Interventions saisonnières 🌞❄",
+        description: `Nos prestations sont adaptées à chaque période de l’année :\n\nPrintemps : remise en route du bassin, contrôle des équipements et ajustement du traitement\n\nÉté : suivi régulier, nettoyage approfondi, maintien des paramètres de l’eau\n\nAutomne : hivernage, abaissement du niveau d’eau, mise en sécurité du matériel\n\nBénéfice : des interventions planifiées pour prolonger la durée de vie de vos installations.`
+      },
+      {
+        title: "Sécurité & conformité 🧪",
+        description: `Nous intervenons dans le respect des normes suisses et des règles d’hygiène :\n\nPermis officiel pour l’emploi de produits biocides destinés à la désinfection de l’eau des piscines publiques\n\nProduits agréés et dosés avec précision\n\nRespect des protocoles de sécurité pour piscines privées et publiques\n\nGarantie : un service professionnel, conforme et sûr.`
+      },
+      {
+        title: "Suivi personnalisé 🤝",
+        description: `Parce que chaque client est unique, nous assurons un accompagnement personnalisé :\n\nConseils techniques et pédagogiques pour simplifier votre entretien\n\nFiches de suivi ou rapports d’intervention (sur demande)\n\nDisponibilité rapide en cas de besoin ou d’urgence\n\nNotre engagement : la confiance d’un artisan local, l’expérience d’un professionnel.`
+      }
     ],
     gallery: getServiceGallery("entretien"),
     hero: { eyebrow: "Entretien & Maintenance", heading: "Entretien & Maintenance", subheading: "Interventions rapide discrète et soignée." },

@@ -188,7 +188,7 @@ export default function ServicesShowcase() {
         <div className="text-center">
           <motion.button
             onClick={() => setShowAllServices(!showAllServices)}
-            className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-navy/90 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-sky focus-visible:ring-offset-brand-navy"
+            className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-navy/90 text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-sky focus-visible:ring-offset-brand-navy"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

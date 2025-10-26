@@ -185,7 +185,14 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
                       </span>
                       <div>
                         <h4 className="text-sm font-semibold text-brand-navy">{step.title}</h4>
-                        <p className="text-sm text-brand-navy/70">{step.description}</p>
+                        {/* Render multi-paragraph descriptions: split on double newlines */}
+                        {String(step.description)
+                          .split('\n\n')
+                          .map((para, i) => (
+                            <p key={i} className="text-sm text-brand-navy/70">
+                              {para}
+                            </p>
+                          ))}
                       </div>
                     </motion.div>
                   ))}
