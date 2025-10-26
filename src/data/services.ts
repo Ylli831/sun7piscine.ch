@@ -128,9 +128,71 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Suivi personnalisé", description: "Chef de projet dédié." }
     ],
     process: [
-      { title: "Étude & conception", description: "Modélisation 3D." },
-      { title: "Interventions régulières", description: "Nettoyage et réglages." },
-      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+      {
+        title: "Étude & conception 💡",
+        description: `Tout commence par une analyse approfondie de votre terrain et de vos attentes :
+
+Étude du sol, de l’exposition et des contraintes techniques
+
+Conseils personnalisés sur le type de piscine (béton, coque, inox, miroir, etc.)
+
+Élaboration d’un plan détaillé et modélisation 3D réaliste de votre futur bassin
+
+
+Objectif : concevoir une piscine parfaitement adaptée à votre environnement et à votre style de vie.`
+      },
+      {
+        title: "Préparation & implantation 🧱",
+        description: `Une fois le projet validé, nous procédons à la préparation minutieuse du chantier :
+
+Terrassement précis et installation des réseaux hydrauliques et électriques
+
+Pose de la structure (coffrage béton, coque polyester ou inox)
+
+Mise en place du système de filtration, des canalisations et des équipements
+
+
+Résultat : une base solide, durable et conforme aux normes suisses de sécurité.`
+      },
+      {
+        title: "Finitions & équipements haut de gamme 🌿",
+        description: `Nous apportons un soin particulier à chaque détail pour sublimer votre bassin :
+
+Pose des margelles, carrelages ou PVC armé renforcé
+
+Installation de systèmes de chauffage, éclairage LED intelligent, nage à contre-courant, etc.
+
+Aménagements personnalisés : escaliers, plage immergée, couverture automatique, pool house
+
+
+But : allier esthétisme, confort et performance.`
+      },
+      {
+        title: "Mise en service & contrôle qualité 💧",
+        description: `Avant la remise des clés, nous assurons :
+
+Le remplissage et la mise en route du système complet
+
+Les réglages hydrauliques, thermiques et automatiques
+
+Un contrôle qualité final pour garantir le bon fonctionnement de chaque élément
+
+
+Engagement : vous livrer une piscine prête à l’emploi, sûre et parfaitement équilibrée.`
+      },
+      {
+        title: "Accompagnement & garantie 🤝",
+        description: `Notre relation ne s’arrête pas à la livraison :
+
+Formation à l’utilisation et à l’entretien du bassin
+
+Service après-vente rapide et à l’écoute
+
+Garantie sur la structure, l’étanchéité et les équipements
+
+
+Notre promesse : une piscine conçue pour durer, avec le savoir-faire d’un artisan de confiance.`
+      }
     ],
     gallery: getServiceGallery("construction"),
     hero: { eyebrow: "", heading: "Construction de piscines sur-mesure", subheading: "Esthétique, durabilité et performance." },
@@ -143,7 +205,7 @@ export const serviceDetails: readonly ServiceDetail[] = [
     excerpt: "Systèmes de sécurité intelligents",
     description: "Solutions de sécurité de pointe conformes aux normes suisses.",
     icon: Shield,
-    image: getServicePrimary("securite") ?? "/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG",
+    image: "/sun7piscine-photos/hero-security.jpeg",
     features: [
       "Diagnostic",
       "Couverture sur mesure",
@@ -158,9 +220,71 @@ export const serviceDetails: readonly ServiceDetail[] = [
       { title: "Installation rapide", description: "Intervention efficace." }
     ],
     process: [
-      { title: "Installation certifiée", description: "Pose par techniciens agréés." },
-      { title: "Interventions régulières", description: "Nettoyage et réglages." },
-      { title: "Permis", description: "Pour l'emploi de produits biocides pour la désinfection de l'eau des piscines publiques." }
+      {
+        title: "Diagnostic & analyse du site 🔍",
+        description: `Chaque projet commence par une évaluation complète de votre installation :
+
+Mesures précises du bassin et des abords
+
+Vérification des points d’ancrage, des margelles et du local technique
+
+Identification des besoins spécifiques selon le type de couverture souhaité (manuelle, automatique, solaire, chauffante, etc.)
+
+
+Objectif : déterminer la solution de sécurité la plus adaptée et conforme aux exigences légales.`
+      },
+      {
+        title: "Étude technique & conception sur mesure 🧩",
+        description: `Nous concevons votre couverture en fonction de vos contraintes et de votre usage :
+
+Choix du modèle, des matériaux et du système de motorisation
+
+Adaptation aux formes spéciales, escaliers ou plages immergées
+
+Présentation d’un devis clair et d’un plan d’installation personnalisé
+
+
+Résultat : une couverture parfaitement intégrée, esthétique et fonctionnelle.`
+      },
+      {
+        title: "Installation certifiée 🛠",
+        description: `Nos techniciens agréés assurent une pose minutieuse et sécurisée :
+
+Installation des rails, motorisations et systèmes d’enroulement
+
+Réglages de fin de course, alignement et tension des lames ou toiles
+
+Tests de sécurité avant mise en service
+
+
+Engagement : une installation propre, conforme et garantie.`
+      },
+      {
+        title: "Mise aux normes & contrôles de conformité ✅",
+        description: `Nous veillons à ce que chaque dispositif respecte les normes suisses et européennes de sécurité (SN EN 16582 / 16713) :
+
+Vérification de la résistance, du verrouillage et des fixations
+
+Contrôle des automatismes et des dispositifs anti-chute
+
+Remise d’un rapport de conformité si nécessaire
+
+
+But : assurer une sécurité totale pour les enfants, animaux et utilisateurs.`
+      },
+      {
+        title: "Suivi & maintenance régulière 🔧",
+        description: `Pour préserver la performance et la longévité de vos équipements :
+
+Entretien périodique, nettoyage et réglages techniques
+
+Remplacement ou réparation de pièces d’usure
+
+Conseils d’utilisation et de protection saisonnière (bâches d’hiver, couvertures 4 saisons, etc.)
+
+
+Notre promesse : votre piscine reste sûre, protégée et en parfait état tout au long de l’année.`
+      }
     ],
     gallery: getServiceGallery("securite"),
     hero: { eyebrow: "", heading: "Sécurisez votre piscine", subheading: "Dispositifs discrets et intelligents." },

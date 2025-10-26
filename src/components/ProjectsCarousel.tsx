@@ -18,11 +18,11 @@ interface ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 0,
-    title: "Transformation Spectaculaire",
-    description: "Rénovation complète d'une piscine avec des résultats impressionnants",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before.jpg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after.jpg",
-    category: "renovation"
+    title: "Construction Personnalisée",
+    description: "Création d'un espace aquatique unique et moderne",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before7.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after7.jpg",
+    category: "construction"
   },
   {
     id: 1,
@@ -66,11 +66,11 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 6,
-    title: "Construction Personnalisée",
-    description: "Création d'un espace aquatique unique et moderne",
-    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before7.jpg",
-    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after7.jpg",
-    category: "construction"
+    title: "Transformation Spectaculaire",
+    description: "Rénovation complète d'une piscine avec des résultats impressionnants",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after.jpg",
+    category: "renovation"
   },
   {
     id: 7,

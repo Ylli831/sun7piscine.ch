@@ -122,13 +122,13 @@ export const serviceImageMap: Record<string, string[]> = {
     '/sun7piscine-photos/Nouvelle Construction/chene-bourge/chene-bourge/IMG_3948.jpeg'
   ],
   securite: [
-    '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG',
+    '/sun7piscine-photos/Couverture de sécurité et Solaire/1c0a7058-52f8-4e11-b30b-64c8cd4cc156.jpg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_1308.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_4253.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3433.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7051.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_0540.jpeg',
-    '/sun7piscine-photos/Couverture de sécurité et Solaire/1c0a7058-52f8-4e11-b30b-64c8cd4cc156.jpg',
+    '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_3465.JPG',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/1000033862.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_1074.jpeg',
     '/sun7piscine-photos/Couverture de sécurité et Solaire/IMG_7050.jpeg',
