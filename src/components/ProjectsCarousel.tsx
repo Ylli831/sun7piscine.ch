@@ -18,6 +18,14 @@ interface ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 0,
+    title: "Avant/Après Vedette",
+    description: "Découvrez la transformation la plus marquante de cette année.",
+    beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before-first.jpg",
+    afterImage: "/sun7piscine-photos/before and after/para edhe pas/after-first.jpg",
+    category: "renovation"
+  },
+  {
+    id: 1,
     title: "Construction Personnalisée",
     description: "Création d'un espace aquatique unique et moderne",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before7.jpg",
@@ -25,7 +33,7 @@ const projectsData: ProjectData[] = [
     category: "construction"
   },
   {
-    id: 1,
+    id: 2,
     title: "Rénovation Complète",
     description: "Transformation complète d'une piscine vieillissante en oasis moderne",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-1.jpeg",
@@ -33,7 +41,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 2,
+    id: 3,
     title: "Rénovation Moderne",
     description: "Modernisation complète avec nouveau revêtement",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-2.jpeg",
@@ -41,7 +49,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 3,
+    id: 4,
     title: "Remise à Neuf",
     description: "Remise à neuf complète avec équipements modernes",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Renovation-3.jpeg",
@@ -49,7 +57,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 4,
+    id: 5,
     title: "Nettoyage Professionnel",
     description: "Nettoyage et remise en état spectaculaire",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/Avant-Nettoyage.jpeg",
@@ -57,7 +65,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 5,
+    id: 6,
     title: "Nouvelle Construction",
     description: "Construction sur-mesure d'une piscine moderne et élégante",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before6.jpg",
@@ -65,7 +73,7 @@ const projectsData: ProjectData[] = [
     category: "construction"
   },
   {
-    id: 6,
+    id: 7,
     title: "Transformation Spectaculaire",
     description: "Rénovation complète d'une piscine avec des résultats impressionnants",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before.jpg",
@@ -73,7 +81,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 7,
+    id: 8,
     title: "Rénovation d'Excellence",
     description: "Transformation complète avec finitions haut de gamme",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before8.jpg",
@@ -81,7 +89,7 @@ const projectsData: ProjectData[] = [
     category: "renovation"
   },
   {
-    id: 8,
+    id: 9,
     title: "Construction Moderne",
     description: "Création d'une piscine contemporaine avec équipements de pointe",
     beforeImage: "/sun7piscine-photos/before and after/para edhe pas/before10.jpg",
