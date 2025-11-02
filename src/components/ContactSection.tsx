@@ -30,7 +30,9 @@ export default function ContactSection() {
             Restons en contact
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-brand-navy/70 lg:text-base">
-            Notre équipe répond en moins de 24 heures ouvrées. Choisissez le canal qui vous convient pour discuter de votre piscine ou spa.
+            Une question, un conseil ou un projet piscine ?
+            <br />
+            Je serai ravie de vous répondre personnellement — généralement dans les 24 heures ouvrées.
           </p>
         </motion.div>
 
