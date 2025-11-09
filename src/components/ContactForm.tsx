@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { motion } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 const inquiryTopics = [
@@ -76,16 +75,12 @@ export default function ContactForm() {
   };
 
   return (
-    <motion.form
+    <form
       id="form"
       onSubmit={handleSubmit}
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.4 }}
-  className="relative w-full overflow-hidden rounded-3xl border border-brand-navy/10 bg-white/95 p-8 shadow-xl backdrop-blur lg:p-10"
+      className="relative w-full overflow-hidden rounded-3xl border border-brand-navy/10 bg-white/95 p-8 shadow-xl backdrop-blur lg:p-10"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/5 via-transparent to-brand-gold/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/5 via-transparent to-brand-gold/5 pointer-events-none" />
       <div className="relative z-10 space-y-8">
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-brand-navy">Contact rapide</h2>
@@ -182,10 +177,10 @@ export default function ContactForm() {
             />
           </div>
 
-          <div>
-            <span className="mb-2 block text-sm font-semibold text-brand-navy">
-              Préférence de contact
-            </span>
+          <div className="lg:col-span-2">
+            <label className="mb-3 block text-sm font-semibold text-brand-navy">
+              Préférence de contact *
+            </label>
             <div className="flex flex-wrap gap-3">
               {contactPreferences.map((preference) => {
                 const isActive = formData.contactPreference === preference.value;
@@ -193,16 +188,19 @@ export default function ContactForm() {
                   <button
                     key={preference.value}
                     type="button"
-                    onClick={() =>
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      console.log('Clicked:', preference.value);
                       setFormData((prev) => ({
                         ...prev,
                         contactPreference: preference.value
-                      }))
-                    }
-                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/60 ${
+                      }));
+                    }}
+                    className={`cursor-pointer rounded-full border-2 px-6 py-3 text-sm font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/60 ${
                       isActive
-                        ? "border-brand-gold bg-brand-gold/15 text-brand-navy"
-                        : "border-brand-navy/15 text-brand-navy/70 hover:border-brand-gold/40 hover:text-brand-navy"
+                        ? "border-brand-gold bg-brand-gold text-brand-navy shadow-lg scale-105"
+                        : "border-brand-navy/20 bg-white text-brand-navy/70 hover:border-brand-gold/60 hover:bg-brand-gold/10 hover:text-brand-navy hover:scale-102"
                     }`}
                     aria-pressed={isActive}
                   >
@@ -254,17 +252,15 @@ export default function ContactForm() {
         </div>
 
         {submitted && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="flex items-center gap-3 rounded-2xl border border-brand-gold/30 bg-brand-gold/15 px-4 py-3 text-sm text-brand-navy"
             role="status"
           >
             <CheckCircle className="h-4 w-4 text-brand-gold-dark" />
             Merci ! Votre demande a bien été envoyée. Un expert SUN7 vous recontacte rapidement.
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.form>
+    </form>
   );
 }

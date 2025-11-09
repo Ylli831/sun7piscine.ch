@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -13,21 +15,6 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-
-    // Create transporter with Outlook SMTP settings
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST || 'smtp-mail.outlook.com',
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: false, // Use STARTTLS
-      auth: {
-        user: process.env.EMAIL_USER || 'info@sun7piscine.ch',
-        pass: process.env.EMAIL_PASSWORD || 'Bmond280985',
-      },
-      tls: {
-        ciphers: 'SSLv3',
-        rejectUnauthorized: false,
-      },
-    });
 
     // Get topic label
     const topicLabels: { [key: string]: string } = {
@@ -166,8 +153,8 @@ export async function POST(request: Request) {
     `;
 
     // Send email to business
-    await transporter.sendMail({
-      from: '"SUN7 Piscine Website" <info@sun7piscine.ch>',
+    await resend.emails.send({
+      from: 'SUN7 Piscine <info@sun7piscine.ch>',
       to: 'info@sun7piscine.ch',
       subject: `Nouvelle demande: ${topicLabel} - ${name}`,
       html: businessEmailHtml,
@@ -175,8 +162,8 @@ export async function POST(request: Request) {
     });
 
     // Send confirmation email to customer
-    await transporter.sendMail({
-      from: '"SUN7 Piscine" <info@sun7piscine.ch>',
+    await resend.emails.send({
+      from: 'SUN7 Piscine <info@sun7piscine.ch>',
       to: email,
       subject: 'Confirmation de votre demande - SUN7 Piscine',
       html: customerEmailHtml,

@@ -31,35 +31,24 @@ export default function ContactPage() {
       <ScrollProgress />
       <WaterDropCursor />
 
-  <section className="relative overflow-hidden py-16 sm:py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy/90 to-brand-sky/70" />
-        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "url(/layered-waves-navbar.png)", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto max-w-3xl space-y-6 text-center text-white"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-gold">
+      <section className="relative overflow-hidden py-20 sm:py-24 bg-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/10 via-white to-brand-gold/5 z-0" />
+        <div className="container-custom relative z-20">
+          <div className="mx-auto max-w-3xl space-y-6 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold/60 bg-brand-gold/15 px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-brand-navy">
               Parlons de votre projet
             </span>
-            <h1 className="text-balance text-4xl font-bold leading-tight sm:text-5xl">
+            <h1 className="text-balance text-5xl font-bold leading-tight sm:text-6xl text-brand-navy">
               Construisons ensemble la piscine ou le spa qui vous ressemble
             </h1>
-            <p className="text-base text-white/85 sm:text-lg">
+            <p className="text-lg text-brand-navy/80 sm:text-xl font-medium">
               Dites-nous tout sur vos envies : notre équipe adapte chaque proposition à votre budget, votre terrain et vos délais.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="mx-auto mt-10 grid w-full max-w-5xl gap-5 md:grid-cols-3">
+          <div className="mx-auto mt-12 grid w-full max-w-5xl gap-6 md:grid-cols-3">
             {responseHighlights.map((highlight, index) => (
-              <motion.div
-                key={highlight.title}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-              >
+              <div key={highlight.title}>
                 <TiltCard
                   tiltAmount={15}
                   scale={1.03}
@@ -71,7 +60,7 @@ export default function ContactPage() {
                 <h2 className="text-base font-semibold group-hover:text-brand-gold transition-colors duration-300">{highlight.title}</h2>
                 <p className="mt-2 text-sm text-brand-navy/70">{highlight.description}</p>
                 </TiltCard>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -82,13 +71,7 @@ export default function ContactPage() {
           <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-[1.6fr,1fr] lg:items-start">
             <ContactForm />
 
-            <motion.aside
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.4 }}
-            className="flex w-full flex-col gap-6"
-          >
+            <aside className="flex w-full flex-col gap-6">
             <div className="rounded-3xl border border-brand-navy/10 bg-white/95 p-6 shadow-lg" aria-labelledby="contact-direct">
               <h2 id="contact-direct" className="text-xl font-semibold text-brand-navy">
                 Contact direct
@@ -126,7 +109,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </motion.aside>
+          </aside>
           </div>
         </div>
       </section>
