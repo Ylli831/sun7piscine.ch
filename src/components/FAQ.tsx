@@ -109,7 +109,7 @@ export default function FAQ() {
         >
           <a
             href="/faq"
-            className="inline-flex items-center gap-2 bg-brand-navy text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-sky focus-visible:ring-offset-brand-navy"
+            className="inline-flex items-center gap-2 bg-white text-navy font-semibold px-8 py-4 rounded-full border border-brand-navy hover:bg-brand-navy/10 transition-colors duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-sky focus-visible:ring-offset-brand-navy"
           >
             Voir Toutes les Questions
             <ChevronDown className="w-5 h-5 rotate-[-90deg]" />
