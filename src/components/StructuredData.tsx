@@ -8,6 +8,14 @@ export default function StructuredData() {
     "url": "https://sun7piscine.ch",
     "telephone": "+41793463200",
     "email": "info@sun7piscine.ch",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Esplanade des Récréation 22",
+      "addressLocality": "Meyrin",
+      "postalCode": "1217",
+      "addressRegion": "Genève",
+      "addressCountry": "CH"
+    },
     "priceRange": "CHF",
     "openingHoursSpecification": [
       {

@@ -142,6 +142,7 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#fed700' }} />
                 <div className="text-white/90">
                   <div className="font-medium text-white">Adresse</div>
+                  <div className="text-sm text-white/80">Esplanade des Récréation 22</div>
                   <div className="text-sm text-white/80">1217 Meyrin, Genève</div>
                   <div className="text-sm text-white/80">Suisse</div>
                 </div>

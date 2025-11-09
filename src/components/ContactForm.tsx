@@ -38,18 +38,41 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
     setSubmitted(false);
 
-    // TODO: Connect to API route or CRM integration
-    console.info("Contact form submission", formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       setSubmitted(true);
-    }, 900);
+      // Reset form after successful submission
+      setFormData({
+        topic: "construction",
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        contactPreference: "email",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
