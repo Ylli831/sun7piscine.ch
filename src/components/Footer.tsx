@@ -190,7 +190,7 @@ export default function Footer() {
             © {new Date().getFullYear()} SUN7 Piscine. Tous droits réservés.
           </div>
           <div className="text-white/80 text-sm">
-            Site réalisé par{" "}
+            Fourni Par{" "}
             <a
               href="https://atlas-studio.eu"
               target="_blank"
